@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mr Kassio</title>
+<meta name="description" content="Mr Kassio, le Fixer d'Opérations : je retrouve où votre PME perd de l'argent et du temps, entre la première demande et la facture. Abidjan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,900&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<meta property="og:title" content="Mr Kassio — Le Fixer d'Opérations">
+<meta property="og:description" content="Trouvez en 3 minutes l'étape où votre PME perd des ventes, du stock ou du temps. Diagnostic gratuit, Abidjan.">
+<meta property="og:type" content="website">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+<style>
+/* Mise en page : un « bon de travail » d'atelier — bandeaux pleine largeur, étiquettes de dossier, chiffres en FCFA au tampon. */
+:root{
+  --cobalt:#1f3fbf; --cobalt-ink:#142a80; --mandarine:#f26a1b; --beurre:#fff3c4;
+  --bg:#f6f7fb; --surface:#ffffff; --fg:#14182b; --muted:#565d78; --line:#d9ddea;
+  --on-cobalt:#ffffff; --ok:#1d8a4e; --warn:#b4560f;
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --r:6px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1222; --surface:#161b31; --fg:#eef0f8; --muted:#a3a9c4; --line:#2a3152;
+  --cobalt:#3a5ce0; --cobalt-ink:#0f1e5c; --beurre:#3a3417; --ok:#4cc184; --warn:#f29a55; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1222; --surface:#161b31; --fg:#eef0f8; --muted:#a3a9c4; --line:#2a3152;
+  --cobalt:#3a5ce0; --cobalt-ink:#0f1e5c; --beurre:#3a3417; --ok:#4cc184; --warn:#f29a55; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--f-body);margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);line-height:1.05;text-wrap:balance;margin:0}
+.tag{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mandarine);outline-offset:2px}
+
+/* En-tête */
+.top{background:var(--cobalt);color:var(--on-cobalt)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;font:900 20px/1 var(--f-display);font-stretch:85%;letter-spacing:.01em}
+.logo{display:grid;grid-template-columns:repeat(2,9px);gap:3px}
+.logo i{width:9px;height:9px;border-radius:2px;display:block}
+.logo i:nth-child(1){background:#4f7bff}.logo i:nth-child(2){background:var(--mandarine)}.logo i:nth-child(3){background:#5fd39a}.logo i:nth-child(4){background:#ffd23f}
+.top nav{display:flex;gap:18px;font-size:14px}
+.top nav a{text-decoration:none;opacity:.9}.top nav a:hover{opacity:1;text-decoration:underline}
+
+/* Ouverture */
+.hero{background:var(--cobalt);color:var(--on-cobalt);padding-block:40px 64px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end}
+.hero h1{font-size:clamp(40px,7.2vw,86px);font-weight:900;font-stretch:78%;letter-spacing:-.01em;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--mandarine);display:block}
+.hero p.lead{font-size:clamp(17px,2vw,20px);max-width:34ch;margin:22px 0 28px;opacity:.95}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 var(--f-display);font-stretch:95%;letter-spacing:.02em;text-transform:uppercase;
+  padding:16px 22px;border-radius:var(--r);border:2px solid transparent;text-decoration:none;cursor:pointer}
+.btn-m{background:var(--mandarine);color:#1a0d02}
+.btn-m:hover{filter:brightness(1.07)}
+.btn-o{border-color:currentColor;background:transparent;color:inherit}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+/* bon de travail */
+.bon{background:var(--beurre);color:#2b2410;border-radius:4px;padding:18px 18px 14px;transform:rotate(1.6deg);box-shadow:0 18px 40px rgba(0,0,0,.25);font-family:var(--f-mono);font-size:13px}
+:root[data-theme="dark"] .bon,.bon{--paper:#fff3c4}
+.bon{background:#fff3c4}
+.bon .tag{display:flex;justify-content:space-between;border-bottom:1.5px dashed #b8a66a;padding-bottom:8px;margin-bottom:10px}
+.bon table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.bon td{padding:5px 0;border-bottom:1px dotted #cfbf86;vertical-align:top}
+.bon td:last-child{text-align:right;white-space:nowrap}
+.bon .tot td{border:0;padding-top:10px;font-weight:500}
+.stamp{display:inline-block;margin-top:10px;border:2px solid #c2410c;color:#c2410c;padding:3px 8px;font:700 12px/1 var(--f-mono);letter-spacing:.1em;transform:rotate(-4deg)}
+
+section{padding-block:72px}
+.sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;max-width:60ch}
+.sec-head .tag{color:var(--cobalt)}
+:root[data-theme="dark"] .sec-head .tag{color:#8ea6ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sec-head .tag{color:#8ea6ff}}
+.sec-head h2{font-size:clamp(30px,4.6vw,48px);font-weight:900;font-stretch:82%;text-transform:uppercase}
+.sec-head p{color:var(--muted);margin:0}
+
+/* Douleurs */
+.pains{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pain{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.pain h3{font-size:24px;font-weight:700;font-stretch:90%}
+.pain .scene{margin:0}
+.pain .cost{font:500 13px/1.4 var(--f-mono);color:var(--warn);border-top:1px dashed var(--line);padding-top:10px;margin-top:auto}
+
+/* Diagnostic */
+.diag{background:var(--surface);border-block:1px solid var(--line)}
+.diag-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+.q{display:flex;flex-direction:column;gap:6px;padding:16px 0;border-bottom:1px solid var(--line)}
+.q:first-child{padding-top:0}
+.q label{font-weight:600}
+.q small{color:var(--muted)}
+.q input{font:500 20px/1 var(--f-mono);padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--fg);width:100%;max-width:220px;font-variant-numeric:tabular-nums}
+.q input:focus{border-color:var(--cobalt)}
+.result{background:var(--cobalt);color:var(--on-cobalt);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:16px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px)}
+.result .tag{opacity:.85}
+.funnel{display:flex;flex-direction:column;gap:10px}
+.step{display:grid;grid-template-columns:120px minmax(0,1fr) 56px;gap:10px;align-items:center;font-size:14px}
+.step .bar{height:12px;background:rgba(255,255,255,.18);border-radius:3px;overflow:hidden}
+.step .bar span{display:block;height:100%;background:#fff;border-radius:3px;transition:width .4s ease}
+.step.is-goulot .bar span{background:var(--mandarine)}
+.step.is-goulot{font-weight:700}
+.step b{font:500 14px var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+.verdict{border-top:1px solid rgba(255,255,255,.3);padding-top:14px}
+.verdict h3{font-size:28px;font-weight:900;font-stretch:85%;text-transform:uppercase;color:#ffd0b3}
+.verdict p{margin:8px 0 0}
+.note{font-size:12px;opacity:.75}
+
+/* Méthode */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.stp{padding:24px;display:flex;flex-direction:column;gap:8px;border-right:1px solid var(--line);min-width:0}
+.stp:last-child{border-right:0}
+.stp .n{font:900 56px/1 var(--f-display);font-stretch:75%;color:var(--mandarine)}
+.stp h3{font-size:22px;font-weight:700;font-stretch:90%}
+.stp p{margin:0;color:var(--muted)}
+.stp .price{font:500 13px var(--f-mono);color:var(--fg)}
+
+.no{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 28px;padding:0;margin:0;list-style:none}
+.no li{display:flex;gap:10px;align-items:baseline;min-width:0}
+.no li::before{content:"✕";color:var(--mandarine);font-weight:700}
+
+/* Contact */
+.contact{background:var(--cobalt-ink);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:center}
+.contact h2{font-size:clamp(32px,5vw,56px);font-weight:900;font-stretch:80%;text-transform:uppercase}
+.contact p{opacity:.9;max-width:46ch}
+.copy{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font:500 15px var(--f-mono)}
+.copy button{font:600 13px var(--f-body);background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:4px;padding:6px 10px;cursor:pointer}
+footer{padding-block:22px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .hero .wrap,.diag-grid,.contact .wrap{grid-template-columns:1fr}
+  .bon{transform:none;max-width:420px}
+  .result{position:static}
+  .steps{grid-template-columns:1fr}.stp{border-right:0;border-bottom:1px solid var(--line)}.stp:last-child{border-bottom:0}
+  .top nav{display:none}
+}
+@media (max-width:560px){.pains,.no{grid-template-columns:1fr}.step{grid-template-columns:96px minmax(0,1fr) 48px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Mr Kassio</div>
+    <nav aria-label="Sections">
+      <a href="#fuites">Les fuites</a><a href="#diagnostic">Le diagnostic</a><a href="#methode">Comment on travaille</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="t-hero">
+  <div class="wrap">
+    <div>
+      <p class="tag">Le Fixer d'Opérations · Abidjan</p>
+      <h1 id="t-hero">Votre argent fuit quelque part. <em>Je trouve où.</em></h1>
+      <p class="lead">Entre le premier message WhatsApp et la facture encaissée, une PME perd des ventes, du stock et des heures sans le voir. Je retrouve l'étape qui coince et je la répare, une à la fois.</p>
+      <div class="cta-row">
+        <a class="btn btn-m" href="#diagnostic">Trouver mon goulot en 3 minutes</a>
+        <a class="btn btn-o" href="#contact">Échange offert de 30 min</a>
+      </div>
+    </div>
+    <aside class="bon" aria-label="Exemple : bon de travail d'un mois type">
+      <div class="tag"><span>Bon de travail</span><span>N° 0047</span></div>
+      <table>
+        <tr><td>Demandes WhatsApp sans réponse sous 24 h</td><td>31</td></tr>
+        <tr><td>Devis envoyés, jamais relancés</td><td>12</td></tr>
+        <tr><td>Articles « en stock » introuvables</td><td>9</td></tr>
+        <tr><td>Heures à recopier les mêmes chiffres</td><td>14 h</td></tr>
+        <tr class="tot"><td>Ventes probablement perdues</td><td>≈ 1,8 M FCFA</td></tr>
+      </table>
+      <span class="stamp">EXEMPLE FICTIF</span>
+    </aside>
+  </div>
+</section>
+
+<section id="fuites" aria-labelledby="t-fuites">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="tag">Les 4 fuites</p>
+      <h2 id="t-fuites">Ce que je vois dans presque toutes les PME</h2>
+      <p>Pas besoin d'un gros chantier pour les arrêter. Il faut d'abord savoir laquelle vous coûte le plus.</p>
+    </div>
+    <div class="pains">
+      <article class="pain">
+        <p class="tag">Fuite 1</p>
+        <h3>L'argent qui file</h3>
+        <p class="scene">Le client demande un prix sur WhatsApp un samedi soir. Personne ne répond avant lundi. Il a déjà acheté ailleurs.</p>
+        <p class="cost">À mesurer : demandes reçues · réponses dans la journée</p>
+      </article>
+      <article class="pain">
+        <p class="tag">Fuite 2</p>
+        <h3>Le brouillard du stock</h3>
+        <p class="scene">« On l'a en magasin » — sauf qu'on ne le trouve pas. Ou on recommande ce qui dort déjà au dépôt de Yopougon.</p>
+        <p class="cost">À mesurer : ruptures · écarts entre le cahier et le dépôt</p>
+      </article>
+      <article class="pain">
+        <p class="tag">Fuite 3</p>
+        <h3>L'information en silo</h3>
+        <p class="scene">Le chiffre est dans la tête du gérant, le devis dans le téléphone du commercial, le paiement dans le cahier de la caisse.</p>
+        <p class="cost">À mesurer : questions qui remontent toujours au patron</p>
+      </article>
+      <article class="pain">
+        <p class="tag">Fuite 4</p>
+        <h3>Le temps perdu à l'admin</h3>
+        <p class="scene">Chaque fin de mois, deux jours à recopier des chiffres d'un fichier à l'autre pour savoir si on a gagné de l'argent.</p>
+        <p class="cost">À mesurer : heures de saisie par semaine</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="diagnostic" class="diag" aria-labelledby="t-diag">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="tag">Diagnostic gratuit · 3 minutes</p>
+      <h2 id="t-diag">Où se trouve votre goulot ?</h2>
+      <p>Répondez avec les chiffres d'un mois normal. Une estimation suffit. Rien n'est envoyé : le calcul se fait sur votre écran.</p>
+    </div>
+    <div class="diag-grid">
+      <form id="f" novalidate>
+        <div class="q">
+          <label for="q1">Demandes reçues par mois</label>
+          <small>Messages WhatsApp, appels, visites en boutique qui demandent un prix ou un produit.</small>
+          <input id="q1" type="number" inputmode="numeric" min="0" value="120">
+        </div>
+        <div class="q">
+          <label for="q2">Demandes qui ont reçu une réponse ou un devis le jour même</label>
+          <small>Soyez honnête : c'est souvent là que tout se joue.</small>
+          <input id="q2" type="number" inputmode="numeric" min="0" value="45">
+        </div>
+        <div class="q">
+          <label for="q3">Ventes conclues sur le mois</label>
+          <small>Commandes payées ou contrats signés.</small>
+          <input id="q3" type="number" inputmode="numeric" min="0" value="18">
+        </div>
+        <div class="q">
+          <label for="q4">Clients du mois qui avaient déjà acheté chez vous</label>
+          <small>Ceux qui reviennent sans que vous alliez les chercher.</small>
+          <input id="q4" type="number" inputmode="numeric" min="0" value="4">
+        </div>
+      </form>
+      <div class="result" aria-live="polite">
+        <p class="tag">Votre résultat · exemple tant que vous n'avez rien changé</p>
+        <div class="funnel" id="funnel"></div>
+        <div class="verdict">
+          <h3 id="v-titre">—</h3>
+          <p id="v-texte"></p>
+        </div>
+        <a class="btn btn-m" href="#contact" id="v-cta">En parler pendant 30 min (offert)</a>
+        <p class="note">Repères indicatifs tirés de PME de commerce et de services. Votre métier peut être différent : c'est l'objet de l'échange.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="methode" aria-labelledby="t-methode">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="tag">Comment on travaille</p>
+      <h2 id="t-methode">Un goulot, un chiffre, une réparation</h2>
+      <p>On ne refait pas toute l'entreprise. On s'attaque à l'étape qui coûte le plus, on mesure avant et après, et vous décidez de continuer ou non.</p>
+    </div>
+    <div class="steps">
+      <div class="stp"><span class="n">1</span><h3>Le diagnostic</h3><p>Les 4 questions ci-dessus, avec vos vrais chiffres.</p><span class="price">Gratuit</span></div>
+      <div class="stp"><span class="n">2</span><h3>L'échange de 30 min</h3><p>On regarde ensemble l'étape qui coince et ce qu'elle vous coûte en FCFA par mois.</p><span class="price">Offert</span></div>
+      <div class="stp"><span class="n">3</span><h3>La petite mission</h3><p>Une réparation au périmètre écrit : ce qui est livré, la date, et le chiffre qu'on doit faire bouger.</p><span class="price">Devis écrit avant de commencer</span></div>
+    </div>
+    <div class="sec-head" style="margin-top:56px;margin-bottom:18px">
+      <p class="tag">Ce que je ne fais pas</p>
+    </div>
+    <ul class="no">
+      <li>Promettre un chiffre d'affaires ou un nombre de clients</li>
+      <li>Inventer des avis, des témoignages ou des chiffres</li>
+      <li>Envoyer, publier ou dépenser quoi que ce soit sans votre accord</li>
+      <li>Réparer un processus que personne ne sait décrire : on le décrit d'abord</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="contact" aria-labelledby="t-contact">
+  <div class="wrap">
+    <div>
+      <h2 id="t-contact">Parlons de votre goulot</h2>
+      <p>30 minutes, offertes, au téléphone ou à votre bureau à Abidjan. Venez avec votre résultat du diagnostic : on part de là.</p>
+    </div>
+    <div class="cta-row" style="flex-direction:column;align-items:flex-start">
+      <a class="btn btn-m" id="wa" href="#contact" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+      <div class="copy"><span id="wa-num">Numéro WhatsApp à ajouter</span><button type="button" id="copier">Copier</button></div>
+      <a class="btn btn-o" id="li" href="#contact" target="_blank" rel="noopener">Me suivre sur LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>Mr Kassio · Le Fixer d'Opérations · Abidjan, Côte d'Ivoire</span><span>Les chiffres du bon de travail sont un exemple fictif.</span></div>
+</footer>
+
+<script>
+/* ===== Réglages à compléter par le fondateur ===== */
+const WHATSAPP = "2250789263373";
+const LINKEDIN = "https://www.linkedin.com/in/mr-kassio-6190331b1";
+/* ================================================== */
+const ETAPES = [
+  {cle:"rep", nom:"Réponse rapide", repere:0.6,
+   titre:"Votre goulot : la réponse", texte:"Trop de demandes attendent. Chaque heure de retard fait partir des clients chez le voisin. C'est souvent la réparation la plus rapide et la plus rentable."},
+  {cle:"vente", nom:"Vente conclue", repere:0.35,
+   titre:"Votre goulot : la conclusion", texte:"Vous répondez, mais les devis ne se transforment pas en ventes. Il manque souvent une relance au bon moment ou un devis plus clair."},
+  {cle:"retour", nom:"Clients qui reviennent", repere:0.3,
+   titre:"Votre goulot : la fidélité", texte:"Vous gagnez des clients mais ils ne reviennent pas. Un client qui revient coûte bien moins cher à servir qu'un nouveau."}
+];
+const $ = id => document.getElementById(id);
+function n(id){ const v = parseFloat($(id).value); return isFinite(v) && v >= 0 ? v : 0; }
+function calc(){
+  const d = n("q1"), r = n("q2"), v = n("q3"), f = n("q4");
+  const taux = { rep: d ? r/d : 0, vente: r ? v/r : 0, retour: v ? f/v : 0 };
+  let pire = null, ecartMax = -1;
+  ETAPES.forEach(e => { const ecart = (e.repere - Math.min(taux[e.cle], 1)) / e.repere; if (ecart > ecartMax) { ecartMax = ecart; pire = e; } });
+  const ok = ecartMax <= 0;
+  $("funnel").innerHTML = ETAPES.map(e => {
+    const t = Math.min(taux[e.cle], 1), pct = Math.round(t*100);
+    const goul = !ok && e === pire;
+    return `<div class="step${goul ? " is-goulot" : ""}"><span>${e.nom}</span><span class="bar"><span style="width:${Math.max(pct,2)}%"></span></span><b>${pct}%</b></div>`;
+  }).join("");
+  if (!d) { $("v-titre").textContent = "Indiquez vos demandes"; $("v-texte").textContent = "Commencez par le nombre de demandes reçues sur un mois."; return; }
+  if (ok) { $("v-titre").textContent = "Pas de goulot évident"; $("v-texte").textContent = "Vos chiffres sont au-dessus des repères. Le prochain gain est sans doute dans le nombre de demandes reçues."; }
+  else { $("v-titre").textContent = pire.titre; $("v-texte").textContent = pire.texte; }
+  majWhatsApp(ok ? "pas de goulot évident" : pire.nom.toLowerCase());
+}
+function majWhatsApp(goulot){
+  const msg = `Bonjour, j'ai fait le diagnostic sur votre site. Mon goulot : ${goulot}. Je voudrais l'échange de 30 min.`;
+  const url = WHATSAPP ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}` : "#contact";
+  $("wa").href = url;
+}
+["q1","q2","q3","q4"].forEach(id => $(id).addEventListener("input", calc));
+$("f").addEventListener("submit", e => e.preventDefault());
+if (WHATSAPP) { $("wa-num").textContent = "+" + WHATSAPP; } else { $("copier").hidden = true; }
+if (LINKEDIN) { $("li").href = LINKEDIN; } else { $("li").hidden = true; }
+$("copier").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText("+" + WHATSAPP); $("copier").textContent = "Copié"; }
+  catch { const s = window.getSelection(), r = document.createRange(); r.selectNodeContents($("wa-num")); s.removeAllRanges(); s.addRange(r); }
+});
+calc();
+</script>
+
+</body>
+</html>
