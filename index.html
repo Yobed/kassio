@@ -312,6 +312,32 @@ dialog.ex[open]{animation:exIn .28s cubic-bezier(.2,.8,.2,1)}
 .mini-chat .a{align-self:flex-start;background:var(--chat-in);border-radius:10px;padding:6px 9px;max-width:90%}
 .mini-chat .b{align-self:flex-end;background:var(--chat-out);color:#fff;border-radius:10px;padding:6px 9px;max-width:90%}
 .spark{width:100%;height:90px;display:block}
+.ic{width:16px;height:16px;flex:none;display:inline-block;vertical-align:-3px}
+.ex-photo{margin:-20px -24px 0;position:relative;aspect-ratio:5/2;overflow:hidden;background:var(--soft)}
+.ex-photo img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);animation:exZoom 7s ease-out forwards}
+@keyframes exZoom{to{transform:scale(1)}}
+.ex-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,20,0) 35%,rgba(10,12,20,.78))}
+.ex-photo figcaption{position:absolute;left:24px;right:24px;bottom:14px;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.ex-photo .ex-note{color:#fff}
+.ex-photo small{font-size:10.5px;color:rgba(255,255,255,.7)}
+.ex-tag{position:absolute;top:14px;left:24px;z-index:1;display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.94);color:#14182A;border-radius:999px;padding:6px 12px 6px 10px;font:600 12.5px var(--f-b)}
+.ex-tag .ic{color:var(--cobalt)}
+.kpi{position:relative;padding-right:50px}
+.kic{position:absolute;top:12px;right:12px;width:30px;height:30px;padding:7px;border-radius:9px;background:var(--cobalt-soft);color:var(--cobalt)}
+.pros .hd b{display:inline-flex;align-items:center;gap:10px}
+.av{width:30px;height:30px;border-radius:50%;display:inline-grid;place-items:center;font:600 11px var(--f-m);flex:none}
+.pros .meta,.pros .acc{display:inline-flex;align-items:center;gap:5px;flex-wrap:wrap}
+.pros .meta .ic{width:14px;height:14px;color:var(--cobalt);margin-left:2px}
+.pros .acc{font-size:13.5px}.pros .acc .ic{color:var(--mand)}
+.cl{display:inline-flex;align-items:center;gap:8px}.cl .av{width:26px;height:26px;font-size:10px}
+.al{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;margin-right:8px;vertical-align:middle;background:var(--mand-soft);color:var(--mand)}
+.al .ic{width:14px;height:14px}
+.wf .i{position:relative}.wf .i .ic{width:17px;height:17px}
+.wf .i em{position:absolute;top:-5px;right:-5px;width:16px;height:16px;border-radius:50%;background:var(--fg);color:var(--bg);font:600 9.5px/16px var(--f-m);text-align:center;font-style:normal}
+.ms-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;margin-bottom:12px}
+@media (max-width:640px){.kpi{padding-right:14px}.kic{position:static;display:block;width:28px;height:28px;padding:6px;margin-bottom:8px}.ex-photo{margin:-20px -16px 0;aspect-ratio:16/9}.ex-photo figcaption,.ex-tag{left:16px;right:16px}.ex-tag{right:auto}}
+@media (prefers-reduced-motion:reduce){.ex-photo img{animation:none;transform:none}}
+
 @media (max-width:640px){.ex-grid{grid-template-columns:1fr 1fr}.mini-site .in{grid-template-columns:1fr}.ex-h,.ex-b{padding-inline:16px}}
 
 @media (max-width:980px){
@@ -331,7 +357,6 @@ dialog.ex[open]{animation:exIn .28s cubic-bezier(.2,.8,.2,1)}
 </style>
 </head>
 <body>
-
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="#ouverture"><span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Kassio</a>
@@ -486,57 +511,58 @@ dialog.ex[open]{animation:exIn .28s cubic-bezier(.2,.8,.2,1)}
 </section>
 
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-msg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20l1.1-4.4A8.4 8.4 0 1 1 21 11.5z"/></symbol><symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.6l2.4 11.6a1.6 1.6 0 0 0 1.6 1.3h8.7a1.6 1.6 0 0 0 1.6-1.2L21 7H6"/></symbol><symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.6"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.3a3.6 3.6 0 0 1 0 7.2M18 14a6.5 6.5 0 0 1 3.5 6"/></symbol><symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol><symbol id="i-pct" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol><symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></symbol><symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/><path d="M6 6l9-3 1 3"/></symbol><symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol><symbol id="i-in" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2.5 2.5 0 0 1 5 0v4M12 10v7"/></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol><symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></symbol><symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></symbol><symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14"/><path d="M21 3l-7 18-4-7-7-4z"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16 10"/></symbol><symbol id="i-table" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></symbol><symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol><symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol><symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol><symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3z"/><path d="M14.5 6.5L17 4l3 3-2.5 2.5"/></symbol></defs></svg>
 <dialog class="ex" id="ex" aria-labelledby="ex-t">
   <div class="ex-h"><div><h3 id="ex-t"></h3><p id="ex-s"></p></div><button type="button" class="ex-x" id="ex-x" aria-label="Fermer">×</button></div>
   <div class="ex-b" id="ex-b"></div>
 </dialog>
 
-<template id="t-wa"><p class="ex-note">EXEMPLE FICTIF · QUINCAILLERIE À ADJAMÉ · SEMAINE DU 10 NOVEMBRE</p>
-<div class="ex-grid"><div class="kpi"><span>Conversations</span><b>214</b><small>dont 61 la nuit</small></div><div class="kpi"><span>Commandes prises</span><b>38</b><small>+11 vs semaine passée</small></div><div class="kpi"><span>Passées à un humain</span><b>9</b><small class="bas">questions techniques</small></div></div>
+<template id="t-wa"><figure class="ex-photo"><img src="img/ex/wa.jpg" alt="Commerçant dans sa boutique" width="1400" height="560" loading="lazy"><span class="ex-tag"><svg class="ic" aria-hidden="true"><use href="#i-msg"/></svg>Agent WhatsApp</span><figcaption><span class="ex-note">EXEMPLE FICTIF · QUINCAILLERIE À ADJAMÉ · SEMAINE DU 10 NOVEMBRE</span><small>Photo : Muhammad-Taha Ibrahim / Pexels</small></figcaption></figure>
+<div class="ex-grid"><div class="kpi"><svg class="ic kic" aria-hidden="true"><use href="#i-msg"/></svg><span>Conversations</span><b>214</b><small>dont 61 la nuit</small></div><div class="kpi"><svg class="ic kic" aria-hidden="true"><use href="#i-cart"/></svg><span>Commandes prises</span><b>38</b><small>+11 vs semaine passée</small></div><div class="kpi"><svg class="ic kic" aria-hidden="true"><use href="#i-user"/></svg><span>Passées à un humain</span><b>9</b><small class="bas">questions techniques</small></div></div>
 <div class="tw"><table class="tbl"><thead><tr><th>Client</th><th>Demande</th><th>Objection</th><th>Statut</th></tr></thead><tbody>
-<tr><td>Awa K.</td><td>40 m² carrelage, Cocody</td><td>prix</td><td><span class="etat ok">vendu</span></td></tr>
-<tr><td>Bakary T.</td><td>12 sacs de ciment</td><td>délai</td><td><span class="etat bl">rappel demain 8 h</span></td></tr>
-<tr><td>Chantier Yao</td><td>Devis plomberie complet</td><td>confiance</td><td><span class="etat at">gérant à rappeler</span></td></tr>
+<tr><td><span class="cl"><span class="av" style="background:#E3F3EA;color:#1C7A4A">AK</span>Awa K.</span></td><td>40 m² carrelage, Cocody</td><td>prix</td><td><span class="etat ok">vendu</span></td></tr>
+<tr><td><span class="cl"><span class="av" style="background:#DCE7FB;color:#2347A8">BT</span>Bakary T.</span></td><td>12 sacs de ciment</td><td>délai</td><td><span class="etat bl">rappel demain 8 h</span></td></tr>
+<tr><td><span class="cl"><span class="av" style="background:#F4E3C8;color:#8A5A12">CY</span>Chantier Yao</span></td><td>Devis plomberie complet</td><td>confiance</td><td><span class="etat at">gérant à rappeler</span></td></tr>
 </tbody></table></div>
 <p>Chaque lundi, vous recevez ce résumé et les 3 objections les plus fréquentes, avec une proposition pour y répondre.</p>
 <div class="ex-cta"><a class="btn btn-p" href="#demo" data-close>Essayer la démo en direct</a></div></template>
 
-<template id="t-pros"><p class="ex-note">EXEMPLE FICTIF · CE QUE VOUS RECEVEZ CHAQUE MATIN À 9 H</p>
-<div class="pros"><div class="hd"><b>Boulangerie Le Fournil d'Or</b><span>Marcory · gérante · LinkedIn</span></div><span>Accroche : ouverture d'un 2e point de vente, annoncée il y a 6 jours.</span><div class="msg">Madame Koné, bravo pour votre nouvelle boutique à Marcory. Avec deux points de vente, les commandes WhatsApp arrivent souvent sur deux numéros. Comment faites-vous aujourd'hui pour qu'aucune commande de gâteau ne soit oubliée ?</div></div>
-<div class="pros"><div class="hd"><b>Transports Bassam Express</b><span>Grand-Bassam · directeur · email</span></div><span>Accroche : recrute 3 chauffeurs, offre publiée hier.</span><div class="msg">Monsieur Diallo, j'ai vu que vous recrutez trois chauffeurs. Quand la flotte grandit, le suivi des livraisons se fait souvent au téléphone. Comment vos clients savent-ils aujourd'hui où en est leur colis ?</div></div>
+<template id="t-pros"><figure class="ex-photo"><img src="img/ex/pros.jpg" alt="Transporteurs devant un camion" width="1400" height="560" loading="lazy"><span class="ex-tag"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg>Prospection</span><figcaption><span class="ex-note">EXEMPLE FICTIF · CE QUE VOUS RECEVEZ CHAQUE MATIN À 9 H</span><small>Photo : Gugulethu Ndlalani / Pexels</small></figcaption></figure>
+<div class="pros"><div class="hd"><b><span class="av" style="background:#F4E3C8;color:#8A5A12">FO</span>Boulangerie Le Fournil d'Or</b><span class="meta"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Marcory · <svg class="ic" aria-hidden="true"><use href="#i-user"/></svg>gérante · <svg class="ic" aria-hidden="true"><use href="#i-in"/></svg>LinkedIn</span></div><span class="acc"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Accroche : ouverture d'un 2e point de vente, annoncée il y a 6 jours.</span><div class="msg">Madame Koné, bravo pour votre nouvelle boutique à Marcory. Avec deux points de vente, les commandes WhatsApp arrivent souvent sur deux numéros. Comment faites-vous aujourd'hui pour qu'aucune commande de gâteau ne soit oubliée ?</div></div>
+<div class="pros"><div class="hd"><b><span class="av" style="background:#DCE7FB;color:#2347A8">BE</span>Transports Bassam Express</b><span class="meta"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Grand-Bassam · <svg class="ic" aria-hidden="true"><use href="#i-user"/></svg>directeur · <svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>email</span></div><span class="acc"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Accroche : recrute 3 chauffeurs, offre publiée hier.</span><div class="msg">Monsieur Diallo, j'ai vu que vous recrutez trois chauffeurs. Quand la flotte grandit, le suivi des livraisons se fait souvent au téléphone. Comment vos clients savent-ils aujourd'hui où en est leur colis ?</div></div>
 <p>Vous relisez, vous envoyez vous-même, puis vous répondez « envoyé » à l'agent : il programme la relance et compte vos rendez-vous de la semaine.</p></template>
 
-<template id="t-bi"><p class="ex-note">EXEMPLE FICTIF · DISTRIBUTEUR DE BOISSONS · NOVEMBRE</p>
-<div class="ex-grid"><div class="kpi"><span>Chiffre du mois</span><b>48,2 M</b><small>FCFA · +6 %</small></div><div class="kpi"><span>Marge</span><b>21 %</b><small class="bas">−2 pts</small></div><div class="kpi"><span>Créances &gt; 30 j</span><b>7,4 M</b><small class="bas">5 clients</small></div></div>
+<template id="t-bi"><figure class="ex-photo"><img src="img/ex/bi.jpg" alt="Casiers de boissons en entrepôt" width="1400" height="560" loading="lazy"><span class="ex-tag"><svg class="ic" aria-hidden="true"><use href="#i-trend"/></svg>Tableau de bord</span><figcaption><span class="ex-note">EXEMPLE FICTIF · DISTRIBUTEUR DE BOISSONS · NOVEMBRE</span><small>Photo : Randolf Jorberg / Pexels</small></figcaption></figure>
+<div class="ex-grid"><div class="kpi"><svg class="ic kic" aria-hidden="true"><use href="#i-trend"/></svg><span>Chiffre du mois</span><b>48,2 M</b><small>FCFA · +6 %</small></div><div class="kpi"><svg class="ic kic" aria-hidden="true"><use href="#i-pct"/></svg><span>Marge</span><b>21 %</b><small class="bas">−2 pts</small></div><div class="kpi"><svg class="ic kic" aria-hidden="true"><use href="#i-clock"/></svg><span>Créances &gt; 30 j</span><b>7,4 M</b><small class="bas">5 clients</small></div></div>
 <svg class="spark" viewBox="0 0 600 90" preserveAspectRatio="none" aria-label="Ventes par semaine, en hausse"><polyline points="0,70 100,62 200,66 300,44 400,50 500,30 600,22" fill="none" stroke="var(--cobalt)" stroke-width="3"/><polyline points="0,70 100,62 200,66 300,44 400,50 500,30 600,22 600,90 0,90" fill="var(--cobalt-soft)" stroke="none" opacity=".7"/></svg>
 <div class="tw"><table class="tbl"><thead><tr><th>Alerte du matin</th><th>Action proposée</th></tr></thead><tbody>
-<tr><td>Stock d'eau minérale : 4 jours restants</td><td>Commander 300 packs avant jeudi</td></tr>
-<tr><td>Marge en baisse sur les jus</td><td>Revoir le prix de 2 références</td></tr>
+<tr><td><span class="al at"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg></span>Stock d'eau minérale : 4 jours restants</td><td>Commander 300 packs avant jeudi</td></tr>
+<tr><td><span class="al at"><svg class="ic" aria-hidden="true"><use href="#i-pct"/></svg></span>Marge en baisse sur les jus</td><td>Revoir le prix de 2 références</td></tr>
 </tbody></table></div></template>
 
-<template id="t-site"><p class="ex-note">EXEMPLE FICTIF · INSTITUT DE BEAUTÉ À RIVIERA</p>
+<template id="t-site"><figure class="ex-photo"><img src="img/ex/site.jpg" alt="Maquilleuse au travail dans un institut" width="1400" height="560" loading="lazy"><span class="ex-tag"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Site + assistant</span><figcaption><span class="ex-note">EXEMPLE FICTIF · INSTITUT DE BEAUTÉ À RIVIERA</span><small>Photo : Israel Alahia / Pexels</small></figcaption></figure>
 <div class="mini-site"><div class="bar"><i></i><i></i><i></i><span>institut-belle-riviera.ci</span></div><div class="in">
 <div><h4>Votre pause beauté à Riviera 3</h4><p>Soins, coiffure et onglerie. Réservez en 1 minute, payez avec Wave ou Orange Money.</p><span class="bt">Réserver</span></div>
 <div class="mini-chat"><span class="a">Bonjour, vous êtes ouverts dimanche ?</span><span class="b">Oui, de 10 h à 18 h. Il reste 14 h et 16 h pour une pose d'ongles. Je réserve ?</span><span class="a">16 h svp</span><span class="b">C'est noté ✅ Je vous envoie la confirmation sur WhatsApp.</span></div>
 </div></div>
 <p>Le site se charge vite sur téléphone, apparaît sur Google, et l'assistant transforme les visiteurs en rendez-vous sur votre WhatsApp.</p></template>
 
-<template id="t-erp"><p class="ex-note">EXEMPLE FICTIF · ATELIER DE MENUISERIE À YOPOUGON</p>
+<template id="t-erp"><figure class="ex-photo"><img src="img/ex/erp.jpg" alt="Menuisier à l'atelier" width="1400" height="560" loading="lazy"><span class="ex-tag"><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg>ERP sur mesure</span><figcaption><span class="ex-note">EXEMPLE FICTIF · ATELIER DE MENUISERIE À YOPOUGON</span><small>Photo : Tima Miroshnichenko / Pexels</small></figcaption></figure>
 <div class="tw"><table class="tbl"><thead><tr><th>Commande</th><th>Client</th><th class="num">Montant</th><th>Étape</th></tr></thead><tbody>
 <tr><td>CMD-0418</td><td>Hôtel Lagune</td><td class="num">2 350 000</td><td><span class="etat bl">fabrication</span></td></tr>
 <tr><td>CMD-0419</td><td>M. Ouattara</td><td class="num">480 000</td><td><span class="etat at">acompte attendu</span></td></tr>
 <tr><td>CMD-0420</td><td>École Les Palmiers</td><td class="num">1 120 000</td><td><span class="etat ok">livrée · facturée</span></td></tr>
 </tbody></table></div>
-<div class="ex-grid"><div class="kpi"><span>Bois en stock</span><b>38 m³</b><small class="bas">contreplaqué bas</small></div><div class="kpi"><span>À encaisser</span><b>3,1 M</b><small>FCFA</small></div><div class="kpi"><span>Équipe</span><b>9 / 10</b><small>présents aujourd'hui</small></div></div>
+<div class="ex-grid"><div class="kpi"><svg class="ic kic" aria-hidden="true"><use href="#i-box"/></svg><span>Bois en stock</span><b>38 m³</b><small class="bas">contreplaqué bas</small></div><div class="kpi"><svg class="ic kic" aria-hidden="true"><use href="#i-wallet"/></svg><span>À encaisser</span><b>3,1 M</b><small>FCFA</small></div><div class="kpi"><svg class="ic kic" aria-hidden="true"><use href="#i-users"/></svg><span>Équipe</span><b>9 / 10</b><small>présents aujourd'hui</small></div></div>
 <p>Une commande crée automatiquement la fiche de fabrication, réserve le stock et prépare la facture. Vos fichiers Excel actuels sont repris au démarrage.</p></template>
 
-<template id="t-n8n"><p class="ex-note">EXEMPLE FICTIF · RELANCE AUTOMATIQUE DES DEVIS</p>
+<template id="t-n8n"><figure class="ex-photo"><img src="img/ex/n8n.jpg" alt="Deux collaborateurs devant leurs ordinateurs" width="1400" height="560" loading="lazy"><span class="ex-tag"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Automatisation</span><figcaption><span class="ex-note">EXEMPLE FICTIF · RELANCE AUTOMATIQUE DES DEVIS</span><small>Photo : Thirdman / Pexels</small></figcaption></figure>
 <div class="wf">
-<div class="s"><span class="i">1</span><div><b>Un devis est envoyé</b><span>depuis votre logiciel ou votre fichier de suivi</span></div></div>
-<div class="s"><span class="i">2</span><div><b>3 jours sans réponse</b><span>le workflow le détecte chaque matin à 8 h</span></div></div>
-<div class="s"><span class="i">3</span><div><b>Relance WhatsApp préparée</b><span>« Bonjour M. Kouassi, avez-vous pu regarder le devis du 12 ? »</span></div></div>
-<div class="s"><span class="i">4</span><div><b>Vous validez en un clic</b><span>ou la relance part seule si vous l'avez autorisé</span></div></div>
-<div class="s"><span class="i">5</span><div><b>Le tableau de suivi se met à jour</b><span>devis relancé, réponse reçue, vente gagnée</span></div></div>
+<div class="s"><span class="i"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg><em>1</em></span><div><b>Un devis est envoyé</b><span>depuis votre logiciel ou votre fichier de suivi</span></div></div>
+<div class="s"><span class="i"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><em>2</em></span><div><b>3 jours sans réponse</b><span>le workflow le détecte chaque matin à 8 h</span></div></div>
+<div class="s"><span class="i"><svg class="ic" aria-hidden="true"><use href="#i-msg"/></svg><em>3</em></span><div><b>Relance WhatsApp préparée</b><span>« Bonjour M. Kouassi, avez-vous pu regarder le devis du 12 ? »</span></div></div>
+<div class="s"><span class="i"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><em>4</em></span><div><b>Vous validez en un clic</b><span>ou la relance part seule si vous l'avez autorisé</span></div></div>
+<div class="s"><span class="i"><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg><em>5</em></span><div><b>Le tableau de suivi se met à jour</b><span>devis relancé, réponse reçue, vente gagnée</span></div></div>
 </div>
 <p>Autres exemples : rapport des ventes chaque lundi, copie automatique des commandes vers la comptabilité, rappel des factures impayées.</p></template>
 
