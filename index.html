@@ -40,7 +40,7 @@ a{color:inherit}
 
 /* ---------- En-tête ---------- */
 .top{position:fixed;inset:0 0 auto;z-index:20;padding-top:env(safe-area-inset-top,0px);transition:background-color .3s ease,box-shadow .3s ease;color:var(--on-dark)}
-.top.solid{background:rgba(15,31,102,.92);backdrop-filter:blur(8px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.top.solid{background:#0f1f66;backdrop-filter:blur(8px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
 .brand{display:flex;align-items:center;gap:10px;font:900 20px/1 var(--f-display);font-stretch:85%;text-decoration:none}
 .logo{display:grid;grid-template-columns:repeat(2,9px);gap:3px}
@@ -234,7 +234,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .result{position:static}
   .frise{grid-template-columns:1fr;gap:34px}.frise::before,.frise .trait{display:none}
   .q-grid{grid-template-columns:1fr}
-  .cent-grid{grid-template-columns:1fr;gap:28px}.carres{justify-self:start;max-width:420px}.cent-pin{min-height:auto}
+  .cent-grid{grid-template-columns:1fr;gap:20px}.carres{order:-1;justify-self:start;max-width:min(72vw,300px,38svh)}.cent-pin{min-height:100svh;padding-block:76px 24px}.cent-texte{gap:10px}.cent-texte h2{font-size:30px}.ec .big{font-size:64px}.etapes-cent{min-height:150px}.cent-legende{display:none}
   .top nav a:not(.btn){display:none}
 }
 @media (max-width:560px){
