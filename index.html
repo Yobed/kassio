@@ -104,9 +104,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:40px}
 .sh h2{font-size:clamp(32px,4.4vw,52px)}
 .sh p{margin:0;color:var(--muted);font-size:17px;max-width:48ch}
-.grid-s{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.svc{background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:background-color .2s}
-.svc:hover{background:var(--bg)}
+.grid-s{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:background-color .2s}
+.svc:hover{border-color:color-mix(in srgb,var(--cobalt) 40%,var(--line));box-shadow:0 18px 40px -24px rgba(14,17,26,.25)}
 .svc .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--cobalt-soft);color:var(--cobalt)}
 .svc .ic svg{width:20px;height:20px}
 .svc h3{font-size:21px}
@@ -261,6 +261,59 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .ag .log{transition:opacity .3s}
 @media (prefers-reduced-motion:reduce){.hl{animation:none;background:none;color:var(--cobalt)!important}}
 
+
+/* ===== Bouton « Voir un exemple » + fenêtre d'exemple ===== */
+.svc .delai{margin-bottom:2px}
+.voir{align-self:flex-start;margin-top:6px;font:600 14px var(--f-b);color:var(--fg);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s}
+.voir:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.voir span{display:inline-block;transition:transform .2s}.voir:hover span{transform:translateX(3px)}
+dialog.ex{border:0;padding:0;border-radius:18px;width:min(760px,calc(100vw - 32px));max-height:calc(100svh - 48px);background:var(--surface);color:var(--fg);box-shadow:0 40px 90px -20px rgba(0,0,0,.45)}
+dialog.ex::backdrop{background:rgba(10,12,20,.55);backdrop-filter:blur(3px)}
+dialog.ex[open]{animation:exIn .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes exIn{from{transform:translateY(16px) scale(.98);opacity:0}to{transform:none;opacity:1}}
+.ex-h{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:22px 24px 14px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);z-index:1}
+.ex-h h3{font-size:24px}
+.ex-h p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.ex-x{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--fg);font-size:18px;cursor:pointer}
+.ex-x:hover{background:var(--soft)}
+.ex-b{padding:20px 24px 24px;overflow:auto;display:flex;flex-direction:column;gap:16px}
+.ex-note{font:500 11.5px var(--f-m);color:var(--muted);letter-spacing:.04em}
+.ex-cta{display:flex;gap:10px;flex-wrap:wrap;padding-top:4px}
+.ex-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg)}
+.kpi span{font:500 10.5px var(--f-m);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.kpi b{display:block;font:600 22px var(--f-d);margin-top:4px;font-variant-numeric:tabular-nums}
+.kpi small{font-size:12px;color:var(--ok)}
+.kpi small.bas{color:var(--mand)}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{font:500 10.5px var(--f-m);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+.tbl td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.etat{font:500 11px var(--f-b);border-radius:999px;padding:2px 8px;background:var(--soft);white-space:nowrap}
+.etat.ok{background:var(--ok-soft);color:var(--ok)}.etat.at{background:var(--mand-soft);color:var(--mand)}.etat.bl{background:var(--cobalt-soft);color:var(--cobalt)}
+.pros{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;background:var(--bg)}
+.pros .hd{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.pros .hd b{color:var(--fg);font-size:15px}
+.pros .msg{background:var(--surface);border-left:3px solid var(--cobalt);border-radius:6px;padding:10px 12px;font-size:14px}
+.wf{display:flex;flex-direction:column;gap:0}
+.wf .s{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding-bottom:16px;position:relative}
+.wf .s:not(:last-child)::after{content:"";position:absolute;left:16px;top:34px;bottom:2px;width:2px;background:var(--line)}
+.wf .i{width:34px;height:34px;border-radius:10px;background:var(--cobalt-soft);color:var(--cobalt);display:grid;place-items:center;font:600 13px var(--f-m)}
+.wf b{display:block;font-size:15px}.wf span{color:var(--muted);font-size:13.5px}
+.mini-site{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg)}
+.mini-site .bar{display:flex;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line);background:var(--surface);font:400 11px var(--f-m);color:var(--muted);align-items:center}
+.mini-site .bar i{width:9px;height:9px;border-radius:50%;background:var(--line);display:block}
+.mini-site .in{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:16px;padding:18px}
+.mini-site h4{font:600 22px/1.1 var(--f-d);margin:0 0 8px}
+.mini-site p{margin:0 0 12px;color:var(--muted);font-size:14px}
+.mini-site .bt{display:inline-block;background:var(--fg);color:var(--bg);border-radius:999px;padding:8px 14px;font:600 13px var(--f-b)}
+.mini-chat{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:10px;display:flex;flex-direction:column;gap:6px;font-size:13px}
+.mini-chat .a{align-self:flex-start;background:var(--chat-in);border-radius:10px;padding:6px 9px;max-width:90%}
+.mini-chat .b{align-self:flex-end;background:var(--chat-out);color:#fff;border-radius:10px;padding:6px 9px;max-width:90%}
+.spark{width:100%;height:90px;display:block}
+@media (max-width:640px){.ex-grid{grid-template-columns:1fr 1fr}.mini-site .in{grid-template-columns:1fr}.ex-h,.ex-b{padding-inline:16px}}
+
 @media (max-width:980px){
   .hero .wrap,.sh,.obj .wrap,.faq .wrap,.carte{grid-template-columns:1fr;gap:32px}
   .grid-s{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -278,7 +331,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </style>
 </head>
 <body>
-
 
 <header class="top" id="top">
   <div class="wrap">
@@ -339,12 +391,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p>On commence par la brique qui vous rapporte le plus vite, puis on relie les autres. Chaque livraison est testée sur vos vrais cas avant la mise en route.</p>
     </div>
     <div class="grid-s">
-      <article class="svc"><div class="vig v-wa" aria-hidden="true"><span class="b b1"></span><span class="b o b2"></span><span class="b b3"></span><span class="b o b4"></span><span class="ck">✓✓ commande</span></div><h3>Agent WhatsApp 24 h/24</h3><p>Il répond à vos clients, prend les commandes et les rendez-vous, et remplit votre CRM tout seul.</p><ul><li>Analyse des objections pour mieux vous positionner</li><li>Passage à un humain quand il le faut</li></ul><span class="delai">Mise en route : 2 à 3 semaines</span></article>
-      <article class="svc"><div class="vig v-rad" aria-hidden="true"><span class="ring" style="width:80px;height:80px"></span><span class="ring" style="width:160px;height:160px"></span><span class="ring" style="width:240px;height:240px"></span><span class="sweep"></span><span class="pt" style="left:30%;top:30%"></span><span class="pt hit" style="left:64%;top:36%"></span><span class="pt" style="left:42%;top:70%"></span><span class="pt hit" style="left:72%;top:66%;animation-delay:2s"></span><span class="pt" style="left:22%;top:58%"></span><span class="tagq" style="left:calc(64% + 12px);top:calc(36% - 6px)">FIT 9/10</span></div><h3>Agents de prospection</h3><p>Ils trouvent des entreprises qui vous ressemblent, préparent des messages personnalisés et suivent les relances.</p><ul><li>Vous validez chaque message avant l'envoi</li><li>Compteur de rendez-vous chaque semaine</li></ul><span class="delai">Mise en route : 2 semaines</span></article>
-      <article class="svc"><div class="vig v-bi" aria-hidden="true"><svg viewBox="0 0 300 150" preserveAspectRatio="none"><g fill="var(--cobalt)" opacity=".85"><rect class="bar" x="30" y="70" width="26" height="60" rx="3"/><rect class="bar" x="72" y="50" width="26" height="80" rx="3" style="animation-delay:.15s"/><rect class="bar" x="114" y="85" width="26" height="45" rx="3" style="animation-delay:.3s"/><rect class="bar" x="156" y="40" width="26" height="90" rx="3" style="animation-delay:.45s"/><rect class="bar" x="198" y="60" width="26" height="70" rx="3" style="animation-delay:.6s"/><rect class="bar" x="240" y="28" width="26" height="102" rx="3" fill="var(--mand)" style="animation-delay:.75s"/></g><path class="ln" d="M30 96 L85 72 L127 92 L169 52 L211 66 L253 34" fill="none" stroke="var(--fg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="20" y1="130" x2="285" y2="130" stroke="var(--line)" stroke-width="1.5"/></svg></div><h3>Tableaux de bord Power BI</h3><p>Ventes, stock, trésorerie, achats : les chiffres qui comptent, à jour, sur votre téléphone.</p><ul><li>Branché sur vos fichiers ou votre logiciel</li><li>Alertes quand un chiffre dérape</li></ul><span class="delai">Mise en route : 1 à 3 semaines</span></article>
-      <article class="svc"><div class="vig v-site" aria-hidden="true"><div class="win"><span class="l" style="top:26px;width:55%;height:10px;background:var(--fg);opacity:.85"></span><span class="l" style="top:44px;width:70%"></span><span class="l" style="top:58px;width:62%"></span><span class="l" style="top:80px;width:30%;height:16px;border-radius:8px;background:var(--cobalt)"></span><span class="pop">Bonjour ! Je peux vérifier le stock pour vous ?</span><span class="fab"></span></div></div><h3>Sites avec chatbot WhatsApp</h3><p>Un site rapide sur mobile, et un assistant qui répond aux visiteurs et les envoie sur votre WhatsApp.</p><ul><li>Paiement Wave et Orange Money si besoin</li><li>Visible sur Google</li></ul><span class="delai">Mise en route : 2 à 4 semaines</span></article>
-      <article class="svc"><div class="vig v-erp" aria-hidden="true"><div class="grid"><span class="mod">Stock</span><span class="mod">Ventes</span><span class="mod">Devis</span><span class="mod">Factures</span><span class="mod">Achats</span><span class="mod">Équipe</span><span class="mod">Caisse</span><span class="mod">Rapports</span></div></div><h3>ERP sur mesure</h3><p>Commandes, stock, facturation, équipes : un seul outil pensé pour votre métier, pas un logiciel qu'on vous force à adopter.</p><ul><li>Reprise de vos fichiers Excel existants</li><li>Formation de l'équipe incluse</li></ul><span class="delai">Mise en route : par modules</span></article>
-      <article class="svc"><div class="vig v-n8n" aria-hidden="true"><svg viewBox="0 0 300 150"><path id="w1" class="wire" d="M62 75 C110 75 110 38 150 38"/><path id="w2" class="wire" d="M62 75 C110 75 110 112 150 112"/><path id="w3" class="wire" d="M190 38 C230 38 230 75 250 75"/><path id="w4" class="wire" d="M190 112 C230 112 230 75 250 75"/><rect class="node" x="18" y="57" width="44" height="36" rx="8"/><rect class="node" x="150" y="20" width="40" height="36" rx="8"/><rect class="node" x="150" y="94" width="40" height="36" rx="8"/><rect class="node" x="250" y="57" width="36" height="36" rx="8" style="fill:var(--fg);stroke:var(--fg)"/><text x="40" y="79" text-anchor="middle" font-size="10" font-family="JetBrains Mono,monospace" fill="var(--muted)">devis</text><text x="170" y="42" text-anchor="middle" font-size="9" font-family="JetBrains Mono,monospace" fill="var(--muted)">J+3</text><text x="170" y="116" text-anchor="middle" font-size="9" font-family="JetBrains Mono,monospace" fill="var(--muted)">mail</text><circle class="pk" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle><circle class="pk" r="4"><animateMotion dur="2.4s" begin=".8s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="1.2s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="2s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle></svg></div><h3>Automatisations n8n</h3><p>Relances de devis, rapports du lundi, saisie entre deux logiciels : les tâches répétées tournent toutes seules.</p><ul><li>Historique de chaque action</li><li>Reprise à la main toujours possible</li></ul><span class="delai">Mise en route : quelques jours</span></article>
+      <article class="svc"><div class="vig v-wa" aria-hidden="true"><span class="b b1"></span><span class="b o b2"></span><span class="b b3"></span><span class="b o b4"></span><span class="ck">✓✓ commande</span></div><h3>Agent WhatsApp 24 h/24</h3><p>Il répond à vos clients, prend les commandes et les rendez-vous, et remplit votre CRM tout seul.</p><ul><li>Analyse des objections pour mieux vous positionner</li><li>Passage à un humain quand il le faut</li></ul><span class="delai">Mise en route : 2 à 3 semaines</span><button type="button" class="voir" data-ex="wa">Voir un exemple <span aria-hidden="true">→</span></button></article>
+      <article class="svc"><div class="vig v-rad" aria-hidden="true"><span class="ring" style="width:80px;height:80px"></span><span class="ring" style="width:160px;height:160px"></span><span class="ring" style="width:240px;height:240px"></span><span class="sweep"></span><span class="pt" style="left:30%;top:30%"></span><span class="pt hit" style="left:64%;top:36%"></span><span class="pt" style="left:42%;top:70%"></span><span class="pt hit" style="left:72%;top:66%;animation-delay:2s"></span><span class="pt" style="left:22%;top:58%"></span><span class="tagq" style="left:calc(64% + 12px);top:calc(36% - 6px)">FIT 9/10</span></div><h3>Agents de prospection</h3><p>Ils trouvent des entreprises qui vous ressemblent, préparent des messages personnalisés et suivent les relances.</p><ul><li>Vous validez chaque message avant l'envoi</li><li>Compteur de rendez-vous chaque semaine</li></ul><span class="delai">Mise en route : 2 semaines</span><button type="button" class="voir" data-ex="pros">Voir un exemple <span aria-hidden="true">→</span></button></article>
+      <article class="svc"><div class="vig v-bi" aria-hidden="true"><svg viewBox="0 0 300 150" preserveAspectRatio="none"><g fill="var(--cobalt)" opacity=".85"><rect class="bar" x="30" y="70" width="26" height="60" rx="3"/><rect class="bar" x="72" y="50" width="26" height="80" rx="3" style="animation-delay:.15s"/><rect class="bar" x="114" y="85" width="26" height="45" rx="3" style="animation-delay:.3s"/><rect class="bar" x="156" y="40" width="26" height="90" rx="3" style="animation-delay:.45s"/><rect class="bar" x="198" y="60" width="26" height="70" rx="3" style="animation-delay:.6s"/><rect class="bar" x="240" y="28" width="26" height="102" rx="3" fill="var(--mand)" style="animation-delay:.75s"/></g><path class="ln" d="M30 96 L85 72 L127 92 L169 52 L211 66 L253 34" fill="none" stroke="var(--fg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="20" y1="130" x2="285" y2="130" stroke="var(--line)" stroke-width="1.5"/></svg></div><h3>Tableaux de bord Power BI</h3><p>Ventes, stock, trésorerie, achats : les chiffres qui comptent, à jour, sur votre téléphone.</p><ul><li>Branché sur vos fichiers ou votre logiciel</li><li>Alertes quand un chiffre dérape</li></ul><span class="delai">Mise en route : 1 à 3 semaines</span><button type="button" class="voir" data-ex="bi">Voir un exemple <span aria-hidden="true">→</span></button></article>
+      <article class="svc"><div class="vig v-site" aria-hidden="true"><div class="win"><span class="l" style="top:26px;width:55%;height:10px;background:var(--fg);opacity:.85"></span><span class="l" style="top:44px;width:70%"></span><span class="l" style="top:58px;width:62%"></span><span class="l" style="top:80px;width:30%;height:16px;border-radius:8px;background:var(--cobalt)"></span><span class="pop">Bonjour ! Je peux vérifier le stock pour vous ?</span><span class="fab"></span></div></div><h3>Sites avec chatbot WhatsApp</h3><p>Un site rapide sur mobile, et un assistant qui répond aux visiteurs et les envoie sur votre WhatsApp.</p><ul><li>Paiement Wave et Orange Money si besoin</li><li>Visible sur Google</li></ul><span class="delai">Mise en route : 2 à 4 semaines</span><button type="button" class="voir" data-ex="site">Voir un exemple <span aria-hidden="true">→</span></button></article>
+      <article class="svc"><div class="vig v-erp" aria-hidden="true"><div class="grid"><span class="mod">Stock</span><span class="mod">Ventes</span><span class="mod">Devis</span><span class="mod">Factures</span><span class="mod">Achats</span><span class="mod">Équipe</span><span class="mod">Caisse</span><span class="mod">Rapports</span></div></div><h3>ERP sur mesure</h3><p>Commandes, stock, facturation, équipes : un seul outil pensé pour votre métier, pas un logiciel qu'on vous force à adopter.</p><ul><li>Reprise de vos fichiers Excel existants</li><li>Formation de l'équipe incluse</li></ul><span class="delai">Mise en route : par modules</span><button type="button" class="voir" data-ex="erp">Voir un exemple <span aria-hidden="true">→</span></button></article>
+      <article class="svc"><div class="vig v-n8n" aria-hidden="true"><svg viewBox="0 0 300 150"><path id="w1" class="wire" d="M62 75 C110 75 110 38 150 38"/><path id="w2" class="wire" d="M62 75 C110 75 110 112 150 112"/><path id="w3" class="wire" d="M190 38 C230 38 230 75 250 75"/><path id="w4" class="wire" d="M190 112 C230 112 230 75 250 75"/><rect class="node" x="18" y="57" width="44" height="36" rx="8"/><rect class="node" x="150" y="20" width="40" height="36" rx="8"/><rect class="node" x="150" y="94" width="40" height="36" rx="8"/><rect class="node" x="250" y="57" width="36" height="36" rx="8" style="fill:var(--fg);stroke:var(--fg)"/><text x="40" y="79" text-anchor="middle" font-size="10" font-family="JetBrains Mono,monospace" fill="var(--muted)">devis</text><text x="170" y="42" text-anchor="middle" font-size="9" font-family="JetBrains Mono,monospace" fill="var(--muted)">J+3</text><text x="170" y="116" text-anchor="middle" font-size="9" font-family="JetBrains Mono,monospace" fill="var(--muted)">mail</text><circle class="pk" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle><circle class="pk" r="4"><animateMotion dur="2.4s" begin=".8s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="1.2s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="2s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle></svg></div><h3>Automatisations n8n</h3><p>Relances de devis, rapports du lundi, saisie entre deux logiciels : les tâches répétées tournent toutes seules.</p><ul><li>Historique de chaque action</li><li>Reprise à la main toujours possible</li></ul><span class="delai">Mise en route : quelques jours</span><button type="button" class="voir" data-ex="n8n">Voir un exemple <span aria-hidden="true">→</span></button></article>
     </div>
   </div>
 </section>
@@ -432,6 +484,61 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
   </div>
 </section>
+
+
+<dialog class="ex" id="ex" aria-labelledby="ex-t">
+  <div class="ex-h"><div><h3 id="ex-t"></h3><p id="ex-s"></p></div><button type="button" class="ex-x" id="ex-x" aria-label="Fermer">×</button></div>
+  <div class="ex-b" id="ex-b"></div>
+</dialog>
+
+<template id="t-wa"><p class="ex-note">EXEMPLE FICTIF · QUINCAILLERIE À ADJAMÉ · SEMAINE DU 10 NOVEMBRE</p>
+<div class="ex-grid"><div class="kpi"><span>Conversations</span><b>214</b><small>dont 61 la nuit</small></div><div class="kpi"><span>Commandes prises</span><b>38</b><small>+11 vs semaine passée</small></div><div class="kpi"><span>Passées à un humain</span><b>9</b><small class="bas">questions techniques</small></div></div>
+<div class="tw"><table class="tbl"><thead><tr><th>Client</th><th>Demande</th><th>Objection</th><th>Statut</th></tr></thead><tbody>
+<tr><td>Awa K.</td><td>40 m² carrelage, Cocody</td><td>prix</td><td><span class="etat ok">vendu</span></td></tr>
+<tr><td>Bakary T.</td><td>12 sacs de ciment</td><td>délai</td><td><span class="etat bl">rappel demain 8 h</span></td></tr>
+<tr><td>Chantier Yao</td><td>Devis plomberie complet</td><td>confiance</td><td><span class="etat at">gérant à rappeler</span></td></tr>
+</tbody></table></div>
+<p>Chaque lundi, vous recevez ce résumé et les 3 objections les plus fréquentes, avec une proposition pour y répondre.</p>
+<div class="ex-cta"><a class="btn btn-p" href="#demo" data-close>Essayer la démo en direct</a></div></template>
+
+<template id="t-pros"><p class="ex-note">EXEMPLE FICTIF · CE QUE VOUS RECEVEZ CHAQUE MATIN À 9 H</p>
+<div class="pros"><div class="hd"><b>Boulangerie Le Fournil d'Or</b><span>Marcory · gérante · LinkedIn</span></div><span>Accroche : ouverture d'un 2e point de vente, annoncée il y a 6 jours.</span><div class="msg">Madame Koné, bravo pour votre nouvelle boutique à Marcory. Avec deux points de vente, les commandes WhatsApp arrivent souvent sur deux numéros. Comment faites-vous aujourd'hui pour qu'aucune commande de gâteau ne soit oubliée ?</div></div>
+<div class="pros"><div class="hd"><b>Transports Bassam Express</b><span>Grand-Bassam · directeur · email</span></div><span>Accroche : recrute 3 chauffeurs, offre publiée hier.</span><div class="msg">Monsieur Diallo, j'ai vu que vous recrutez trois chauffeurs. Quand la flotte grandit, le suivi des livraisons se fait souvent au téléphone. Comment vos clients savent-ils aujourd'hui où en est leur colis ?</div></div>
+<p>Vous relisez, vous envoyez vous-même, puis vous répondez « envoyé » à l'agent : il programme la relance et compte vos rendez-vous de la semaine.</p></template>
+
+<template id="t-bi"><p class="ex-note">EXEMPLE FICTIF · DISTRIBUTEUR DE BOISSONS · NOVEMBRE</p>
+<div class="ex-grid"><div class="kpi"><span>Chiffre du mois</span><b>48,2 M</b><small>FCFA · +6 %</small></div><div class="kpi"><span>Marge</span><b>21 %</b><small class="bas">−2 pts</small></div><div class="kpi"><span>Créances &gt; 30 j</span><b>7,4 M</b><small class="bas">5 clients</small></div></div>
+<svg class="spark" viewBox="0 0 600 90" preserveAspectRatio="none" aria-label="Ventes par semaine, en hausse"><polyline points="0,70 100,62 200,66 300,44 400,50 500,30 600,22" fill="none" stroke="var(--cobalt)" stroke-width="3"/><polyline points="0,70 100,62 200,66 300,44 400,50 500,30 600,22 600,90 0,90" fill="var(--cobalt-soft)" stroke="none" opacity=".7"/></svg>
+<div class="tw"><table class="tbl"><thead><tr><th>Alerte du matin</th><th>Action proposée</th></tr></thead><tbody>
+<tr><td>Stock d'eau minérale : 4 jours restants</td><td>Commander 300 packs avant jeudi</td></tr>
+<tr><td>Marge en baisse sur les jus</td><td>Revoir le prix de 2 références</td></tr>
+</tbody></table></div></template>
+
+<template id="t-site"><p class="ex-note">EXEMPLE FICTIF · INSTITUT DE BEAUTÉ À RIVIERA</p>
+<div class="mini-site"><div class="bar"><i></i><i></i><i></i><span>institut-belle-riviera.ci</span></div><div class="in">
+<div><h4>Votre pause beauté à Riviera 3</h4><p>Soins, coiffure et onglerie. Réservez en 1 minute, payez avec Wave ou Orange Money.</p><span class="bt">Réserver</span></div>
+<div class="mini-chat"><span class="a">Bonjour, vous êtes ouverts dimanche ?</span><span class="b">Oui, de 10 h à 18 h. Il reste 14 h et 16 h pour une pose d'ongles. Je réserve ?</span><span class="a">16 h svp</span><span class="b">C'est noté ✅ Je vous envoie la confirmation sur WhatsApp.</span></div>
+</div></div>
+<p>Le site se charge vite sur téléphone, apparaît sur Google, et l'assistant transforme les visiteurs en rendez-vous sur votre WhatsApp.</p></template>
+
+<template id="t-erp"><p class="ex-note">EXEMPLE FICTIF · ATELIER DE MENUISERIE À YOPOUGON</p>
+<div class="tw"><table class="tbl"><thead><tr><th>Commande</th><th>Client</th><th class="num">Montant</th><th>Étape</th></tr></thead><tbody>
+<tr><td>CMD-0418</td><td>Hôtel Lagune</td><td class="num">2 350 000</td><td><span class="etat bl">fabrication</span></td></tr>
+<tr><td>CMD-0419</td><td>M. Ouattara</td><td class="num">480 000</td><td><span class="etat at">acompte attendu</span></td></tr>
+<tr><td>CMD-0420</td><td>École Les Palmiers</td><td class="num">1 120 000</td><td><span class="etat ok">livrée · facturée</span></td></tr>
+</tbody></table></div>
+<div class="ex-grid"><div class="kpi"><span>Bois en stock</span><b>38 m³</b><small class="bas">contreplaqué bas</small></div><div class="kpi"><span>À encaisser</span><b>3,1 M</b><small>FCFA</small></div><div class="kpi"><span>Équipe</span><b>9 / 10</b><small>présents aujourd'hui</small></div></div>
+<p>Une commande crée automatiquement la fiche de fabrication, réserve le stock et prépare la facture. Vos fichiers Excel actuels sont repris au démarrage.</p></template>
+
+<template id="t-n8n"><p class="ex-note">EXEMPLE FICTIF · RELANCE AUTOMATIQUE DES DEVIS</p>
+<div class="wf">
+<div class="s"><span class="i">1</span><div><b>Un devis est envoyé</b><span>depuis votre logiciel ou votre fichier de suivi</span></div></div>
+<div class="s"><span class="i">2</span><div><b>3 jours sans réponse</b><span>le workflow le détecte chaque matin à 8 h</span></div></div>
+<div class="s"><span class="i">3</span><div><b>Relance WhatsApp préparée</b><span>« Bonjour M. Kouassi, avez-vous pu regarder le devis du 12 ? »</span></div></div>
+<div class="s"><span class="i">4</span><div><b>Vous validez en un clic</b><span>ou la relance part seule si vous l'avez autorisé</span></div></div>
+<div class="s"><span class="i">5</span><div><b>Le tableau de suivi se met à jour</b><span>devis relancé, réponse reçue, vente gagnée</span></div></div>
+</div>
+<p>Autres exemples : rapport des ventes chaque lundi, copie automatique des commandes vers la comptabilité, rappel des factures impayées.</p></template>
 
 <footer><div class="wrap"><span>Kassio · agence IA · Abidjan, Côte d'Ivoire</span><span>Démo, chiffres et rapports de cette page : exemples fictifs.</span></div></footer>
 
@@ -552,6 +659,34 @@ document.querySelectorAll(".log").forEach((el, k) => {
   gsap.from(".et", {"--x":0, scrollTrigger:{trigger:".etapes", start:"top 85%", once:true}});
   gsap.from(".carte", {y:60, scale:.97, duration:1, ease:"power3.out", scrollTrigger:{trigger:".carte", start:"top 85%", once:true}});
   gsap.utils.toArray(".sh, .obj .wrap > div:first-child, .faq h2").forEach(el => gsap.from(el, {y:30, duration:.8, ease:"power3.out", scrollTrigger:{trigger:el, start:"top 88%", once:true}}));
+})();
+</script>
+
+<script>
+(function(){
+  const INFO = {
+    wa:["Agent WhatsApp 24 h/24","Le rapport que vous recevez chaque lundi"],
+    pros:["Agents de prospection","La prospection du jour, prête à envoyer"],
+    bi:["Tableaux de bord Power BI","Ce que vous voyez sur votre téléphone le matin"],
+    site:["Sites avec chatbot WhatsApp","Un site et son assistant"],
+    erp:["ERP sur mesure","Le suivi des commandes, du stock et des factures"],
+    n8n:["Automatisations n8n","Une automatisation, étape par étape"]
+  };
+  const dlg = document.getElementById("ex"), body = document.getElementById("ex-b");
+  let dernier = null;
+  function ouvrir(k, bouton){
+    dernier = bouton;
+    document.getElementById("ex-t").textContent = INFO[k][0];
+    document.getElementById("ex-s").textContent = INFO[k][1];
+    body.innerHTML = ""; body.appendChild(document.getElementById("t-" + k).content.cloneNode(true));
+    body.scrollTop = 0;
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+  }
+  function fermer(){ dlg.close ? dlg.close() : dlg.removeAttribute("open"); }
+  document.querySelectorAll(".voir").forEach(b => b.addEventListener("click", () => ouvrir(b.dataset.ex, b)));
+  document.getElementById("ex-x").addEventListener("click", fermer);
+  dlg.addEventListener("click", e => { if (e.target === dlg) fermer(); if (e.target.closest("[data-close]")) fermer(); });
+  dlg.addEventListener("close", () => { if (dernier) dernier.focus(); });
 })();
 </script>
 
