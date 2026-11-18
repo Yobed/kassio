@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <meta property="og:title" content="Kassio — des agents IA pour votre PME">
-<meta property="og:description" content="Agent WhatsApp 24 h/24 avec CRM, agents de prospection, tableaux de bord, sites avec chatbot, ERP sur mesure, automatisations. Abidjan.">
+<meta property="og:description" content="Agent WhatsApp 24 h/24 avec CRM, agents de prospection, tableaux de bord Power BI, sites avec chatbot, ERP sur mesure, automatisations n8n. Abidjan.">
 <meta property="og:type" content="website">
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
 <style>
@@ -100,12 +100,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .demo-note{font-size:12px;color:var(--muted);margin-top:10px;text-align:right}
 
 /* Services */
-.services{padding-block:110px;border-top:1px solid var(--line)}
+.services{padding-block:90px;border-top:1px solid var(--line)}
 .sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:40px}
 .sh h2{font-size:clamp(32px,4.4vw,52px)}
 .sh p{margin:0;color:var(--muted);font-size:17px;max-width:48ch}
 .grid-s{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.svc{background:var(--surface);padding:28px 28px 32px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:background-color .2s}
+.svc{background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:background-color .2s}
 .svc:hover{background:var(--bg)}
 .svc .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--cobalt-soft);color:var(--cobalt)}
 .svc .ic svg{width:20px;height:20px}
@@ -147,7 +147,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* Méthode */
 .methode{padding-block:20px 90px}
-.etapes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:36px}
+.etapes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:36px}
 .et{padding-top:16px;border-top:2px solid var(--fg);display:flex;flex-direction:column;gap:8px;min-width:0}
 .et .n{font:500 12px var(--f-m);color:var(--muted)}
 .et h3{font-size:20px}
@@ -181,7 +181,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 
 /* ===== Motion design : illustrations animées par service ===== */
-.vig{height:170px;border-radius:10px;background:var(--soft);position:relative;overflow:hidden;margin-bottom:6px}
+.vig{height:150px;border-radius:10px;background:var(--soft);position:relative;overflow:hidden;margin-bottom:6px}
 .vig svg{position:absolute;inset:0;width:100%;height:100%}
 .svc:hover .vig{background:color-mix(in srgb,var(--cobalt-soft) 60%,var(--soft))}
 /* 1. WhatsApp */
@@ -296,11 +296,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div>
       <p class="lab">Agence IA · Abidjan</p>
       <h1 id="t-hero" style="margin-top:14px">Des agents IA qui travaillent pour votre PME, <span class="hl">même la nuit.</span></h1>
-      <p class="lead">Ils répondent à vos clients, trouvent de nouveaux prospects et tiennent vos chiffres à jour. Vous gardez la décision.</p>
+      <p class="lead">Un agent WhatsApp qui répond à vos clients et remplit votre CRM, des agents qui prospectent, des tableaux de bord, un ERP à votre mesure. Conçus et installés à Abidjan, pour votre façon de travailler.</p>
       <div class="cta">
         <a class="btn btn-p" id="wa-hero" href="#contact" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
         <a class="btn btn-s" href="#demo">Essayer la démo</a>
       </div>
+      <div class="faits"><span>Réponse en moins de 10 secondes</span><span>Rien n'est envoyé sans votre accord</span><span>Devis écrit sous 48 h</span></div>
     </div>
 
     <div id="demo">
@@ -330,37 +331,39 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
+<div class="canaux" aria-hidden="true"><div class="piste"><span>WhatsApp Business</span><span>CRM</span><span>Power BI</span><span>n8n</span><span>Wave</span><span>Orange Money</span><span>Google</span><span>Excel</span><span>Sites web</span><span>ERP</span><span>Facebook</span><span>LinkedIn</span><span>WhatsApp Business</span><span>CRM</span><span>Power BI</span><span>n8n</span><span>Wave</span><span>Orange Money</span><span>Google</span><span>Excel</span><span>Sites web</span><span>ERP</span><span>Facebook</span><span>LinkedIn</span></div></div>
 <section class="services" id="services" aria-labelledby="t-svc">
   <div class="wrap">
     <div class="sh">
-      <div><p class="lab">Ce qu'on construit</p><h2 id="t-svc" style="margin-top:12px">Six briques, une à la fois</h2></div>
-      <p>On commence par celle qui vous rapporte le plus vite.</p>
+      <div><p class="lab">Ce qu'on construit</p><h2 id="t-svc" style="margin-top:12px">Tout l'écosystème, une brique à la fois</h2></div>
+      <p>On commence par la brique qui vous rapporte le plus vite, puis on relie les autres. Chaque livraison est testée sur vos vrais cas avant la mise en route.</p>
     </div>
     <div class="grid-s">
-      <article class="svc"><div class="vig v-wa" aria-hidden="true"><span class="b b1"></span><span class="b o b2"></span><span class="b b3"></span><span class="b o b4"></span><span class="ck">✓✓ commande</span></div><h3>Agent WhatsApp 24 h/24</h3><p>Répond à vos clients et remplit votre CRM, jour et nuit.</p></article>
-      <article class="svc"><div class="vig v-rad" aria-hidden="true"><span class="ring" style="width:80px;height:80px"></span><span class="ring" style="width:160px;height:160px"></span><span class="ring" style="width:240px;height:240px"></span><span class="sweep"></span><span class="pt" style="left:30%;top:30%"></span><span class="pt hit" style="left:64%;top:36%"></span><span class="pt" style="left:42%;top:70%"></span><span class="pt hit" style="left:72%;top:66%;animation-delay:2s"></span><span class="pt" style="left:22%;top:58%"></span><span class="tagq" style="left:calc(64% + 12px);top:calc(36% - 6px)">FIT 9/10</span></div><h3>Agents de prospection</h3><p>Trouvent des clients potentiels et préparent vos messages.</p></article>
-      <article class="svc"><div class="vig v-bi" aria-hidden="true"><svg viewBox="0 0 300 150" preserveAspectRatio="none"><g fill="var(--cobalt)" opacity=".85"><rect class="bar" x="30" y="70" width="26" height="60" rx="3"/><rect class="bar" x="72" y="50" width="26" height="80" rx="3" style="animation-delay:.15s"/><rect class="bar" x="114" y="85" width="26" height="45" rx="3" style="animation-delay:.3s"/><rect class="bar" x="156" y="40" width="26" height="90" rx="3" style="animation-delay:.45s"/><rect class="bar" x="198" y="60" width="26" height="70" rx="3" style="animation-delay:.6s"/><rect class="bar" x="240" y="28" width="26" height="102" rx="3" fill="var(--mand)" style="animation-delay:.75s"/></g><path class="ln" d="M30 96 L85 72 L127 92 L169 52 L211 66 L253 34" fill="none" stroke="var(--fg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="20" y1="130" x2="285" y2="130" stroke="var(--line)" stroke-width="1.5"/></svg></div><h3>Tableaux de bord Power BI</h3><p>Vos ventes, stock et trésorerie, à jour sur votre téléphone.</p></article>
-      <article class="svc"><div class="vig v-site" aria-hidden="true"><div class="win"><span class="l" style="top:26px;width:55%;height:10px;background:var(--fg);opacity:.85"></span><span class="l" style="top:44px;width:70%"></span><span class="l" style="top:58px;width:62%"></span><span class="l" style="top:80px;width:30%;height:16px;border-radius:8px;background:var(--cobalt)"></span><span class="pop">Bonjour ! Je peux vérifier le stock pour vous ?</span><span class="fab"></span></div></div><h3>Sites avec chatbot WhatsApp</h3><p>Un site rapide qui envoie les visiteurs sur votre WhatsApp.</p></article>
-      <article class="svc"><div class="vig v-erp" aria-hidden="true"><div class="grid"><span class="mod">Stock</span><span class="mod">Ventes</span><span class="mod">Devis</span><span class="mod">Factures</span><span class="mod">Achats</span><span class="mod">Équipe</span><span class="mod">Caisse</span><span class="mod">Rapports</span></div></div><h3>ERP sur mesure</h3><p>Commandes, stock et factures dans un seul outil fait pour vous.</p></article>
-      <article class="svc"><div class="vig v-n8n" aria-hidden="true"><svg viewBox="0 0 300 150"><path id="w1" class="wire" d="M62 75 C110 75 110 38 150 38"/><path id="w2" class="wire" d="M62 75 C110 75 110 112 150 112"/><path id="w3" class="wire" d="M190 38 C230 38 230 75 250 75"/><path id="w4" class="wire" d="M190 112 C230 112 230 75 250 75"/><rect class="node" x="18" y="57" width="44" height="36" rx="8"/><rect class="node" x="150" y="20" width="40" height="36" rx="8"/><rect class="node" x="150" y="94" width="40" height="36" rx="8"/><rect class="node" x="250" y="57" width="36" height="36" rx="8" style="fill:var(--fg);stroke:var(--fg)"/><text x="40" y="79" text-anchor="middle" font-size="10" font-family="JetBrains Mono,monospace" fill="var(--muted)">devis</text><text x="170" y="42" text-anchor="middle" font-size="9" font-family="JetBrains Mono,monospace" fill="var(--muted)">J+3</text><text x="170" y="116" text-anchor="middle" font-size="9" font-family="JetBrains Mono,monospace" fill="var(--muted)">mail</text><circle class="pk" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle><circle class="pk" r="4"><animateMotion dur="2.4s" begin=".8s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="1.2s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="2s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle></svg></div><h3>Automatisations n8n</h3><p>Relances, rapports et saisies qui tournent tout seuls.</p></article>
+      <article class="svc"><div class="vig v-wa" aria-hidden="true"><span class="b b1"></span><span class="b o b2"></span><span class="b b3"></span><span class="b o b4"></span><span class="ck">✓✓ commande</span></div><h3>Agent WhatsApp 24 h/24</h3><p>Il répond à vos clients, prend les commandes et les rendez-vous, et remplit votre CRM tout seul.</p><ul><li>Analyse des objections pour mieux vous positionner</li><li>Passage à un humain quand il le faut</li></ul><span class="delai">Mise en route : 2 à 3 semaines</span></article>
+      <article class="svc"><div class="vig v-rad" aria-hidden="true"><span class="ring" style="width:80px;height:80px"></span><span class="ring" style="width:160px;height:160px"></span><span class="ring" style="width:240px;height:240px"></span><span class="sweep"></span><span class="pt" style="left:30%;top:30%"></span><span class="pt hit" style="left:64%;top:36%"></span><span class="pt" style="left:42%;top:70%"></span><span class="pt hit" style="left:72%;top:66%;animation-delay:2s"></span><span class="pt" style="left:22%;top:58%"></span><span class="tagq" style="left:calc(64% + 12px);top:calc(36% - 6px)">FIT 9/10</span></div><h3>Agents de prospection</h3><p>Ils trouvent des entreprises qui vous ressemblent, préparent des messages personnalisés et suivent les relances.</p><ul><li>Vous validez chaque message avant l'envoi</li><li>Compteur de rendez-vous chaque semaine</li></ul><span class="delai">Mise en route : 2 semaines</span></article>
+      <article class="svc"><div class="vig v-bi" aria-hidden="true"><svg viewBox="0 0 300 150" preserveAspectRatio="none"><g fill="var(--cobalt)" opacity=".85"><rect class="bar" x="30" y="70" width="26" height="60" rx="3"/><rect class="bar" x="72" y="50" width="26" height="80" rx="3" style="animation-delay:.15s"/><rect class="bar" x="114" y="85" width="26" height="45" rx="3" style="animation-delay:.3s"/><rect class="bar" x="156" y="40" width="26" height="90" rx="3" style="animation-delay:.45s"/><rect class="bar" x="198" y="60" width="26" height="70" rx="3" style="animation-delay:.6s"/><rect class="bar" x="240" y="28" width="26" height="102" rx="3" fill="var(--mand)" style="animation-delay:.75s"/></g><path class="ln" d="M30 96 L85 72 L127 92 L169 52 L211 66 L253 34" fill="none" stroke="var(--fg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="20" y1="130" x2="285" y2="130" stroke="var(--line)" stroke-width="1.5"/></svg></div><h3>Tableaux de bord Power BI</h3><p>Ventes, stock, trésorerie, achats : les chiffres qui comptent, à jour, sur votre téléphone.</p><ul><li>Branché sur vos fichiers ou votre logiciel</li><li>Alertes quand un chiffre dérape</li></ul><span class="delai">Mise en route : 1 à 3 semaines</span></article>
+      <article class="svc"><div class="vig v-site" aria-hidden="true"><div class="win"><span class="l" style="top:26px;width:55%;height:10px;background:var(--fg);opacity:.85"></span><span class="l" style="top:44px;width:70%"></span><span class="l" style="top:58px;width:62%"></span><span class="l" style="top:80px;width:30%;height:16px;border-radius:8px;background:var(--cobalt)"></span><span class="pop">Bonjour ! Je peux vérifier le stock pour vous ?</span><span class="fab"></span></div></div><h3>Sites avec chatbot WhatsApp</h3><p>Un site rapide sur mobile, et un assistant qui répond aux visiteurs et les envoie sur votre WhatsApp.</p><ul><li>Paiement Wave et Orange Money si besoin</li><li>Visible sur Google</li></ul><span class="delai">Mise en route : 2 à 4 semaines</span></article>
+      <article class="svc"><div class="vig v-erp" aria-hidden="true"><div class="grid"><span class="mod">Stock</span><span class="mod">Ventes</span><span class="mod">Devis</span><span class="mod">Factures</span><span class="mod">Achats</span><span class="mod">Équipe</span><span class="mod">Caisse</span><span class="mod">Rapports</span></div></div><h3>ERP sur mesure</h3><p>Commandes, stock, facturation, équipes : un seul outil pensé pour votre métier, pas un logiciel qu'on vous force à adopter.</p><ul><li>Reprise de vos fichiers Excel existants</li><li>Formation de l'équipe incluse</li></ul><span class="delai">Mise en route : par modules</span></article>
+      <article class="svc"><div class="vig v-n8n" aria-hidden="true"><svg viewBox="0 0 300 150"><path id="w1" class="wire" d="M62 75 C110 75 110 38 150 38"/><path id="w2" class="wire" d="M62 75 C110 75 110 112 150 112"/><path id="w3" class="wire" d="M190 38 C230 38 230 75 250 75"/><path id="w4" class="wire" d="M190 112 C230 112 230 75 250 75"/><rect class="node" x="18" y="57" width="44" height="36" rx="8"/><rect class="node" x="150" y="20" width="40" height="36" rx="8"/><rect class="node" x="150" y="94" width="40" height="36" rx="8"/><rect class="node" x="250" y="57" width="36" height="36" rx="8" style="fill:var(--fg);stroke:var(--fg)"/><text x="40" y="79" text-anchor="middle" font-size="10" font-family="JetBrains Mono,monospace" fill="var(--muted)">devis</text><text x="170" y="42" text-anchor="middle" font-size="9" font-family="JetBrains Mono,monospace" fill="var(--muted)">J+3</text><text x="170" y="116" text-anchor="middle" font-size="9" font-family="JetBrains Mono,monospace" fill="var(--muted)">mail</text><circle class="pk" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle><circle class="pk" r="4"><animateMotion dur="2.4s" begin=".8s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="1.2s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="2s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle></svg></div><h3>Automatisations n8n</h3><p>Relances de devis, rapports du lundi, saisie entre deux logiciels : les tâches répétées tournent toutes seules.</p><ul><li>Historique de chaque action</li><li>Reprise à la main toujours possible</li></ul><span class="delai">Mise en route : quelques jours</span></article>
     </div>
   </div>
 </section>
 
 <section class="flux" aria-labelledby="t-flux">
   <div class="wrap">
-    <p class="lab">Comment ça circule</p>
-    <h2 id="t-flux" style="margin:12px 0 28px;font-size:clamp(28px,3.6vw,42px)">Tout se connecte, sans ressaisie</h2>
+    <p class="lab">Tout se connecte</p>
+    <h2 id="t-flux" style="margin:12px 0 28px;font-size:clamp(28px,3.6vw,42px)">Du premier message à votre décision, sans ressaisie</h2>
     <div class="flux-box"><svg viewBox="0 0 940 150" role="img" aria-label="Le client écrit, l'agent répond, le CRM se remplit, le tableau de bord se met à jour, vous décidez."><path id="fw0" class="w" d="M150 75 H205"/><path id="fw1" class="w" d="M345 75 H400"/><path id="fw2" class="w" d="M540 75 H595"/><path id="fw3" class="w" d="M735 75 H790"/><g class="nd"><rect x="10" y="40" width="140" height="70" rx="12"/><text x="24" y="70">Client</text><text class="s" x="24" y="92">WhatsApp · site</text></g><g class="nd c"><rect x="205" y="40" width="140" height="70" rx="12"/><text x="219" y="70">Agent Accueil</text><text class="s" x="219" y="92">répond 24 h/24</text></g><g class="nd"><rect x="400" y="40" width="140" height="70" rx="12"/><text x="414" y="70">CRM</text><text class="s" x="414" y="92">fiche + objections</text></g><g class="nd"><rect x="595" y="40" width="140" height="70" rx="12"/><text x="609" y="70">Tableau de bord</text><text class="s" x="609" y="92">ventes · stock</text></g><g class="nd"><rect x="790" y="40" width="140" height="70" rx="12"/><text x="804" y="70">Vous</text><text class="s" x="804" y="92">décision du jour</text></g><circle class="pq" r="5"><animateMotion dur="1.6s" begin="0.0s" repeatCount="indefinite"><mpath href="#fw0"/></animateMotion></circle><circle class="pq m" r="5"><animateMotion dur="1.6s" begin="0.4s" repeatCount="indefinite"><mpath href="#fw1"/></animateMotion></circle><circle class="pq" r="5"><animateMotion dur="1.6s" begin="0.8s" repeatCount="indefinite"><mpath href="#fw2"/></animateMotion></circle><circle class="pq m" r="5"><animateMotion dur="1.6s" begin="1.2000000000000002s" repeatCount="indefinite"><mpath href="#fw3"/></animateMotion></circle></svg>
-      <ol class="flux-list" aria-hidden="true"><li><b>Client</b><span>WhatsApp · site</span></li><li><b>Agent Accueil</b><span>répond 24 h/24</span></li><li><b>CRM</b><span>fiche + objections</span></li><li><b>Tableau de bord</b><span>ventes · stock</span></li><li><b>Vous</b><span>décision du jour</span></li></ol></div>
+      <ol class="flux-list" aria-hidden="true"><li><b>Client</b><span>WhatsApp · site</span></li><li><b>Agent Accueil</b><span>répond 24 h/24</span></li><li><b>CRM</b><span>fiche + objections</span></li><li><b>Tableau de bord</b><span>ventes · stock</span></li><li><b>Vous</b><span>décision du jour</span></li></ol>
+      <div class="flux-cap"><span>Chaque message alimente la fiche client et vos chiffres.</span><span>Vous gardez la main sur tout ce qui part.</span></div></div>
   </div>
 </section>
 <section class="obj" aria-labelledby="t-obj">
   <div class="wrap">
     <div>
       <p class="lab">Ce que l'agent vous apprend</p>
-      <h2 id="t-obj" style="margin-top:12px">Sachez enfin pourquoi un client n'achète pas.</h2>
-      <p>L'agent classe chaque refus. Chaque semaine, vous savez quoi changer.</p>
+      <h2 id="t-obj" style="margin-top:12px">Vos clients vous disent pourquoi ils n'achètent pas. L'agent le note.</h2>
+      <p>Chaque conversation est classée : prix, délai, disponibilité, confiance. Chaque semaine, vous voyez ce qui bloque vraiment, et on ajuste votre offre, vos prix ou vos messages en conséquence.</p>
     </div>
     <div class="panel" aria-label="Exemple de rapport d'objections">
       <div class="panel-h"><b>Objections de la semaine</b><span class="lab">exemple · 214 conversations</span></div>
@@ -379,37 +382,40 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <div class="sh" style="margin-bottom:0">
       <div><p class="lab">Vos agents</p><h2 id="t-ag" style="margin-top:12px">Une petite équipe qui ne dort pas</h2></div>
-      <p>Chacun a un rôle. Chaque matin, vous recevez son compte rendu.</p>
+      <p>Chaque agent a un rôle précis et vous rend compte. Le matin, vous recevez sur votre téléphone ce qui a été fait et ce qui attend votre décision.</p>
     </div>
     <div class="agents">
-      <article class="ag"><span class="st">actif</span><h3>Agent Accueil</h3><p class="log" data-log="03:14 · commande de 12 sacs de ciment enregistrée|07:02 · rendez-vous fixé jeudi 10 h|09:40 · client transféré au gérant"></p></article>
-      <article class="ag"><span class="st">actif</span><h3>Agent Prospection</h3><p class="log" data-log="08:59 · 3 entreprises qualifiées|09:01 · 3 messages prêts à valider|lundi · 1 relance due"></p></article>
-      <article class="ag"><span class="st">actif</span><h3>Agent Rapports</h3><p class="log" data-log="06:30 · ventes d'hier : +8 %|06:31 · alerte : stock de peinture bas|vendredi · bilan de la semaine"></p></article>
-      <article class="ag"><span class="st">actif</span><h3>Agent Admin</h3><p class="log" data-log="10:00 · 4 devis relancés|11:20 · 2 factures prêtes à envoyer|16:00 · reçus classés"></p></article>
+      <article class="ag"><span class="st">actif</span><h3>Agent Accueil</h3><p>Répond sur WhatsApp, prend les commandes, remplit le CRM.</p><p class="log" data-log="03:14 · commande de 12 sacs de ciment enregistrée|07:02 · rendez-vous fixé jeudi 10 h|09:40 · client transféré au gérant"></p></article>
+      <article class="ag"><span class="st">actif</span><h3>Agent Prospection</h3><p>Repère des entreprises cibles et prépare vos messages.</p><p class="log" data-log="08:59 · 3 entreprises qualifiées|09:01 · 3 messages prêts à valider|lundi · 1 relance due"></p></article>
+      <article class="ag"><span class="st">actif</span><h3>Agent Rapports</h3><p>Met à jour vos tableaux de bord et signale ce qui dérape.</p><p class="log" data-log="06:30 · ventes d'hier : +8 %|06:31 · alerte : stock de peinture bas|vendredi · bilan de la semaine"></p></article>
+      <article class="ag"><span class="st">actif</span><h3>Agent Admin</h3><p>Relance les devis, prépare les factures, range les documents.</p><p class="log" data-log="10:00 · 4 devis relancés|11:20 · 2 factures prêtes à envoyer|16:00 · reçus classés"></p></article>
     </div>
-    <p class="regle"><b>Un agent prépare, vous décidez.</b></p>
+    <p class="regle"><b>La règle :</b> un agent prépare, vous décidez. Rien n'est publié, envoyé ou payé sans votre accord.</p>
   </div>
 </section>
 
 <section class="methode" aria-labelledby="t-m">
   <div class="wrap">
     <p class="lab">Comment on travaille</p>
-    <h2 id="t-m" style="margin-top:12px;font-size:clamp(30px,4vw,44px)">En trois étapes</h2>
-    <div class="etapes e3">
-      <div class="et"><span class="n">01 · offert</span><h3>On discute 30 min</h3><p>Vous montrez comment vous travaillez.</p></div>
-      <div class="et"><span class="n">02 · sous 48 h</span><h3>Devis écrit</h3><p>Ce qui est livré, quand, et à quel prix.</p></div>
-      <div class="et"><span class="n">03 · en semaines</span><h3>Votre agent tourne</h3><p>Testé sur vos vrais cas, puis amélioré chaque mois.</p></div>
+    <h2 id="t-m" style="margin-top:12px;font-size:clamp(30px,4vw,44px)">De la première discussion à l'agent en service</h2>
+    <div class="etapes">
+      <div class="et"><span class="n">01 · 30 min, offert</span><h3>On discute</h3><p>Vous montrez comment vous travaillez aujourd'hui. On repère ce qui vous fait perdre le plus de temps ou de ventes.</p></div>
+      <div class="et"><span class="n">02 · sous 48 h</span><h3>Devis écrit</h3><p>Ce qui sera livré, la date, le prix et le chiffre qu'on doit faire bouger.</p></div>
+      <div class="et"><span class="n">03 · en semaines</span><h3>On construit</h3><p>Testé sur vos vrais messages et vos vrais fichiers, avec votre équipe.</p></div>
+      <div class="et"><span class="n">04 · chaque mois</span><h3>On améliore</h3><p>On suit les résultats, on corrige, et on ajoute la brique suivante si elle vaut le coup.</p></div>
     </div>
   </div>
 </section>
 
 <section class="faq" id="questions" aria-labelledby="t-q">
   <div class="wrap">
-    <div><p class="lab">Questions</p><h2 id="t-q" style="margin-top:12px">Questions fréquentes</h2></div>
+    <div><p class="lab">Questions</p><h2 id="t-q" style="margin-top:12px">Ce qu'on me demande souvent</h2></div>
     <div>
       <details class="qr"><summary>L'agent va-t-il dire n'importe quoi à mes clients ?</summary><p>Il ne répond qu'à partir de vos informations : vos prix, votre stock, vos règles. Quand il ne sait pas, il passe la main à vous ou à votre équipe. Vous relisez ses réponses pendant les premières semaines.</p></details>
       <details class="qr"><summary>Je dois changer de numéro WhatsApp ?</summary><p>Non. On utilise un numéro WhatsApp Business, le vôtre ou un nouveau, avec les outils officiels de WhatsApp.</p></details>
       <details class="qr"><summary>Combien ça coûte ?</summary><p>Ça dépend de la brique et de votre volume. Après l'échange de 30 minutes, vous recevez un devis écrit sous 48 h. Les abonnements des outils (WhatsApp, hébergement) sont indiqués à part.</p></details>
+      <details class="qr"><summary>Mes données sont-elles protégées ?</summary><p>Vous décidez qui voit quoi. Les accès sont nominatifs, les données restent les vôtres, et on peut tout vous rendre si vous arrêtez.</p></details>
+      <details class="qr"><summary>Mon équipe saura-t-elle s'en servir ?</summary><p>On part de vos habitudes actuelles et on forme l'équipe sur ses vraies tâches. Une reprise à la main reste toujours possible.</p></details>
     </div>
   </div>
 </section>
@@ -417,7 +423,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section class="contact" id="contact" aria-labelledby="t-c">
   <div class="wrap">
     <div class="carte">
-      <div><h2 id="t-c">Parlons de votre entreprise.</h2><p>30 minutes offertes, au téléphone ou à Abidjan.</p></div>
+      <div><h2 id="t-c">Montrez-moi comment vous travaillez. Je vous montre ce qu'un agent peut prendre en charge.</h2><p>30 minutes offertes, au téléphone ou à votre bureau à Abidjan.</p></div>
       <div class="act">
         <a class="btn btn-w" id="wa" href="#contact" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
         <div class="num"><span id="wa-num">+225 07 89 26 33 73</span><button type="button" id="copier">Copier</button></div>
