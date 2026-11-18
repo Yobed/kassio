@@ -391,6 +391,111 @@ footer .lien{padding:0;min-height:0;font-size:13px}
 .wa-fixe.on{transform:none}
 @media (max-width:980px){.wa-fixe{display:inline-flex}.pr-box{grid-template-columns:1fr;gap:28px}}
 @media (max-width:640px){.devis{flex-direction:column;align-items:flex-start}.ex-cta .btn{width:100%;justify-content:center}.ex-cta .lien{margin-left:0}}
+
+/* ===== Demo Studio (repris de KASSIO 2.0, adapté au site actuel) ===== */
+.demos{padding-block:90px;background:#0e111a;color:#eef0f6;--n-bg:#0b0e16;--n-surface:#141826;--n-raise:#1b2031;--n-line:#272d42;--n-fg:#eef0f6;--n-muted:#a0a8bd;--n-acc:#7d93ff;--cy:#55d6d0}
+.demos .lab{color:var(--n-muted)}
+.demos .sh p{color:var(--n-muted)}
+.studio{border:1px solid var(--n-line);border-radius:20px;background:var(--n-surface);overflow:hidden}
+.studio .ic{width:16px;height:16px;flex:none}
+.st-h{display:flex;align-items:center;gap:12px;padding:12px 14px 12px 18px;border-bottom:1px solid var(--n-line);flex-wrap:wrap}
+.st-h > b{font:600 14px var(--f-d)}
+.tagd{display:inline-flex;align-items:center;font:500 12px/1 var(--f-m);letter-spacing:.03em;padding:6px 9px;border-radius:7px;border:1px solid var(--n-line);color:var(--n-muted);white-space:nowrap}
+.tagd.perso{color:var(--cy);border-color:color-mix(in srgb,var(--cy) 40%,transparent)}
+.studio .tabs{display:flex;gap:4px;padding:4px;background:var(--n-bg);border:1px solid var(--n-line);border-radius:10px;margin-left:auto}
+.studio .tabs button{min-height:40px;padding:0 14px;border-radius:7px;border:0;background:transparent;color:var(--n-muted);font:600 14px var(--f-b);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.studio .tabs button[aria-selected="true"]{background:var(--n-raise);color:var(--n-fg)}
+.studio .tabs button:hover{color:var(--n-fg)}
+.st-p[hidden]{display:none}
+.st-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);min-height:540px}
+.st-main{display:flex;flex-direction:column;border-right:1px solid var(--n-line);min-width:0}
+.st-side{padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--n-bg);min-width:0}
+.st-bar{display:flex;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid var(--n-line)}
+.avd{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#e8eef8;color:#0e111a;font:700 12.5px var(--f-d);flex:none}
+.st-bar b{font-size:14.5px;display:block}
+.st-bar small{font-size:12.5px;color:var(--cy)}
+.st-bar small.hum{color:#ffb37a}
+.st-bar .tagd{margin-left:auto}
+.secteurs{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 18px;border-bottom:1px solid var(--n-line);font:500 12.5px var(--f-m);color:var(--n-muted)}
+.secteurs > div{display:flex;gap:6px;flex-wrap:wrap}
+.secteurs button{min-height:34px;padding:0 11px;border-radius:8px;border:1px solid var(--n-line);background:transparent;color:var(--n-muted);font:500 13px var(--f-b);cursor:pointer}
+.secteurs button[aria-pressed="true"]{background:var(--n-raise);color:var(--n-fg);border-color:var(--n-acc)}
+.fild{flex:1;padding:18px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;max-height:360px;scroll-behavior:smooth}
+.mm{max-width:84%;padding:10px 13px;border-radius:14px;font-size:14.5px;line-height:1.45;animation:pop .28s ease both}
+.mm.in{align-self:flex-start;background:var(--n-raise);border-bottom-left-radius:4px}
+.mm.out{align-self:flex-end;background:#2a4ad6;color:#fff;border-bottom-right-radius:4px}
+.mm.sys{align-self:center;max-width:92%;background:transparent;border:1px dashed var(--n-line);color:var(--n-muted);font:500 12.5px var(--f-m);text-align:center}
+.mm time{display:block;font:400 11px var(--f-m);opacity:.65;margin-top:4px;text-align:right}
+.mm.typing{display:flex;gap:4px;padding:13px}
+.mm.typing i{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.5;animation:dot 1s infinite}
+.mm.typing i:nth-child(2){animation-delay:.15s}.mm.typing i:nth-child(3){animation-delay:.3s}
+.choixd{padding:14px 18px 16px;border-top:1px solid var(--n-line);display:flex;flex-direction:column;gap:10px}
+.labd{font:500 12px var(--f-m);letter-spacing:.06em;text-transform:uppercase;color:var(--n-muted)}
+.choixd .row{display:flex;flex-wrap:wrap;gap:8px}
+.chipd{min-height:44px;padding:0 15px;border-radius:10px;border:1px solid var(--n-line);background:var(--n-raise);color:var(--n-fg);font:500 14.5px var(--f-b);cursor:pointer;text-align:left}
+.chipd:hover{border-color:var(--n-acc)}
+.chipd:disabled{opacity:.4;cursor:default}
+.chipd.go{background:#25d366;border-color:#25d366;color:#052e14;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.chipd.ghost{background:transparent}
+.studio .fiche{border:1px solid var(--n-line);border-radius:12px;background:var(--n-surface);padding:11px 14px;display:flex;flex-direction:column;gap:3px;transition:border-color .3s,background-color .3s}
+.studio .fiche span{font:500 11.5px var(--f-m);letter-spacing:.06em;text-transform:uppercase;color:var(--n-muted)}
+.studio .fiche b{font-size:14.5px;font-weight:600}
+.studio .fiche.vide b{color:var(--n-muted);font-weight:400}
+.studio .fiche.flash{border-color:var(--n-acc);background:color-mix(in srgb,#4f6dff 18%,var(--n-surface))}
+.side-h{display:flex;justify-content:space-between;align-items:center}
+.side-h b{font:600 14px var(--f-d)}
+.side-h span{font:500 11.5px var(--f-m);color:var(--n-muted);text-transform:uppercase;letter-spacing:.06em}
+.pillsd{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.pilld{font:500 12px var(--f-b);border-radius:6px;padding:3px 8px;background:rgba(255,179,122,.12);color:#ffb37a}
+.pilld.ok{background:rgba(74,222,128,.12);color:#6ee7a0}
+.pilld.hu{background:rgba(85,214,208,.12);color:var(--cy)}
+.scored{height:6px;border-radius:3px;background:var(--n-line);overflow:hidden;margin-top:6px}
+.scored i{display:block;height:100%;width:0;background:var(--cy);transition:width .6s ease}
+.journal{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font:400 12.5px/1.45 var(--f-m);color:var(--n-muted);max-height:150px;overflow:auto}
+.journal li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:6px;animation:pop .3s ease both}
+.st-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;padding:12px 18px;border-top:1px solid var(--n-line);font-size:13px;color:var(--n-muted)}
+.st-foot button{background:none;border:0;color:var(--n-fg);font:600 13.5px var(--f-b);cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 4px}
+.cibles{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.cible{border:1px solid var(--n-line);border-radius:12px;background:var(--n-raise);padding:14px 16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 14px;animation:pop .3s ease both}
+.cible b{font-size:15px}
+.cible .meta{grid-column:1;font-size:13px;color:var(--n-muted)}
+.cible .fit{grid-column:2;grid-row:1/3;align-self:start;font:600 13px var(--f-m);color:var(--cy);border:1px solid color-mix(in srgb,var(--cy) 40%,transparent);border-radius:7px;padding:5px 8px}
+.cible .msg{grid-column:1/-1;font-size:14px;background:var(--n-surface);border-left:3px solid #4f6dff;border-radius:6px;padding:10px 12px;margin-top:4px}
+.cible .act{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.cible .ok-st{font:500 12.5px var(--f-m);color:#6ee7a0;align-self:center}
+.vide-st{flex:1;display:grid;place-items:center;text-align:center;color:var(--n-muted);font-size:14.5px;padding:24px}
+.wfd{padding:18px;display:flex;flex-direction:column;flex:1}
+.wfd .s{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:14px;align-items:start;padding-bottom:18px;position:relative;opacity:.45;transition:opacity .3s}
+.wfd .s:not(:last-child)::after{content:"";position:absolute;left:19px;top:42px;bottom:4px;width:2px;background:var(--n-line)}
+.wfd .s.fait,.wfd .s.cours{opacity:1}
+.wfd .s.fait:not(:last-child)::after{background:#4f6dff}
+.wfd .i{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--n-raise);border:1px solid var(--n-line);color:var(--n-muted);transition:all .3s}
+.wfd .i svg{width:18px;height:18px}
+.wfd .s.cours .i{border-color:var(--cy);color:var(--cy)}
+.wfd .s.fait .i{background:#2a4ad6;border-color:#2a4ad6;color:#fff}
+.wfd b{display:block;font-size:15px}
+.wfd span{display:block;color:var(--n-muted);font-size:13.5px;margin-top:2px}
+.wfd .d{font:500 12px var(--f-m);color:var(--n-muted);padding-top:3px}
+.wfd .s.fait .d{color:#6ee7a0}
+.demo-plus{display:inline-flex;align-items:center;gap:6px;margin-left:10px;color:var(--cobalt);font-weight:600;text-decoration:none}
+.demo-plus:hover{text-decoration:underline}
+/* fiches des agents */
+.ag dl{margin:4px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;font-size:13.5px}
+.ag dt{font:500 11.5px var(--f-m);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding-top:2px}
+.ag dd{margin:0}
+@media (max-width:767px){
+  .st-h{padding:12px}
+  .st-h > b,.st-h > .tagd{display:none}
+  .studio .tabs{margin-left:0;width:100%}
+  .studio .tabs button{flex:1;justify-content:center;padding:0 6px;font-size:13.5px}
+  .studio .tabs .ic{display:none}
+  .st-grid{grid-template-columns:1fr;min-height:0}
+  .st-main{border-right:0;border-bottom:1px solid var(--n-line)}
+  .fild{max-height:340px}
+  .st-side{display:grid;grid-template-columns:1fr 1fr}
+  .st-side .side-h,.st-side .large,.st-side .jr{grid-column:1/-1}
+  .st-bar .tagd{display:none}
+}
 @media (max-width:980px){
   .hero .wrap,.sh,.obj .wrap,.faq .wrap,.carte{grid-template-columns:1fr;gap:32px}
   .grid-s{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -412,7 +517,7 @@ footer .lien{padding:0;min-height:0;font-size:13px}
   <div class="wrap">
     <a class="brand" href="#ouverture"><span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Kassio</a>
     <nav aria-label="Sections">
-      <a href="#demo">Démo</a><a href="#services">Ce qu'on construit</a><a href="#agents">Vos agents</a><a href="#questions">Questions</a>
+      <a href="#demos">Démos</a><a href="#services">Ce qu'on construit</a><a href="#agents">Vos agents</a><a href="#questions">Questions</a>
       <a class="btn btn-p" href="#contact">Parler à Kassio</a>
     </nav>
   </div>
@@ -454,7 +559,7 @@ footer .lien{padding:0;min-height:0;font-size:13px}
           <div class="champ large" id="c-score"><span>Chance de vente</span><b id="score-t">35 %</b><div class="score"><i id="score-b" style="width:35%"></i></div></div>
         </aside>
       </div>
-      <p class="demo-note">Démo jouée dans votre navigateur · boutique, prix et stock fictifs.</p>
+      <p class="demo-note">Démo jouée dans votre navigateur · boutique, prix et stock fictifs. <a class="demo-plus" href="#demos">Autres métiers et démos →</a></p>
     </div>
   </div>
 </section>
@@ -475,6 +580,87 @@ footer .lien{padding:0;min-height:0;font-size:13px}
       <article class="svc"><div class="vig v-n8n" aria-hidden="true"><svg viewBox="0 0 300 150"><path id="w1" class="wire" d="M62 75 C110 75 110 38 150 38"/><path id="w2" class="wire" d="M62 75 C110 75 110 112 150 112"/><path id="w3" class="wire" d="M190 38 C230 38 230 75 250 75"/><path id="w4" class="wire" d="M190 112 C230 112 230 75 250 75"/><rect class="node" x="18" y="57" width="44" height="36" rx="8"/><rect class="node" x="150" y="20" width="40" height="36" rx="8"/><rect class="node" x="150" y="94" width="40" height="36" rx="8"/><rect class="node" x="250" y="57" width="36" height="36" rx="8" style="fill:var(--fg);stroke:var(--fg)"/><text x="40" y="79" text-anchor="middle" font-size="11" font-family="JetBrains Mono,monospace" fill="var(--muted)">devis</text><text x="170" y="42" text-anchor="middle" font-size="10.5" font-family="JetBrains Mono,monospace" fill="var(--muted)">J+3</text><text x="170" y="116" text-anchor="middle" font-size="10.5" font-family="JetBrains Mono,monospace" fill="var(--muted)">mail</text><circle class="pk" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle><circle class="pk" r="4"><animateMotion dur="2.4s" begin=".8s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="1.2s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="2s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle></svg></div><h3>Automatisations n8n</h3><p>Relances de devis, rapports du lundi, saisie entre deux logiciels : les tâches répétées tournent toutes seules.</p><ul><li>Historique de chaque action</li><li>Reprise à la main toujours possible</li></ul><span class="delai">Mise en route : quelques jours</span><button type="button" class="voir" data-ex="n8n">Voir un exemple <span aria-hidden="true">→</span></button></article>
     </div>
     <div class="devis"><span class="dv-i"><svg aria-hidden="true"><use href="#i-file"/></svg></span><p><b>Pas de tarif surprise.</b> Premier échange de 30 minutes offert, puis devis fixe sous 48 h, sans engagement. Les abonnements des outils sont indiqués à part.</p><a class="btn btn-p" data-wa="devis" href="#contact" target="_blank" rel="noopener">Demander un devis</a></div>
+  </div>
+</section>
+
+<section class="demos" id="demos" aria-labelledby="t-demos">
+  <div class="wrap">
+    <div class="sh">
+      <div><p class="lab">Démonstrations</p><h2 id="t-demos" style="margin-top:12px">Essayez un agent, ici, maintenant.</h2></div>
+      <p>Trois démonstrations jouées dans votre navigateur. Rien n'est envoyé, aucune donnée réelle n'est utilisée.</p>
+    </div>
+    <div class="studio">
+      <div class="st-h"><b>Demo Studio</b><span class="tagd">simulation locale</span>
+        <div class="tabs" role="tablist" aria-label="Démonstrations">
+          <button type="button" role="tab" id="sd-tb-wa" aria-controls="sd-pn-wa" aria-selected="true"><svg class="ic" aria-hidden="true"><use href="#i-msg"/></svg>WhatsApp</button>
+          <button type="button" role="tab" id="sd-tb-pr" aria-controls="sd-pn-pr" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>Prospection</button>
+          <button type="button" role="tab" id="sd-tb-wf" aria-controls="sd-pn-wf" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="#i-flow"/></svg>Workflow</button>
+        </div>
+      </div>
+
+      <div class="st-p" id="sd-pn-wa" role="tabpanel" aria-labelledby="sd-tb-wa">
+        <div class="st-grid">
+          <div class="st-main">
+            <div class="st-bar"><span class="avd" id="sd-av" aria-hidden="true">QB</span><div><b id="sd-nom">Quincaillerie du Boulevard</b><small id="sd-etat">Agent Kassio · répond</small></div><span class="tagd" id="sd-perso">scénario fictif</span></div>
+            <div class="secteurs" role="group" aria-label="Choisir un métier"><span>Votre métier :</span><div id="sd-sect"></div></div>
+            <div class="fild" id="sd-fil" aria-live="polite"></div>
+            <div class="choixd"><span class="labd" id="sd-lab">Choisissez un message client</span><div class="row" id="sd-choix"></div></div>
+          </div>
+          <aside class="st-side" aria-label="Fiche CRM synchronisée">
+            <div class="side-h"><b>Fiche CRM</b><span id="sd-crm-etat">en attente</span></div>
+            <div class="fiche vide" id="sd-c1"><span>Client</span><b>—</b></div>
+            <div class="fiche vide" id="sd-c2"><span>Besoin</span><b>—</b></div>
+            <div class="fiche vide" id="sd-c3"><span id="sd-l3">Quantité</span><b>—</b></div>
+            <div class="fiche vide" id="sd-c4"><span id="sd-l4">Livraison</span><b>—</b></div>
+            <div class="fiche vide large" id="sd-c5"><span>Objections · statut</span><b>Aucune pour l'instant</b><div class="pillsd" id="sd-pills"></div></div>
+            <div class="fiche large"><span>Chance de vente</span><b id="sd-score-t">—</b><div class="scored"><i id="sd-score-b"></i></div></div>
+            <div class="jr large"><div class="side-h" style="margin:6px 0 8px"><b>Journal d'actions</b><span>agent</span></div><ol class="journal" id="sd-jr"></ol></div>
+          </aside>
+        </div>
+        <div class="st-foot"><span>Scénario fictif, exécuté localement. Aucune commande ni réservation réelle.</span><button type="button" id="sd-wa-reset"><svg class="ic" aria-hidden="true"><use href="#i-repeat"/></svg>Réinitialiser</button></div>
+      </div>
+
+      <div class="st-p" id="sd-pn-pr" role="tabpanel" aria-labelledby="sd-tb-pr" hidden>
+        <div class="st-grid">
+          <div class="st-main">
+            <div class="st-bar"><span class="avd" aria-hidden="true" style="background:#DCE7FB">AP</span><div><b>Agent Prospection</b><small>Cible : commerces et PME, Abidjan</small></div><span class="tagd">entreprises fictives</span></div>
+            <div class="cibles" id="sd-cibles"><div class="vide-st">Lancez la recherche : l'agent trouve 3 entreprises, explique pourquoi, et prépare un message pour chacune.</div></div>
+            <div class="choixd"><div class="row"><button type="button" class="chipd" id="sd-pr-go">Lancer la prospection du jour</button></div></div>
+          </div>
+          <aside class="st-side" aria-label="Compteurs de prospection">
+            <div class="side-h"><b>Cette semaine</b><span>compteurs</span></div>
+            <div class="fiche"><span>Entreprises qualifiées</span><b id="sd-pr-q">0</b></div>
+            <div class="fiche"><span>Messages validés</span><b id="sd-pr-v">0</b></div>
+            <div class="fiche large"><span>Règle</span><b style="font-weight:400">L'agent prépare. Vous relisez et envoyez vous-même. Rien ne part sans vous.</b></div>
+            <div class="jr large"><div class="side-h" style="margin:6px 0 8px"><b>Journal d'actions</b><span>agent</span></div><ol class="journal" id="sd-pr-j"></ol></div>
+          </aside>
+        </div>
+        <div class="st-foot"><span>Entreprises et contacts inventés pour la démonstration.</span><button type="button" id="sd-pr-reset"><svg class="ic" aria-hidden="true"><use href="#i-repeat"/></svg>Réinitialiser</button></div>
+      </div>
+
+      <div class="st-p" id="sd-pn-wf" role="tabpanel" aria-labelledby="sd-tb-wf" hidden>
+        <div class="st-grid">
+          <div class="st-main">
+            <div class="st-bar"><span class="avd" aria-hidden="true" style="background:#D9F5F3">WF</span><div><b>Relance des devis sans réponse</b><small>Déclenché chaque matin à 8 h</small></div><span class="tagd">exécution simulée</span></div>
+            <div class="wfd" id="sd-wf">
+              <div class="s"><span class="i"><svg aria-hidden="true"><use href="#i-file"/></svg></span><div><b>Lecture des devis envoyés</b><span>depuis votre logiciel ou votre fichier de suivi</span></div><span class="d">—</span></div>
+              <div class="s"><span class="i"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><div><b>Filtre : 3 jours sans réponse</b><span>2 devis concernés sur 14</span></div><span class="d">—</span></div>
+              <div class="s"><span class="i"><svg aria-hidden="true"><use href="#i-msg"/></svg></span><div><b>Relances WhatsApp préparées</b><span>« Bonjour M. Kouassi, avez-vous pu regarder le devis du 12 ? »</span></div><span class="d">—</span></div>
+              <div class="s"><span class="i"><svg aria-hidden="true"><use href="#i-check"/></svg></span><div><b>Validation par vous</b><span>un clic, ou envoi automatique si vous l'avez autorisé</span></div><span class="d">—</span></div>
+              <div class="s"><span class="i"><svg aria-hidden="true"><use href="#i-table"/></svg></span><div><b>Mise à jour du suivi</b><span>statut « relancé », rappel programmé à J+7</span></div><span class="d">—</span></div>
+            </div>
+            <div class="choixd"><div class="row" id="sd-wf-row"><button type="button" class="chipd" id="sd-wf-go">Exécuter le workflow</button></div></div>
+          </div>
+          <aside class="st-side" aria-label="Journal d'exécution">
+            <div class="side-h"><b>Exécution</b><span id="sd-wf-etat">prête</span></div>
+            <div class="fiche"><span>Durée</span><b id="sd-wf-t">—</b></div>
+            <div class="fiche"><span>Erreurs</span><b id="sd-wf-e">—</b></div>
+            <div class="jr large"><div class="side-h" style="margin:6px 0 8px"><b>Journal</b><span>historique</span></div><ol class="journal" id="sd-wf-j"></ol></div>
+          </aside>
+        </div>
+        <div class="st-foot"><span>Chaque exécution est journalisée. En cas d'erreur, vous êtes prévenu et rien n'est envoyé.</span><button type="button" id="sd-wf-reset"><svg class="ic" aria-hidden="true"><use href="#i-repeat"/></svg>Réinitialiser</button></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -514,10 +700,10 @@ footer .lien{padding:0;min-height:0;font-size:13px}
       <p>Chaque agent a un rôle précis et vous rend compte. Le matin, vous recevez sur votre téléphone ce qui a été fait et ce qui attend votre décision.</p>
     </div>
     <div class="agents">
-      <article class="ag" style="--ac:#1fbf75"><div class="ag-h"><span class="ag-i"><svg aria-hidden="true"><use href="#i-msg"/></svg></span><span class="st">en service</span></div><h3>Agent Accueil</h3><p>Répond sur WhatsApp, prend les commandes, remplit le CRM.</p><p class="log" data-log="03:14 · commande de 12 sacs de ciment enregistrée|07:02 · rendez-vous fixé jeudi 10 h|09:40 · client transféré au gérant"></p></article>
-      <article class="ag" style="--ac:#4f6dff"><div class="ag-h"><span class="ag-i"><svg aria-hidden="true"><use href="#i-send"/></svg></span><span class="st">en service</span></div><h3>Agent Prospection</h3><p>Repère des entreprises cibles et prépare vos messages.</p><p class="log" data-log="08:59 · 3 entreprises qualifiées|09:01 · 3 messages prêts à valider|lundi · 1 relance due"></p></article>
-      <article class="ag" style="--ac:#f2661a"><div class="ag-h"><span class="ag-i"><svg aria-hidden="true"><use href="#i-trend"/></svg></span><span class="st">en service</span></div><h3>Agent Rapports</h3><p>Met à jour vos tableaux de bord et signale ce qui dérape.</p><p class="log" data-log="06:30 · ventes d'hier : +8 %|06:31 · alerte : stock de peinture bas|vendredi · bilan de la semaine"></p></article>
-      <article class="ag" style="--ac:#8b5cf6"><div class="ag-h"><span class="ag-i"><svg aria-hidden="true"><use href="#i-file"/></svg></span><span class="st">en service</span></div><h3>Agent Admin</h3><p>Relance les devis, prépare les factures, range les documents.</p><p class="log" data-log="10:00 · 4 devis relancés|11:20 · 2 factures prêtes à envoyer|16:00 · reçus classés"></p></article>
+      <article class="ag" style="--ac:#1fbf75"><div class="ag-h"><span class="ag-i"><svg aria-hidden="true"><use href="#i-msg"/></svg></span><span class="st">en service</span></div><h3>Agent Accueil</h3><p>Répond sur WhatsApp, prend les commandes, remplit le CRM.</p><dl><dt>Canaux</dt><dd>WhatsApp, site</dd><dt>Données</dt><dd>catalogue, prix, stock</dd><dt>Limite</dt><dd>passe la main au gérant</dd></dl><p class="log" data-log="03:14 · commande de 12 sacs de ciment enregistrée|07:02 · rendez-vous fixé jeudi 10 h|09:40 · client transféré au gérant"></p></article>
+      <article class="ag" style="--ac:#4f6dff"><div class="ag-h"><span class="ag-i"><svg aria-hidden="true"><use href="#i-send"/></svg></span><span class="st">en service</span></div><h3>Agent Prospection</h3><p>Repère des entreprises cibles et prépare vos messages.</p><dl><dt>Canaux</dt><dd>LinkedIn, e-mail</dd><dt>Données</dt><dd>vos critères de cible</dd><dt>Limite</dt><dd>vous envoyez vous-même</dd></dl><p class="log" data-log="08:59 · 3 entreprises qualifiées|09:01 · 3 messages prêts à valider|lundi · 1 relance due"></p></article>
+      <article class="ag" style="--ac:#f2661a"><div class="ag-h"><span class="ag-i"><svg aria-hidden="true"><use href="#i-trend"/></svg></span><span class="st">en service</span></div><h3>Agent Rapports</h3><p>Met à jour vos tableaux de bord et signale ce qui dérape.</p><dl><dt>Canaux</dt><dd>téléphone, e-mail</dd><dt>Données</dt><dd>ventes, stock, caisse</dd><dt>Limite</dt><dd>lecture seule</dd></dl><p class="log" data-log="06:30 · ventes d'hier : +8 %|06:31 · alerte : stock de peinture bas|vendredi · bilan de la semaine"></p></article>
+      <article class="ag" style="--ac:#8b5cf6"><div class="ag-h"><span class="ag-i"><svg aria-hidden="true"><use href="#i-file"/></svg></span><span class="st">en service</span></div><h3>Agent Admin</h3><p>Relance les devis, prépare les factures, range les documents.</p><dl><dt>Canaux</dt><dd>WhatsApp, e-mail</dd><dt>Données</dt><dd>devis, factures</dd><dt>Limite</dt><dd>validation avant envoi</dd></dl><p class="log" data-log="10:00 · 4 devis relancés|11:20 · 2 factures prêtes à envoyer|16:00 · reçus classés"></p></article>
     </div>
     <p class="regle"><b>La règle :</b> un agent prépare, vous décidez. Rien n'est publié, envoyé ou payé sans votre accord.</p>
   </div>
@@ -581,7 +767,7 @@ footer .lien{padding:0;min-height:0;font-size:13px}
 </section>
 
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-msg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20l1.1-4.4A8.4 8.4 0 1 1 21 11.5z"/></symbol><symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.6l2.4 11.6a1.6 1.6 0 0 0 1.6 1.3h8.7a1.6 1.6 0 0 0 1.6-1.2L21 7H6"/></symbol><symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.6"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.3a3.6 3.6 0 0 1 0 7.2M18 14a6.5 6.5 0 0 1 3.5 6"/></symbol><symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol><symbol id="i-pct" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol><symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></symbol><symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/><path d="M6 6l9-3 1 3"/></symbol><symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol><symbol id="i-in" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2.5 2.5 0 0 1 5 0v4M12 10v7"/></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol><symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></symbol><symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></symbol><symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14"/><path d="M21 3l-7 18-4-7-7-4z"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16 10"/></symbol><symbol id="i-table" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></symbol><symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol><symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol><symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol><symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3z"/><path d="M14.5 6.5L17 4l3 3-2.5 2.5"/></symbol></defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-msg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20l1.1-4.4A8.4 8.4 0 1 1 21 11.5z"/></symbol><symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.6l2.4 11.6a1.6 1.6 0 0 0 1.6 1.3h8.7a1.6 1.6 0 0 0 1.6-1.2L21 7H6"/></symbol><symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.6"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.3a3.6 3.6 0 0 1 0 7.2M18 14a6.5 6.5 0 0 1 3.5 6"/></symbol><symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol><symbol id="i-pct" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol><symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></symbol><symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/><path d="M6 6l9-3 1 3"/></symbol><symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol><symbol id="i-in" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2.5 2.5 0 0 1 5 0v4M12 10v7"/></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol><symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></symbol><symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></symbol><symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14"/><path d="M21 3l-7 18-4-7-7-4z"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16 10"/></symbol><symbol id="i-table" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></symbol><symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol><symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol><symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol><symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3z"/><path d="M14.5 6.5L17 4l3 3-2.5 2.5"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol><symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14"/></symbol><symbol id="i-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></symbol></defs></svg>
 <dialog class="ex" id="ex" aria-labelledby="ex-t">
   <div class="ex-h"><div><h3 id="ex-t"></h3><p id="ex-s"></p></div><button type="button" class="ex-x" id="ex-x" aria-label="Fermer">×</button></div>
   <div class="ex-b" id="ex-b"></div>
@@ -854,6 +1040,199 @@ document.querySelectorAll(".log").forEach((el, k) => {
   }
 })();
 </script>
+<script>
+/* Demo Studio : 3 démos locales + liens personnalisés (?demo=wa&s=resto&n=Nom). Aucune donnée envoyée. */
+(function () {
+  const q = s => document.querySelector(s), qa = s => [...document.querySelectorAll(s)];
+  if (!q("#demos")) return;
+  const lent = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const pause = ms => new Promise(r => setTimeout(r, lent ? ms : 60));
+  const wa = k => (typeof waLien === "function" ? waLien(k) : "#contact");
+
+  /* ---------- Onglets ---------- */
+  const tabs = qa('#demos [role="tab"]');
+  function onglet(t) { tabs.forEach(b => { const on = b === t; b.setAttribute("aria-selected", on); b.tabIndex = on ? 0 : -1; document.getElementById(b.getAttribute("aria-controls")).hidden = !on; }); }
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => onglet(t));
+    t.addEventListener("keydown", e => { const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0; if (!d) return; const n = tabs[(i + d + tabs.length) % tabs.length]; onglet(n); n.focus(); });
+  });
+  const horloge = (() => { let m = 11; return () => `21:${String(m++ % 60).padStart(2, "0")}`; })();
+  const noter = (ol, txt, t) => { const li = document.createElement("li"); li.innerHTML = "<span></span><span></span>"; li.firstChild.textContent = t || horloge(); li.lastChild.textContent = txt; ol.prepend(li); };
+
+  /* ---------- Scénarios WhatsApp par métier ---------- */
+  const METIERS = {
+    commerce: { lib: "Commerce", nom: "Quincaillerie du Boulevard", l3: "Quantité", l4: "Livraison", cta: "wa",
+      debut: [["stock", "Vous avez du carrelage 60×60 gris ?"], ["prix", "C'est combien le sac de ciment ?"], ["tech", "Quel joint pour une douche à l'italienne ?"]],
+      e: {
+        stock: { r: "Bonsoir ! Oui, 46 m² en stock à 7 500 FCFA le m². Combien de m² vous faut-il ?", c: { c1: "Nouveau client · WhatsApp", c2: "Carrelage 60×60 gris", sc: 35 }, log: "Stock vérifié : 46 m² disponibles", ch: [["qte", "Il me faut 40 m², livré à Cocody."]] },
+        prix: { r: "Le sac de ciment 50 kg est à 5 200 FCFA. À partir de 20 sacs : 4 950 FCFA. Combien vous en faut-il ?", c: { c1: "Nouveau client · WhatsApp", c2: "Ciment 50 kg", sc: 30 }, log: "Tarif dégressif proposé", ch: [["qte2", "12 sacs, livrés à Yopougon demain."]] },
+        tech: { r: "Bonne question. Je préfère que le gérant vous réponde précisément : je lui transmets votre demande, il vous rappelle avant 9 h demain.", c: { c1: "Nouveau client · WhatsApp", c2: "Conseil technique · douche", sc: 25, hu: true }, log: "Transfert au gérant : question technique", ch: [["finh", "D'accord, merci."]] },
+        qte: { r: "Parfait. 40 m² = 300 000 FCFA. Livraison à Cocody demain avant 12 h : 10 000 FCFA. Je vous réserve le stock ?", c: { c3: "40 m²", c4: "Cocody · demain matin", sc: 60 }, log: "Devis calculé : 310 000 FCFA", ch: [["cher", "C'est un peu cher…"], ["ok", "D'accord, je prends."]] },
+        qte2: { r: "Noté : 12 sacs = 62 400 FCFA, livrés demain à Yopougon. Paiement Wave ou à la livraison. Je confirme ?", c: { c3: "12 sacs", c4: "Yopougon · demain", sc: 70 }, log: "Devis calculé : 62 400 FCFA", ch: [["ok", "Oui, je confirme."]] },
+        cher: { r: "Je comprends. Dès 40 m², je peux vous offrir la livraison : 300 000 FCFA tout compris. Ça vous convient ?", c: { obj: "prix", sc: 78 }, log: "Objection « prix » levée : livraison offerte", ch: [["ok", "D'accord, je prends."]] },
+        ok: { r: "Merci ! Commande enregistrée, livraison demain. Le gérant vous confirme ce soir. ✅", c: { vendu: true, sc: 95 }, log: "Commande créée · stock réservé", fin: true }
+      } },
+    rdv: { lib: "Institut, clinique, services", nom: "Institut Belle Riviera", l3: "Prestation", l4: "Rendez-vous", cta: "site2",
+      debut: [["dispo", "Vous avez de la place samedi ?"], ["prix", "C'est combien une pose d'ongles ?"], ["tech", "J'ai une allergie, quel soin me conseillez-vous ?"]],
+      e: {
+        dispo: { r: "Bonjour ! Samedi il reste 10 h, 14 h et 16 h. C'est pour quel soin ?", c: { c1: "Nouvelle cliente · WhatsApp", c2: "Rendez-vous samedi", sc: 40 }, log: "Agenda consulté : 3 créneaux libres", ch: [["soin", "Pose d'ongles, 14 h."]] },
+        prix: { r: "La pose gel est à 15 000 FCFA, 1 h 30. Il reste des créneaux jeudi et samedi. Je vous en réserve un ?", c: { c1: "Nouvelle cliente · WhatsApp", c2: "Pose d'ongles gel", c3: "Pose gel · 15 000 FCFA", sc: 40 }, log: "Tarif et durée communiqués", ch: [["cher", "Un peu cher pour moi…"], ["soin", "Samedi 14 h alors."]] },
+        tech: { r: "Pour une allergie, je préfère que notre esthéticienne vous conseille elle-même. Je lui transmets, elle vous rappelle aujourd'hui avant 18 h.", c: { c1: "Nouvelle cliente · WhatsApp", c2: "Conseil soin · allergie", sc: 30, hu: true }, log: "Transfert à l'esthéticienne : question santé", ch: [["finh", "Merci beaucoup."]] },
+        cher: { r: "Je comprends. La pose semi-permanente est à 9 000 FCFA, et le mardi -10 %. Je vous propose mardi 15 h ?", c: { obj: "prix", c3: "Semi-permanent · 9 000 FCFA", sc: 65 }, log: "Objection « prix » : alternative proposée", ch: [["ok", "Mardi 15 h, parfait."]] },
+        soin: { r: "C'est noté : pose d'ongles samedi 14 h. Vous recevrez un rappel la veille. Acompte possible par Wave. Je confirme ?", c: { c3: "Pose d'ongles", c4: "Samedi · 14 h", sc: 80 }, log: "Créneau bloqué dans l'agenda", ch: [["ok", "Oui, confirmé."]] },
+        ok: { r: "Rendez-vous confirmé ✅ À bientôt à l'institut !", c: { vendu: true, c4: "confirmé", sc: 95 }, log: "Rendez-vous créé · rappel J-1 programmé", fin: true }
+      } },
+    resto: { lib: "Restaurant, traiteur", nom: "Saveurs d'Ici Traiteur", l3: "Commande", l4: "Livraison", cta: "wa",
+      debut: [["soir", "Vous livrez ce soir à Cocody ?"], ["menu", "C'est quoi le menu du jour ?"], ["event", "Un buffet pour 80 personnes samedi, c'est possible ?"]],
+      e: {
+        soir: { r: "Bonsoir ! Oui, jusqu'à 22 h 30 à Cocody, livraison 1 000 FCFA. Que souhaitez-vous commander ?", c: { c1: "Nouveau client · WhatsApp", c2: "Livraison ce soir", c4: "Cocody · ce soir", sc: 45 }, log: "Zone de livraison vérifiée", ch: [["cmd", "2 garbas et 1 poulet braisé."]] },
+        menu: { r: "Ce soir : poulet braisé attiéké 3 500 FCFA, garba 1 500 FCFA, sauce graine 3 000 FCFA. Sur place ou en livraison ?", c: { c1: "Nouveau client · WhatsApp", c2: "Menu du jour", sc: 35 }, log: "Menu du jour envoyé", ch: [["cmd", "En livraison : 2 garbas et 1 poulet."]] },
+        event: { r: "Avec plaisir ! Pour un buffet de 80 personnes, notre gérante prépare un devis sur mesure. Je lui transmets, elle vous appelle demain matin.", c: { c1: "Nouveau client · WhatsApp", c2: "Buffet · 80 personnes", c3: "Événement samedi", sc: 50, hu: true }, log: "Transfert à la gérante : devis événement", ch: [["finh", "Parfait, j'attends son appel."]] },
+        cmd: { r: "Noté : 2 garbas + 1 poulet braisé = 6 500 FCFA + livraison 1 000 FCFA. Livré vers 21 h 15. Paiement Wave ou à la livraison ?", c: { c3: "2 garbas · 1 poulet", sc: 75 }, log: "Commande calculée : 7 500 FCFA", ch: [["delai", "21 h 15 c'est long…"], ["ok", "Wave, c'est bon."]] },
+        delai: { r: "Je comprends. Si vous venez la chercher, elle est prête à 20 h 50, et sans frais de livraison.", c: { obj: "délai", sc: 80 }, log: "Objection « délai » : retrait proposé", ch: [["ok", "Je passe la chercher."]] },
+        ok: { r: "Commande confirmée ✅ La cuisine la prépare. Merci !", c: { vendu: true, sc: 95 }, log: "Commande transmise en cuisine", fin: true }
+      } },
+    immo: { lib: "Immobilier", nom: "Résidences Lagune Immo", l3: "Bien", l4: "Visite", cta: "site",
+      debut: [["dispo", "Le 3 pièces à Riviera est toujours disponible ?"], ["prix", "Quel est le loyer, charges comprises ?"], ["nego", "Le loyer est négociable ?"]],
+      e: {
+        dispo: { r: "Bonjour ! Oui, le 3 pièces de Riviera 3 est disponible à partir du 1er décembre. Souhaitez-vous le visiter ?", c: { c1: "Prospect locataire · WhatsApp", c2: "3 pièces Riviera 3", c3: "3 pièces · Riviera 3", sc: 40 }, log: "Disponibilité vérifiée", ch: [["visite", "Oui, samedi matin si possible."]] },
+        prix: { r: "Le loyer est de 350 000 FCFA, charges comprises. Caution de 2 mois, 1 mois d'avance. Voulez-vous le visiter ?", c: { c1: "Prospect locataire · WhatsApp", c2: "Informations loyer", c3: "3 pièces · 350 000 FCFA", sc: 35 }, log: "Conditions de location envoyées", ch: [["visite", "Oui, samedi matin."]] },
+        nego: { r: "Je comprends la question. Je laisse l'agent responsable du bien vous répondre : il vous appelle aujourd'hui avant 17 h.", c: { c1: "Prospect locataire · WhatsApp", c2: "Négociation du loyer", sc: 30, hu: true, obj: "prix" }, log: "Transfert à l'agent immobilier : négociation", ch: [["finh", "D'accord, merci."]] },
+        visite: { r: "Samedi : 9 h ou 11 h ? L'agent vous attendra devant la résidence.", c: { c4: "Samedi matin", sc: 70 }, log: "Créneaux de visite proposés", ch: [["ok", "11 h, parfait."]] },
+        ok: { r: "Visite confirmée samedi 11 h ✅ Vous recevrez l'adresse exacte et le nom de l'agent par message.", c: { vendu: true, c4: "Samedi · 11 h", sc: 90 }, log: "Visite planifiée · rappel la veille", fin: true }
+      } },
+    logi: { lib: "Transport, livraison", nom: "Express Colis Abidjan", l3: "Colis", l4: "Trajet", cta: "site",
+      debut: [["suivi", "Où en est mon colis ?"], ["tarif", "Combien pour envoyer un colis à Bouaké ?"], ["litige", "Mon colis est arrivé abîmé."]],
+      e: {
+        suivi: { r: "Bonjour ! Donnez-moi votre numéro de suivi et je vous dis où il est.", c: { c1: "Client · WhatsApp", c2: "Suivi de colis", sc: 40 }, log: "Demande de suivi reçue", ch: [["num", "C'est le EC-48213."]] },
+        num: { r: "Le colis EC-48213 a quitté l'entrepôt de Yopougon à 14 h. Livraison prévue demain avant 12 h à Bingerville.", c: { c3: "EC-48213", c4: "Yopougon → Bingerville", sc: 70 }, log: "Statut transmis depuis le suivi", ch: [["ok", "Merci, parfait."]] },
+        tarif: { r: "Abidjan → Bouaké : 3 500 FCFA jusqu'à 5 kg, départ chaque matin à 7 h. Je vous réserve une place pour demain ?", c: { c1: "Nouveau client · WhatsApp", c2: "Envoi Abidjan → Bouaké", c4: "Abidjan → Bouaké", sc: 45 }, log: "Tarif communiqué", ch: [["ok", "Oui, pour demain."]] },
+        litige: { r: "Je suis désolé. Envoyez-moi une photo du colis : je transmets tout de suite au responsable, qui vous rappelle dans l'heure.", c: { c1: "Client · WhatsApp", c2: "Réclamation colis abîmé", sc: 20, hu: true, obj: "qualité" }, log: "Transfert au responsable : litige", ch: [["finh", "D'accord, j'envoie la photo."]] },
+        ok: { r: "C'est noté ✅ Vous recevrez une confirmation par message.", c: { vendu: true, sc: 90 }, log: "Demande enregistrée", fin: true }
+      } }
+  };
+  ["commerce", "rdv", "resto", "immo", "logi"].forEach(k => { const e = METIERS[k].e; e.finh = e.finh || { r: "Avec plaisir. Bonne journée !", c: {}, log: "Rappel programmé pour un humain", fin: true }; });
+
+  let metier = "commerce", nomPerso = "", occupe = false;
+  const fil = q("#sd-fil"), choix = q("#sd-choix"), jr = q("#sd-jr"), lab = q("#sd-lab");
+  const sect = q("#sd-sect");
+  Object.entries(METIERS).forEach(([k, m]) => { const b = document.createElement("button"); b.type = "button"; b.textContent = m.lib; b.dataset.m = k; b.setAttribute("aria-pressed", k === metier); b.onclick = () => { metier = k; nomPerso = ""; reset(); }; sect.appendChild(b); });
+  const bulle = (cls, txt) => { const d = document.createElement("div"); d.className = "mm " + cls; if (txt !== undefined) { d.innerHTML = "<span></span><time></time>"; d.firstChild.textContent = txt; d.lastChild.textContent = horloge(); } fil.appendChild(d); fil.scrollTop = fil.scrollHeight; return d; };
+  const champ = (id, v) => { const c = q("#" + id); c.classList.remove("vide"); c.querySelector("b").textContent = v; c.classList.add("flash"); setTimeout(() => c.classList.remove("flash"), 900); };
+  const pill = (t, cls) => { const p = document.createElement("span"); p.className = "pilld " + (cls || ""); p.textContent = t; q("#sd-pills").appendChild(p); };
+  function crm(c) {
+    ["c1", "c2", "c3", "c4"].forEach(k => { if (c[k]) champ("sd-" + k, c[k]); });
+    if (c.c1) q("#sd-crm-etat").textContent = "synchronisée";
+    if (c.obj) { champ("sd-c5", c.hu ? "Transféré à un humain" : "Levées par l'agent :"); pill(c.obj); }
+    if (c.hu) { if (!c.obj) champ("sd-c5", "Transféré à un humain"); pill("humain", "hu"); q("#sd-etat").textContent = "Transféré à un humain"; q("#sd-etat").classList.add("hum"); }
+    if (c.vendu) { champ("sd-c5", q("#sd-pills").children.length ? "Levées par l'agent :" : "Aucune"); pill(metier === "rdv" || metier === "immo" ? "confirmé" : "conclu", "ok"); q("#sd-crm-etat").textContent = "opportunité gagnée"; }
+    if (c.sc) { q("#sd-score-t").textContent = c.sc + " %"; q("#sd-score-b").style.width = c.sc + "%"; }
+  }
+  function boutons(cle) {
+    choix.innerHTML = ""; const M = METIERS[metier], e = cle ? M.e[cle] : null;
+    if (e && e.fin) {
+      lab.textContent = e.c.vendu ? "Conclu par l'agent. À vous ?" : "Un humain reprend la main. À vous ?";
+      const a = document.createElement("a"); a.className = "chipd go"; a.href = wa("demo"); a.target = "_blank"; a.rel = "noopener";
+      a.innerHTML = 'Avoir cet agent sur mon numéro <span aria-hidden="true">→</span>'; choix.appendChild(a);
+      const b = document.createElement("button"); b.type = "button"; b.className = "chipd ghost"; b.textContent = "Essayer un autre scénario"; b.onclick = reset; choix.appendChild(b); return;
+    }
+    lab.textContent = cle ? "Répondez comme le client" : "Choisissez un message client";
+    (e ? e.ch : M.debut).forEach(([k, t]) => { const b = document.createElement("button"); b.type = "button"; b.className = "chipd"; b.textContent = t; b.onclick = () => envoyer(k, t); choix.appendChild(b); });
+  }
+  async function envoyer(k, t) {
+    if (occupe) return; occupe = true; qa("#sd-choix button").forEach(b => b.disabled = true);
+    bulle("in", t); const ty = bulle("out typing"); ty.innerHTML = "<i></i><i></i><i></i>";
+    await pause(900); ty.remove();
+    const e = METIERS[metier].e[k]; bulle("out", e.r);
+    if (e.c.hu) { const s = bulle("sys"); s.textContent = "Conversation transférée à un humain · notification envoyée"; }
+    crm(e.c); noter(jr, e.log); occupe = false; boutons(k);
+  }
+  function reset() {
+    const M = METIERS[metier];
+    qa("#sd-sect button").forEach(b => b.setAttribute("aria-pressed", b.dataset.m === metier));
+    const nom = nomPerso || M.nom;
+    q("#sd-nom").textContent = nom; q("#sd-av").textContent = nom.split(/\s+/).filter(w => /^[A-Za-zÀ-ÿ0-9]/.test(w)).slice(0, 2).map(w => w[0].toUpperCase()).join("");
+    q("#sd-perso").textContent = nomPerso ? "démo préparée pour vous" : "scénario fictif"; q("#sd-perso").classList.toggle("perso", !!nomPerso);
+    q("#sd-l3").textContent = M.l3; q("#sd-l4").textContent = M.l4;
+    fil.innerHTML = ""; jr.innerHTML = ""; q("#sd-pills").innerHTML = "";
+    ["c1", "c2", "c3", "c4"].forEach(k => { const c = q("#sd-" + k); c.classList.add("vide"); c.querySelector("b").textContent = "—"; });
+    q("#sd-c5").querySelector("b").textContent = "Aucune pour l'instant"; q("#sd-c5").classList.add("vide");
+    q("#sd-score-t").textContent = "—"; q("#sd-score-b").style.width = "0";
+    q("#sd-crm-etat").textContent = "en attente"; q("#sd-etat").textContent = "Agent Kassio · répond"; q("#sd-etat").classList.remove("hum");
+    const s = bulle("sys"); s.textContent = nomPerso ? `Démo locale · scénario type pour ${nom} · aucune donnée réelle` : `Démo locale · ${nom} (fictif)`;
+    boutons(null);
+  }
+  q("#sd-wa-reset").addEventListener("click", reset);
+
+  /* ---------- Prospection ---------- */
+  const CIBLES = [
+    { n: "Pharmacie Les Lauriers", m: "Cocody · pharmacie · 2 points de vente", fit: "9/10", why: "ouvre une 2e officine", msg: "Bonjour Docteur Aka, félicitations pour la nouvelle officine. Avec deux adresses, comment suivez-vous aujourd'hui les demandes de disponibilité envoyées sur WhatsApp ?" },
+    { n: "Garage Auto Plus", m: "Marcory · garage · 8 employés", fit: "8/10", why: "beaucoup de devis par téléphone", msg: "Bonjour M. Traoré, vos clients demandent souvent un devis avant de passer. Combien de ces devis sont relancés aujourd'hui, et par qui ?" },
+    { n: "Traiteur Saveurs d'Ici", m: "Riviera · traiteur · commandes WhatsApp", fit: "8/10", why: "commandes surtout le soir", msg: "Bonjour Madame Bamba, beaucoup de commandes de traiteur arrivent le soir. Que devient une demande reçue à 22 h quand l'équipe est partie ?" }
+  ];
+  const cibles = q("#sd-cibles"), prJ = q("#sd-pr-j"), prGo = q("#sd-pr-go"); let prEn = false, val = 0;
+  prGo.addEventListener("click", async () => {
+    if (prEn) return; prEn = true; prGo.disabled = true; cibles.innerHTML = ""; val = 0; q("#sd-pr-v").textContent = "0";
+    noter(prJ, "Recherche : commerces et PME, Abidjan", "08:57");
+    for (let i = 0; i < CIBLES.length; i++) {
+      await pause(700); const c = CIBLES[i], el = document.createElement("article"); el.className = "cible";
+      el.innerHTML = '<b></b><span class="fit"></span><span class="meta"></span><div class="msg"></div><div class="act"><button type="button" class="chipd" data-v>Valider · je l\'envoie</button><button type="button" class="chipd ghost" data-r>Écarter</button></div>';
+      el.querySelector("b").textContent = c.n; el.querySelector(".fit").textContent = "FIT " + c.fit; el.querySelector(".meta").textContent = `${c.m} · accroche : ${c.why}`; el.querySelector(".msg").textContent = c.msg;
+      cibles.appendChild(el); q("#sd-pr-q").textContent = i + 1; noter(prJ, `Qualifiée : ${c.n} (${c.fit})`, ["08:58", "08:59", "09:00"][i]);
+    }
+    noter(prJ, "3 messages prêts à valider", "09:01"); prEn = false;
+  });
+  cibles.addEventListener("click", e => {
+    const v = e.target.closest("[data-v]"), r = e.target.closest("[data-r]"); if (!v && !r) return;
+    const c = e.target.closest(".cible"), nom = c.querySelector("b").textContent;
+    c.querySelector(".act").innerHTML = v ? '<span class="ok-st">✓ validé · à envoyer par vous · relance programmée J+4</span>' : '<span class="ok-st" style="color:var(--n-muted)">écartée · ne sera plus proposée</span>';
+    if (v) { val++; q("#sd-pr-v").textContent = val; }
+    noter(prJ, v ? `Validé : ${nom} · relance J+4` : `Écartée : ${nom}`, "09:1" + (prJ.children.length % 10));
+    if (val && !cibles.querySelector(".act button") && !q("#sd-pr-cta")) {
+      const a = document.createElement("a"); a.id = "sd-pr-cta"; a.className = "chipd go"; a.href = wa("pros"); a.target = "_blank"; a.rel = "noopener"; a.style.alignSelf = "flex-start";
+      a.innerHTML = 'Avoir cet agent pour ma prospection <span aria-hidden="true">→</span>'; cibles.appendChild(a);
+    }
+  });
+  q("#sd-pr-reset").addEventListener("click", () => { if (prEn) return; cibles.innerHTML = '<div class="vide-st">Lancez la recherche : l\'agent trouve 3 entreprises, explique pourquoi, et prépare un message pour chacune.</div>'; prJ.innerHTML = ""; q("#sd-pr-q").textContent = "0"; q("#sd-pr-v").textContent = "0"; prGo.disabled = false; });
+
+  /* ---------- Workflow ---------- */
+  const etapes = qa("#sd-wf .s"), wfJ = q("#sd-wf-j"), go = q("#sd-wf-go"); let wfEn = false;
+  const D = ["0,4 s", "0,2 s", "1,1 s", "", "0,3 s"], T = ["08:01", "08:02", "08:03", "08:12", "08:13"];
+  go.addEventListener("click", async () => {
+    if (wfEn) return; wfEn = true; go.disabled = true;
+    etapes.forEach(s => { s.classList.remove("fait", "cours"); s.querySelector(".d").textContent = "—"; });
+    wfJ.innerHTML = ""; q("#sd-wf-etat").textContent = "en cours"; q("#sd-wf-e").textContent = "0"; q("#sd-wf-t").textContent = "…";
+    noter(wfJ, "Déclenchement planifié", "08:00");
+    for (let i = 0; i < etapes.length; i++) {
+      const s = etapes[i]; s.classList.add("cours");
+      if (i === 3) {
+        q("#sd-wf-etat").textContent = "attend votre validation"; go.disabled = false; go.textContent = "Valider les 2 relances";
+        await new Promise(r => go.addEventListener("click", r, { once: true }));
+        go.disabled = true; q("#sd-wf-etat").textContent = "en cours"; s.querySelector(".d").textContent = "validé"; noter(wfJ, "Relances validées par vous", T[i]);
+      } else { await pause(750); s.querySelector(".d").textContent = D[i]; noter(wfJ, s.querySelector("b").textContent, T[i]); }
+      s.classList.remove("cours"); s.classList.add("fait");
+    }
+    q("#sd-wf-t").textContent = "2,0 s + validation"; q("#sd-wf-etat").textContent = "terminé"; noter(wfJ, "Terminé · 2 devis relancés, rappel J+7", "08:13");
+    go.disabled = false; go.textContent = "Rejouer le workflow";
+    if (!q("#sd-wf-cta")) { const a = document.createElement("a"); a.id = "sd-wf-cta"; a.className = "chipd go"; a.href = wa("n8n"); a.target = "_blank"; a.rel = "noopener"; a.innerHTML = 'Automatiser un de mes processus <span aria-hidden="true">→</span>'; go.after(a); }
+    wfEn = false;
+  });
+  q("#sd-wf-reset").addEventListener("click", () => { if (wfEn) return; etapes.forEach(s => { s.classList.remove("fait", "cours"); s.querySelector(".d").textContent = "—"; }); wfJ.innerHTML = ""; q("#sd-wf-etat").textContent = "prête"; q("#sd-wf-t").textContent = "—"; q("#sd-wf-e").textContent = "—"; go.textContent = "Exécuter le workflow"; const a = q("#sd-wf-cta"); if (a) a.remove(); });
+
+  /* ---------- Liens personnalisés : ?demo=wa|pr|wf&s=metier&n=Nom ---------- */
+  const p = new URLSearchParams(location.search);
+  const d = (p.get("demo") || "").toLowerCase(), s = (p.get("s") || "").toLowerCase(), n = (p.get("n") || "").trim().slice(0, 60);
+  if (METIERS[s]) metier = s;
+  if (n) nomPerso = n.replace(/[<>]/g, "");
+  reset();
+  if (d || s || n) {
+    const cible = { wa: "#sd-tb-wa", pr: "#sd-tb-pr", wf: "#sd-tb-wf" }[d] || "#sd-tb-wa";
+    onglet(q(cible));
+    requestAnimationFrame(() => setTimeout(() => q("#demos").scrollIntoView({ behavior: lent ? "smooth" : "auto" }), 300));
+  }
+})();
+</script>
+
 
 </body>
 </html>
