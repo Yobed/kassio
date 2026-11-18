@@ -36,7 +36,6 @@ a{color:inherit}
 .btn-p:hover{background:var(--cobalt);color:#fff}
 .btn-s{border-color:var(--line);background:var(--surface)}
 .btn-s:hover{border-color:var(--fg)}
-.wa-dot{width:8px;height:8px;border-radius:50%;background:#25d366;box-shadow:0 0 0 3px rgba(37,211,102,.25)}
 
 /* En-tête */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
@@ -58,9 +57,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero h1 .hl{color:var(--cobalt)}
 .hero .lead{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:44ch;margin:22px 0 28px}
 .hero .cta{display:flex;flex-wrap:wrap;gap:10px}
-.faits{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font-size:14px;color:var(--muted)}
+.faits{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:30px;font-size:14px;color:var(--muted)}
 .faits span{display:inline-flex;align-items:center;gap:8px}
-.faits span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.faits span + span::before{content:"·";margin-right:14px;color:var(--line)}
 
 .demo{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 70px -30px rgba(14,17,26,.28);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);overflow:hidden;min-height:470px}
 .chat{display:flex;flex-direction:column;border-right:1px solid var(--line);min-width:0}
@@ -68,7 +67,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .chat-h .av{width:32px;height:32px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font:700 13px var(--f-d)}
 .chat-h b{display:block;font-size:14px}
 .chat-h small{color:var(--ok);font-size:12px;display:flex;align-items:center;gap:6px}
-.chat-h small::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
 .chat-h .badge{margin-left:auto;font:500 11px var(--f-m);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 8px}
 .fil{flex:1;padding:16px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;max-height:330px;scroll-behavior:smooth}
 .m{max-width:86%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.45;animation:pop .3s ease both}
@@ -140,7 +138,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .agents{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:40px}
 .ag{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--surface);display:flex;flex-direction:column;gap:10px;min-width:0}
 .ag .st{display:flex;align-items:center;gap:8px;font:500 11.5px var(--f-m);color:var(--ok)}
-.ag .st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 5px transparent}0%{box-shadow:0 0 0 0 rgba(19,134,90,.45)}}
 .ag h3{font-size:19px}
 .ag p{margin:0;color:var(--muted);font-size:14.5px}
@@ -259,7 +256,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .canaux{border-block:1px solid var(--line);background:var(--surface);overflow:hidden;padding-block:14px}
 .canaux .piste{display:flex;gap:48px;width:max-content;animation:defile 40s linear infinite;font:500 14px var(--f-m);color:var(--muted);white-space:nowrap}
 .canaux .piste span{display:inline-flex;align-items:center;gap:10px}
-.canaux .piste span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cobalt)}
+.canaux .piste span::after{content:"/";margin-left:48px;color:var(--line)}
 @keyframes defile{to{transform:translateX(-50%)}}
 .ag .log{transition:opacity .3s}
 @media (prefers-reduced-motion:reduce){.hl{animation:none;background:none;color:var(--cobalt)!important}}
@@ -288,7 +285,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <a class="brand" href="#ouverture"><span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Kassio</a>
     <nav aria-label="Sections">
       <a href="#demo">Démo</a><a href="#services">Ce qu'on construit</a><a href="#agents">Vos agents</a><a href="#questions">Questions</a>
-      <a class="btn btn-p" href="#contact"><span class="wa-dot" aria-hidden="true"></span>Parler à Kassio</a>
+      <a class="btn btn-p" href="#contact">Parler à Kassio</a>
     </nav>
   </div>
 </header>
@@ -301,7 +298,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <h1 id="t-hero" style="margin-top:14px">Des agents IA qui travaillent pour votre PME, <span class="hl">même la nuit.</span></h1>
       <p class="lead">Un agent WhatsApp qui répond à vos clients et remplit votre CRM, des agents qui prospectent, des tableaux de bord, un ERP à votre mesure. Conçus et installés à Abidjan, pour votre façon de travailler.</p>
       <div class="cta">
-        <a class="btn btn-p" id="wa-hero" href="#contact" target="_blank" rel="noopener"><span class="wa-dot" aria-hidden="true"></span>Écrire sur WhatsApp</a>
+        <a class="btn btn-p" id="wa-hero" href="#contact" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
         <a class="btn btn-s" href="#demo">Essayer la démo</a>
       </div>
       <div class="faits"><span>Réponse en moins de 10 secondes</span><span>Rien n'est envoyé sans votre accord</span><span>Devis écrit sous 48 h</span></div>
