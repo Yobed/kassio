@@ -4,193 +4,198 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Mr Kassio</title>
-<meta name="description" content="Mr Kassio, le Fixer d'Opérations : je retrouve où votre PME perd de l'argent et du temps, entre la première demande et la facture. Abidjan.">
+<meta name="description" content="Kassio construit des agents IA pour les PME : agent WhatsApp 24 h/24 avec CRM, agents de prospection, tableaux de bord Power BI, sites avec chatbot, ERP sur mesure, automatisations n8n. Abidjan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,500;1,9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<meta property="og:title" content="Mr Kassio — Le Fixer d'Opérations">
-<meta property="og:description" content="Trouvez en 3 minutes l'étape où votre PME perd des ventes, du stock ou du temps. Diagnostic gratuit, Abidjan.">
-<meta property="og:image" content="https://yobed.github.io/kassio/img/sourire.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<meta property="og:title" content="Kassio — des agents IA pour votre PME">
+<meta property="og:description" content="Agent WhatsApp 24 h/24 avec CRM, agents de prospection, tableaux de bord Power BI, sites avec chatbot, ERP sur mesure, automatisations n8n. Abidjan.">
+<meta property="og:type" content="website">
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
 <style>
-/* Direction B « documentaire » : photos encadrées et nettes, titres en sérif fin avec un mot en italique, colonnes calmes. */
+/* Produit d'abord : la page montre l'agent qui travaille (démo cliquable + fiche CRM qui se remplit) au lieu de l'illustrer. */
 :root{
-  --deep:#0f1f66; --cobalt:#1f3fbf; --mand:#f26a1b; --mand-soft:#ffb38a;
-  --bg:#f5f6fb; --surface:#ffffff; --fg:#121628; --muted:#5a6077; --line:#d6dae6;
-  --on-deep:#ffffff; --on-deep-muted:rgba(255,255,255,.74); --perte:#c2410c;
-  --f-s:"Fraunces",Georgia,"Times New Roman",serif;
-  --f-b:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-m:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --bg:#f6f7f9; --surface:#ffffff; --fg:#0e111a; --muted:#5b6172; --line:#e2e5ec; --soft:#eef0f5;
+  --cobalt:#2340d8; --cobalt-soft:#e7ebff; --mand:#f2661a; --mand-soft:#fff0e6; --ok:#13865a; --ok-soft:#e5f5ee;
+  --chat-in:#f1f3f7; --chat-out:#2340d8; --on-out:#ffffff;
+  --f-d:"Space Grotesk",system-ui,sans-serif; --f-b:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; --f-m:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --r:12px;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1020;--surface:#141a30;--fg:#eef0f8;--muted:#a2a8c3;--line:#283050;--perte:#f29a6b;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0c1020;--surface:#141a30;--fg:#eef0f8;--muted:#a2a8c3;--line:#283050;--perte:#f29a6b;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0d14;--surface:#12151f;--fg:#eef0f6;--muted:#9aa1b5;--line:#232838;--soft:#181c29;--cobalt:#5b77ff;--cobalt-soft:#1a2147;--mand-soft:#2a1a10;--ok:#3ccf8e;--ok-soft:#0f2a1f;--chat-in:#1a1e2c;--chat-out:#3d5bf0;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0d14;--surface:#12151f;--fg:#eef0f6;--muted:#9aa1b5;--line:#232838;--soft:#181c29;--cobalt:#5b77ff;--cobalt-soft:#1a2147;--mand-soft:#2a1a10;--ok:#3ccf8e;--ok-soft:#0f2a1f;--chat-in:#1a1e2c;--chat-out:#3d5bf0;color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 var(--f-b);overflow-x:hidden}
-.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--f-s);font-weight:300;line-height:1.04;letter-spacing:-.015em;text-wrap:balance;margin:0}
-h1 em,h2 em,h3 em{font-style:italic;font-weight:500}
-.tag{font:500 11.5px/1.3 var(--f-m);letter-spacing:.14em;text-transform:uppercase}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--f-b);overflow-x:hidden}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-d);font-weight:600;letter-spacing:-.025em;line-height:1.05;text-wrap:balance;margin:0}
+.lab{font:500 12px/1.3 var(--f-m);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--mand);outline-offset:3px}
-.btn{display:inline-flex;align-items:center;gap:10px;font:700 13.5px/1 var(--f-b);letter-spacing:.06em;text-transform:uppercase;padding:16px 22px;border-radius:2px;border:1.5px solid transparent;text-decoration:none;cursor:pointer;transition:background-color .2s ease,color .2s ease}
-.btn-m{background:var(--mand);color:#1a0d02}
-.btn-m:hover{background:#ff7d33}
-.btn-o{border-color:currentColor}
-.btn-o:hover{background:rgba(255,255,255,.08)}
-.btn .fl{transition:transform .25s ease}.btn:hover .fl{transform:translateX(4px)}
+:focus-visible{outline:2px solid var(--mand);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--f-b);padding:14px 20px;border-radius:999px;border:1px solid transparent;text-decoration:none;cursor:pointer;transition:transform .15s ease,background-color .15s ease}
+.btn:active{transform:scale(.98)}
+.btn-p{background:var(--fg);color:var(--bg)}
+.btn-p:hover{background:var(--cobalt);color:#fff}
+.btn-s{border-color:var(--line);background:var(--surface)}
+.btn-s:hover{border-color:var(--fg)}
+.wa-dot{width:8px;height:8px;border-radius:50%;background:#25d366;box-shadow:0 0 0 3px rgba(37,211,102,.25)}
 
-.top{position:fixed;inset:0 0 auto;z-index:20;padding-top:env(safe-area-inset-top,0px);color:#fff;transition:background-color .3s ease}
-.top.solid{background:var(--deep)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--deep)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
-.brand{display:flex;align-items:center;gap:10px;font:600 19px/1 var(--f-s);text-decoration:none;letter-spacing:-.01em}
-.logo{display:grid;grid-template-columns:repeat(2,8px);gap:3px}
+/* En-tête */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.solid{border-bottom-color:var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--bg)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;font:700 18px/1 var(--f-d);text-decoration:none;letter-spacing:-.02em}
+.logo{display:grid;grid-template-columns:repeat(2,8px);gap:2px}
 .logo i{width:8px;height:8px;border-radius:2px;display:block}
-.logo i:nth-child(1){background:#5b84ff}.logo i:nth-child(2){background:var(--mand)}.logo i:nth-child(3){background:#2fbf71}.logo i:nth-child(4){background:#ffd23f}
-.top nav{display:flex;gap:24px;font-size:14px;align-items:center}
-.top nav a{text-decoration:none;opacity:.82}.top nav a:hover{opacity:1}
-.top .btn{padding:11px 15px;font-size:12px;opacity:1}
+.logo i:nth-child(1){background:#4f6dff}.logo i:nth-child(2){background:var(--mand)}.logo i:nth-child(3){background:#1fbf75}.logo i:nth-child(4){background:#ffcf2e}
+.top nav{display:flex;gap:26px;font-size:14px;align-items:center;color:var(--muted)}
+.top nav a{text-decoration:none}.top nav a:hover{color:var(--fg)}
+.top .btn{padding:10px 16px;font-size:14px;color:var(--bg)}
 
-.hero{background:var(--deep);color:var(--on-deep);padding-block:120px 0}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:56px;align-items:end}
-.hero .txt{display:flex;flex-direction:column;gap:20px;padding-bottom:72px}
-.hero .tag{color:var(--mand-soft)}
-.hero h1{font-size:clamp(44px,6.2vw,86px)}
-.hero h1 em{color:var(--mand-soft)}
-.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
-.hero h1 .ln > span{display:inline-block}
-.hero .lead{font-size:clamp(17px,1.7vw,19px);color:var(--on-deep-muted);max-width:38ch;margin:0}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
-.cadre{position:relative;align-self:stretch}
-.cadre .photo{position:relative;overflow:hidden;height:100%;min-height:520px;border-radius:2px 2px 0 0}
-.cadre .photo img{position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover;object-position:55% 35%;display:block;will-change:transform}
-.cadre .credit{position:absolute;right:12px;bottom:10px;font:400 10px var(--f-m);color:rgba(255,255,255,.75);text-shadow:0 1px 4px rgba(0,0,0,.6)}
-.citation{position:absolute;left:-44px;bottom:84px;width:min(300px,78%);background:#fff;color:#14182b;padding:16px 18px 14px;border-radius:2px;box-shadow:0 22px 44px rgba(5,10,35,.35);font:15px/1.45 var(--f-b)}
-.citation p{margin:0}
-.citation small{display:block;margin-top:8px;font:500 11px var(--f-m);letter-spacing:.04em;color:#c2410c}
-.citation::before{content:"";position:absolute;left:18px;top:-7px;width:14px;height:14px;background:#fff;transform:rotate(45deg)}
+/* Ouverture + démo */
+.hero{padding-block:64px 80px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,72px)}
+.hero h1 .hl{color:var(--cobalt)}
+.hero .lead{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:44ch;margin:22px 0 28px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.faits{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font-size:14px;color:var(--muted)}
+.faits span{display:inline-flex;align-items:center;gap:8px}
+.faits span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
 
-.mois{background:var(--surface);border-bottom:1px solid var(--line)}
-.mois .wrap{padding-block:56px 60px;display:flex;flex-direction:column;gap:30px}
-.mois-h{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
-.mois-h h2{font-size:clamp(28px,3.4vw,42px)}
-.mois-h .tag{color:var(--muted)}
-.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.col{padding:4px 24px 0;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:8px;min-width:0}
-.col:first-child{border-left:0;padding-left:0}
-.col b{font:300 clamp(54px,6.4vw,88px)/1 var(--f-s);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.col:last-child b{font-weight:500;font-style:italic;color:var(--mand)}
-.col span{color:var(--muted);font-size:15px}
-.col small{font:500 12px var(--f-m);color:var(--perte)}
-.jauge{height:3px;background:var(--line);position:relative;margin-top:auto}
-.jauge i{position:absolute;inset:0 auto 0 0;width:100%;background:var(--cobalt);transform-origin:left}
-.col:last-child .jauge i{background:var(--mand)}
-.mois .note{font-size:13px;color:var(--muted);margin:0}
+.demo{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 70px -30px rgba(14,17,26,.28);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);overflow:hidden;min-height:470px}
+.chat{display:flex;flex-direction:column;border-right:1px solid var(--line);min-width:0}
+.chat-h{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.chat-h .av{width:32px;height:32px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font:700 13px var(--f-d)}
+.chat-h b{display:block;font-size:14px}
+.chat-h small{color:var(--ok);font-size:12px;display:flex;align-items:center;gap:6px}
+.chat-h small::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.chat-h .badge{margin-left:auto;font:500 11px var(--f-m);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 8px}
+.fil{flex:1;padding:16px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;max-height:330px;scroll-behavior:smooth}
+.m{max-width:86%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.45;animation:pop .3s ease both}
+.m.in{align-self:flex-start;background:var(--chat-in);border-bottom-left-radius:4px}
+.m.out{align-self:flex-end;background:var(--chat-out);color:var(--on-out);border-bottom-right-radius:4px}
+.m time{display:block;font:400 10.5px var(--f-m);opacity:.65;margin-top:3px;text-align:right}
+.m.typing{display:flex;gap:4px;padding:12px}
+.m.typing i{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.5;animation:dot 1s infinite}
+.m.typing i:nth-child(2){animation-delay:.15s}.m.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{50%{opacity:1;transform:translateY(-2px)}}
+@keyframes pop{from{transform:translateY(6px);opacity:.0}to{transform:none;opacity:1}}
+.choix{padding:12px 14px 14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.choix .lab{font-size:11px}
+.choix .row{display:flex;flex-wrap:wrap;gap:6px}
+.choix button{font:500 13px var(--f-b);background:var(--soft);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer;text-align:left}
+.choix button:hover{border-color:var(--cobalt);color:var(--cobalt)}
+.choix button:disabled{opacity:.4;cursor:default}
+.crm{padding:16px;display:flex;flex-direction:column;gap:12px;background:var(--soft);min-width:0}
+.crm-h{display:flex;justify-content:space-between;align-items:center}
+.crm-h b{font:600 14px var(--f-d)}
+.champ{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:3px;transition:border-color .3s,background-color .3s}
+.champ span{font:500 10.5px var(--f-m);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.champ b{font-size:14px;font-weight:600}
+.champ.vide b{color:var(--muted);font-weight:400}
+.champ.flash{border-color:var(--cobalt);background:var(--cobalt-soft)}
+.pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
+.pill{font:500 11.5px var(--f-b);border-radius:999px;padding:2px 9px;background:var(--mand-soft);color:var(--mand)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.score{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:4px}
+.score i{display:block;height:100%;width:0;background:var(--ok);transition:width .6s ease}
+.demo-note{font-size:12px;color:var(--muted);margin-top:10px;text-align:right}
 
-section{position:relative}
-.sec-head{display:flex;flex-direction:column;gap:14px;max-width:64ch}
-.sec-head .tag{color:var(--cobalt)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sec-head .tag{color:#8ea6ff}}
-:root[data-theme="dark"] .sec-head .tag{color:#8ea6ff}
-.sec-head h2{font-size:clamp(36px,5vw,64px)}
-.sec-head p{color:var(--muted);margin:0;font-size:18px}
+/* Services */
+.services{padding-block:90px;border-top:1px solid var(--line)}
+.sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:40px}
+.sh h2{font-size:clamp(32px,4.4vw,52px)}
+.sh p{margin:0;color:var(--muted);font-size:17px;max-width:48ch}
+.grid-s{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.svc{background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:background-color .2s}
+.svc:hover{background:var(--bg)}
+.svc .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--cobalt-soft);color:var(--cobalt)}
+.svc .ic svg{width:20px;height:20px}
+.svc h3{font-size:21px}
+.svc p{margin:0;color:var(--muted);font-size:15px}
+.svc ul{margin:auto 0 0;padding:12px 0 0;list-style:none;border-top:1px dashed var(--line);display:grid;gap:4px;font-size:13.5px}
+.svc li{display:flex;gap:8px}
+.svc li::before{content:"→";color:var(--mand)}
+.svc .delai{font:500 12px var(--f-m);color:var(--muted)}
 
-.fuites{background:var(--deep);color:var(--on-deep);overflow:hidden}
-.fuites .sec-head{padding-block:100px 40px}
-.fuites .sec-head .tag{color:var(--mand-soft)}
-.fuites .sec-head h2 em{color:var(--mand-soft)}
-.fuites .sec-head p{color:var(--on-deep-muted)}
-.rail{display:flex;gap:32px;padding-bottom:100px;padding-left:max(16px,env(safe-area-inset-left,0px),calc((100vw - 1160px)/2 + 16px));padding-right:max(16px,env(safe-area-inset-right,0px));width:max-content;will-change:transform}
-.fuite{width:min(380px,82vw);flex:none;display:flex;flex-direction:column;gap:14px}
-.fuite figure{margin:0;overflow:hidden;aspect-ratio:4/5;border-radius:2px;position:relative;max-width:100%}
-.fuite figure img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;display:block}
-.fuite .num{font:500 13px var(--f-m);letter-spacing:.12em;color:var(--mand-soft)}
-.fuite h3{font-size:34px}
-.fuite h3 em{color:var(--mand-soft)}
-.fuite p{margin:0;color:var(--on-deep-muted)}
-.fuite .mesure{font:500 12.5px/1.5 var(--f-m);color:var(--mand-soft);border-top:1px solid rgba(255,255,255,.2);padding-top:12px}
+/* Objections */
+.obj{padding-block:90px;background:var(--surface);border-block:1px solid var(--line)}
+.obj .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.obj h2{font-size:clamp(30px,4vw,46px)}
+.obj p{color:var(--muted);font-size:17px;margin:18px 0 0;max-width:44ch}
+.panel{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--bg)}
+.panel-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.panel-h b{font:600 16px var(--f-d)}
+.barres{display:flex;flex-direction:column;gap:14px}
+.br{display:grid;grid-template-columns:150px minmax(0,1fr) 44px;gap:12px;align-items:center;font-size:14px}
+.br .t{height:10px;border-radius:5px;background:var(--line);overflow:hidden}
+.br .t i{display:block;height:100%;background:var(--cobalt);border-radius:5px;transform-origin:left}
+.br:first-child .t i{background:var(--mand)}
+.br b{font:500 13px var(--f-m);text-align:right;font-variant-numeric:tabular-nums}
+.reco{margin-top:20px;padding:14px 16px;border-radius:10px;background:var(--mand-soft);font-size:14px}
+.reco b{color:var(--mand)}
 
-.diag{padding-block:110px}
-.diag-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:44px;align-items:start;margin-top:44px}
-.q{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:4px 18px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
-.q:first-child{border-top:1px solid var(--line)}
-.q label{font-weight:600;grid-column:1}
-.q small{color:var(--muted);grid-column:1}
-.q input{grid-column:2;grid-row:1/span 2;font:400 26px/1 var(--f-s);padding:10px 12px;border:0;border-bottom:1.5px solid var(--line);border-radius:0;background:transparent;color:var(--fg);width:100%;font-variant-numeric:tabular-nums;text-align:right}
-.q input:focus{border-bottom-color:var(--mand);outline:none}
-.result{background:var(--deep);color:var(--on-deep);border-radius:2px;padding:30px;display:flex;flex-direction:column;gap:20px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 90px)}
-.result .tag{color:var(--on-deep-muted)}
-.funnel{display:flex;flex-direction:column;gap:14px}
-.step{display:grid;grid-template-columns:140px minmax(0,1fr) 52px;gap:14px;align-items:center;font-size:14px}
-.step .bar{height:3px;background:rgba(255,255,255,.18);position:relative}
-.step .bar span{position:absolute;inset:-2px auto -2px 0;width:0;background:#fff;transition:width .7s cubic-bezier(.2,.8,.2,1)}
-.step.is-goulot{color:var(--mand-soft);font-weight:600}
-.step.is-goulot .bar span{background:var(--mand)}
-.step b{font:400 22px var(--f-s);text-align:right;font-variant-numeric:tabular-nums}
-.verdict{border-top:1px solid rgba(255,255,255,.2);padding-top:18px}
-.verdict h3{font-size:34px}
-.verdict h3 em{color:var(--mand-soft)}
-.verdict p{margin:10px 0 0;color:var(--on-deep-muted)}
-.perte{margin:0;background:rgba(255,255,255,.07);border-left:2px solid var(--mand);padding:12px 14px;font-size:15px;color:var(--on-deep-muted)}
-.perte b{color:#fff;font-weight:600}
-.note{font-size:12px;color:var(--on-deep-muted);margin:0}
+/* Équipe d'agents */
+.equipe{padding-block:90px}
+.agents{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:40px}
+.ag{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--surface);display:flex;flex-direction:column;gap:10px;min-width:0}
+.ag .st{display:flex;align-items:center;gap:8px;font:500 11.5px var(--f-m);color:var(--ok)}
+.ag .st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 5px transparent}0%{box-shadow:0 0 0 0 rgba(19,134,90,.45)}}
+.ag h3{font-size:19px}
+.ag p{margin:0;color:var(--muted);font-size:14.5px}
+.ag .log{margin-top:auto;font:400 12px/1.5 var(--f-m);color:var(--muted);background:var(--soft);border-radius:8px;padding:8px 10px;min-height:58px}
+.regle{margin-top:18px;font-size:14px;color:var(--muted)}
+.regle b{color:var(--fg)}
 
-.methode{padding-block:20px 100px}
-.frise{margin-top:52px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:relative}
-.frise::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:var(--line)}
-.frise .trait{position:absolute;left:0;top:9px;height:1px;width:100%;background:var(--mand);transform-origin:left}
-.jalon{padding-right:32px;display:flex;flex-direction:column;gap:12px;min-width:0}
-.jalon .pt{width:19px;height:19px;border-radius:50%;background:var(--bg);border:1.5px solid var(--mand);position:relative;z-index:1}
-.jalon .pt::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--mand)}
-.jalon .prix{font:500 11.5px var(--f-m);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:10px}
-.jalon h3{font-size:32px}
-.jalon p{margin:0;color:var(--muted)}
+/* Méthode */
+.methode{padding-block:20px 90px}
+.etapes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:36px}
+.et{padding-top:16px;border-top:2px solid var(--fg);display:flex;flex-direction:column;gap:8px;min-width:0}
+.et .n{font:500 12px var(--f-m);color:var(--muted)}
+.et h3{font-size:20px}
+.et p{margin:0;color:var(--muted);font-size:15px}
 
-.questions{padding-block:20px 110px}
-.q-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start;margin-top:44px}
-.non h3{font-size:28px;margin-bottom:18px}
-.non ul{list-style:none;margin:0;padding:0;display:grid}
-.non li{display:flex;gap:14px;align-items:baseline;padding:13px 0;border-top:1px solid var(--line)}
-.non li::before{content:"—";color:var(--mand)}
+/* Questions */
+.faq{padding-block:20px 90px}
+.faq .wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:48px}
+.faq h2{font-size:clamp(30px,4vw,44px)}
 .qr{border-top:1px solid var(--line)}
 .qr:last-child{border-bottom:1px solid var(--line)}
-.qr summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0;font:400 clamp(20px,2.2vw,26px)/1.25 var(--f-s)}
+.qr summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font:600 18px/1.3 var(--f-d)}
 .qr summary::-webkit-details-marker{display:none}
-.qr summary::after{content:"+";font:300 30px/1 var(--f-b);color:var(--mand);transition:transform .25s ease;flex:none}
+.qr summary::after{content:"+";color:var(--muted);font-weight:400;font-size:22px;line-height:1;transition:transform .2s}
 .qr[open] summary::after{transform:rotate(45deg)}
-.qr p{margin:0 0 22px;color:var(--muted);max-width:64ch;font-size:17px}
+.qr p{margin:0 0 20px;color:var(--muted);max-width:62ch}
 
-.contact{background:var(--deep);color:var(--on-deep);padding-block:110px}
-.contact .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:60px;align-items:center}
-.contact h2{font-size:clamp(46px,7vw,96px)}
-.contact h2 em{color:var(--mand-soft)}
-.contact p{color:var(--on-deep-muted);max-width:44ch;font-size:18px;margin:22px 0 28px}
-.contact .actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
-.num-wa{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font:500 15px var(--f-m)}
-.num-wa button{font:600 12px var(--f-b);background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:6px 10px;cursor:pointer}
-.contact figure{margin:0;overflow:hidden;aspect-ratio:4/5;border-radius:2px;position:relative;max-width:100%}
-.contact figure img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;object-position:50% 30%;display:block}
-footer{padding-block:24px;font-size:12.5px;color:var(--muted);background:var(--bg)}
+/* Contact */
+.contact{padding-block:20px 90px}
+.carte{background:var(--fg);color:var(--bg);border-radius:22px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center}
+.carte h2{font-size:clamp(34px,5vw,60px)}
+.carte p{opacity:.75;margin:16px 0 0;max-width:46ch;font-size:17px}
+.carte .act{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.carte .btn-w{background:#25d366;color:#06240f}
+.carte .btn-w:hover{background:#3be07b}
+.carte .btn-l{border:1px solid color-mix(in srgb,var(--bg) 35%,transparent);color:var(--bg)}
+.num{font:500 15px var(--f-m);display:flex;gap:10px;align-items:center;flex-wrap:wrap;opacity:.9}
+.num button{font:600 12px var(--f-b);background:transparent;color:inherit;border:1px solid color-mix(in srgb,var(--bg) 35%,transparent);border-radius:999px;padding:5px 11px;cursor:pointer}
+footer{padding-block:22px 34px;font-size:13px;color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-@media (max-width:900px){
-  .hero{padding-top:96px}
-  .hero .wrap,.diag-grid,.contact .wrap,.q-grid{grid-template-columns:1fr;gap:36px}
-  .hero .txt{padding-bottom:0}
-  .cadre .photo{min-height:420px}
-  .citation{left:12px;bottom:28px}
-  .cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 0}
-  .col:nth-child(3){border-left:0;padding-left:0}
-  .result{position:static}
-  .frise{grid-template-columns:1fr;gap:32px}.frise::before,.frise .trait{display:none}
-  .top nav a:not(.btn){display:none}
-  .contact figure{max-width:420px}
+@media (max-width:980px){
+  .hero .wrap,.sh,.obj .wrap,.faq .wrap,.carte{grid-template-columns:1fr;gap:32px}
+  .grid-s{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .agents,.etapes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .top nav a{display:none}
 }
-@media (max-width:560px){
-  .q{grid-template-columns:1fr}.q input{grid-column:1;grid-row:auto;text-align:left;max-width:200px}
-  .step{grid-template-columns:104px minmax(0,1fr) 44px}
+@media (max-width:640px){
+  .demo{grid-template-columns:1fr}
+  .chat{border-right:0;border-bottom:1px solid var(--line)}
+  .crm{display:grid;grid-template-columns:1fr 1fr;gap:8px}.crm-h{grid-column:1/-1}.crm .champ.large{grid-column:1/-1}
+  .grid-s,.agents,.etapes{grid-template-columns:1fr}
+  .br{grid-template-columns:110px minmax(0,1fr) 40px}
 }
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -198,232 +203,224 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="#ouverture"><span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Mr Kassio</a>
+    <a class="brand" href="#ouverture"><span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Kassio</a>
     <nav aria-label="Sections">
-      <a href="#mois">Un mois type</a><a href="#fuites">Les 4 fuites</a><a href="#diagnostic">Diagnostic</a>
-      <a class="btn btn-m" href="#contact">Échange offert</a>
+      <a href="#demo">Démo</a><a href="#services">Ce qu'on construit</a><a href="#agents">Vos agents</a><a href="#questions">Questions</a>
+      <a class="btn btn-p" href="#contact"><span class="wa-dot" aria-hidden="true"></span>Parler à Kassio</a>
     </nav>
   </div>
 </header>
 
 <section class="hero" id="ouverture" aria-labelledby="t-hero">
   <div class="wrap">
-    <div class="txt">
-      <p class="tag">Le Fixer d'Opérations · Abidjan</p>
-      <h1 id="t-hero"><span class="ln"><span>Votre argent fuit</span></span><span class="ln"><span>quelque part.</span></span><span class="ln"><span><em>Je trouve où.</em></span></span></h1>
-      <p class="lead">Entre le premier message WhatsApp et la facture encaissée, une PME perd des ventes, du stock et des heures sans le voir. Je retrouve l'étape qui coince et je la répare, une à la fois.</p>
-      <div class="cta-row">
-        <a class="btn btn-m" href="#diagnostic">Trouver mon goulot <span class="fl">→</span></a>
-        <a class="btn btn-o" href="#contact">Échange offert de 30 min</a>
+    <div>
+      <p class="lab">Agence IA · Abidjan</p>
+      <h1 id="t-hero" style="margin-top:14px">Des agents IA qui travaillent pour votre PME, <span class="hl">même la nuit.</span></h1>
+      <p class="lead">Un agent WhatsApp qui répond à vos clients et remplit votre CRM, des agents qui prospectent, des tableaux de bord, un ERP à votre mesure. Conçus et installés à Abidjan, pour votre façon de travailler.</p>
+      <div class="cta">
+        <a class="btn btn-p" id="wa-hero" href="#contact" target="_blank" rel="noopener"><span class="wa-dot" aria-hidden="true"></span>Écrire sur WhatsApp</a>
+        <a class="btn btn-s" href="#demo">Essayer la démo</a>
       </div>
+      <div class="faits"><span>Réponse en moins de 10 secondes</span><span>Rien n'est envoyé sans votre accord</span><span>Devis écrit sous 48 h</span></div>
     </div>
-    <div class="cadre">
-      <div class="photo"><img src="img/sourire.jpg" alt="Un commerçant souriant dans sa boutique, entouré de marchandises" fetchpriority="high"><span class="credit">Photo : Muhammad-Taha Ibrahim / Pexels</span></div>
-      <div class="citation"><p>« Bon, ce n'est pas grave, j'ai trouvé à Treichville. »</p><small>Client · dim. 12:03 · resté sans réponse depuis samedi</small></div>
-    </div>
-  </div>
-</section>
 
-<section class="mois" id="mois" aria-labelledby="t-mois">
-  <div class="wrap">
-    <div class="mois-h"><h2 id="t-mois">100 demandes en un mois. <em>Combien à la caisse ?</em></h2><span class="tag">Exemple fictif d'un mois type</span></div>
-    <div class="cols">
-      <div class="col"><b data-count="100">100</b><span>demandes reçues</span><div class="jauge"><i style="transform:scaleX(1)"></i></div></div>
-      <div class="col"><b data-count="38">38</b><span>réponses le jour même</span><small>−62 parties ailleurs</small><div class="jauge"><i style="transform:scaleX(.38)"></i></div></div>
-      <div class="col"><b data-count="14">14</b><span>ventes conclues</span><small>−24 devis jamais relancés</small><div class="jauge"><i style="transform:scaleX(.14)"></i></div></div>
-      <div class="col"><b data-count="3">3</b><span>clients qui reviennent</span><small>−11 pas recontactés</small><div class="jauge"><i style="transform:scaleX(.03)"></i></div></div>
-    </div>
-    <p class="note">Le plus souvent, une seule étape perd plus que toutes les autres. C'est celle-là qu'on répare en premier.</p>
-  </div>
-</section>
-
-<section class="fuites" id="fuites" aria-labelledby="t-fuites">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="tag">Les 4 fuites</p>
-      <h2 id="t-fuites">Ce que je retrouve dans <em>presque toutes</em> les PME</h2>
-      <p>Pas besoin d'un gros chantier pour les arrêter. Il faut d'abord savoir laquelle vous coûte le plus.</p>
-    </div>
-  </div>
-  <div class="rail" id="rail">
-    <article class="fuite"><figure><img src="img/nuit.jpg" alt="Une femme lit un message sur son téléphone dans le noir" loading="lazy"></figure><span class="num">Fuite 01</span><h3>L'argent <em>qui file</em></h3><p>Le client demande un prix sur WhatsApp un samedi soir. Personne ne répond avant lundi. Il a déjà acheté à Treichville.</p><p class="mesure">On mesure : demandes reçues · réponses dans la journée</p></article>
-    <article class="fuite"><figure><img src="img/stock.jpg" alt="Un magasinier note le stock devant des cartons empilés" loading="lazy"></figure><span class="num">Fuite 02</span><h3>Le brouillard <em>du stock</em></h3><p>« On l'a en magasin » — sauf qu'on ne le trouve pas. Ou on recommande ce qui dort déjà au dépôt de Yopougon.</p><p class="mesure">On mesure : ruptures · écarts entre le cahier et le dépôt</p></article>
-    <article class="fuite"><figure><img src="img/comptoir.jpg" alt="Un commerçant derrière son comptoir, entouré de marchandises" loading="lazy"></figure><span class="num">Fuite 03</span><h3>L'information <em>en silo</em></h3><p>Le chiffre est dans la tête du gérant, le devis dans le téléphone du commercial, le paiement dans le cahier de la caisse.</p><p class="mesure">On mesure : questions qui remontent toujours au patron</p></article>
-    <article class="fuite"><figure><img src="img/papiers.jpg" alt="Un dirigeant relit des documents papier, stylo en main" loading="lazy"></figure><span class="num">Fuite 04</span><h3>Le temps perdu <em>à l'admin</em></h3><p>Chaque fin de mois, deux jours à recopier des chiffres d'un fichier à l'autre pour savoir si on a gagné de l'argent.</p><p class="mesure">On mesure : heures de saisie par semaine</p></article>
-  </div>
-</section>
-
-<section class="diag" id="diagnostic" aria-labelledby="t-diag">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="tag">Diagnostic gratuit · 3 minutes</p>
-      <h2 id="t-diag">À votre tour : <em>où est votre goulot ?</em></h2>
-      <p>Les chiffres d'un mois normal suffisent, même estimés. Rien n'est envoyé : le calcul se fait sur votre écran.</p>
-    </div>
-    <div class="diag-grid">
-      <form id="f" novalidate>
-        <div class="q"><label for="q1">Demandes reçues par mois</label><small>WhatsApp, appels, visites qui demandent un prix ou un produit.</small><input id="q1" type="number" inputmode="numeric" min="0" value="120"></div>
-        <div class="q"><label for="q2">Réponses ou devis envoyés le jour même</label><small>Soyez honnête : c'est souvent là que tout se joue.</small><input id="q2" type="number" inputmode="numeric" min="0" value="45"></div>
-        <div class="q"><label for="q3">Ventes conclues sur le mois</label><small>Commandes payées ou contrats signés.</small><input id="q3" type="number" inputmode="numeric" min="0" value="18"></div>
-        <div class="q"><label for="q4">Clients du mois qui avaient déjà acheté</label><small>Ceux qui reviennent sans que vous alliez les chercher.</small><input id="q4" type="number" inputmode="numeric" min="0" value="4"></div>
-        <div class="q"><label for="q5">Panier moyen d'une vente (FCFA)</label><small>Facultatif : pour estimer ce que le goulot vous coûte.</small><input id="q5" type="number" inputmode="numeric" min="0" value="85000"></div>
-      </form>
-      <div class="result" aria-live="polite">
-        <p class="tag">Votre résultat · exemple tant que vous n'avez rien changé</p>
-        <div class="funnel" id="funnel"></div>
-        <div class="verdict"><h3 id="v-titre">—</h3><p id="v-texte"></p></div>
-        <p class="perte" id="v-perte" hidden></p>
-        <a class="btn btn-m" href="#contact" id="v-cta">En parler 30 min, c'est offert <span class="fl">→</span></a>
-        <p class="note">Repères indicatifs tirés de PME de commerce et de services. Votre métier peut être différent : c'est l'objet de l'échange.</p>
+    <div id="demo">
+      <div class="demo" role="group" aria-label="Démo d'un agent WhatsApp">
+        <div class="chat">
+          <div class="chat-h"><span class="av" aria-hidden="true">QB</span><div><b>Quincaillerie du Boulevard</b><small>Agent Kassio · en ligne</small></div><span class="badge">démo</span></div>
+          <div class="fil" id="fil" aria-live="polite">
+            <div class="m in">Bonsoir, vous avez le carrelage 60×60 gris ?<time>21:12</time></div>
+            <div class="m out">Bonsoir ! Oui, 46 m² en stock à 7 500 FCFA le m². Combien de m² vous faut-il ?<time>21:12</time></div>
+          </div>
+          <div class="choix">
+            <span class="lab">Écrivez comme un client : choisissez un message</span>
+            <div class="row" id="choix"></div>
+          </div>
+        </div>
+        <aside class="crm" aria-label="Fiche client remplie par l'agent">
+          <div class="crm-h"><b>Fiche CRM</b><span class="lab" id="crm-etat">mise à jour en direct</span></div>
+          <div class="champ" id="c-besoin"><span>Besoin</span><b>Carrelage 60×60 gris</b></div>
+          <div class="champ vide" id="c-qte"><span>Quantité</span><b>—</b></div>
+          <div class="champ vide" id="c-zone"><span>Livraison</span><b>—</b></div>
+          <div class="champ vide large" id="c-obj"><span>Objections relevées</span><b>Aucune pour l'instant</b><div class="pills" id="pills"></div></div>
+          <div class="champ large" id="c-score"><span>Chance de vente</span><b id="score-t">35 %</b><div class="score"><i id="score-b" style="width:35%"></i></div></div>
+        </aside>
       </div>
+      <p class="demo-note">Démo jouée dans votre navigateur · boutique, prix et stock fictifs.</p>
     </div>
   </div>
 </section>
 
-<section class="methode" aria-labelledby="t-methode">
+<section class="services" id="services" aria-labelledby="t-svc">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="tag">Comment on travaille</p>
-      <h2 id="t-methode">Un goulot, un chiffre, <em>une réparation</em></h2>
-      <p>On ne refait pas toute l'entreprise. On s'attaque à l'étape qui coûte le plus, on mesure avant et après, et vous décidez de continuer ou non.</p>
+    <div class="sh">
+      <div><p class="lab">Ce qu'on construit</p><h2 id="t-svc" style="margin-top:12px">Tout l'écosystème, une brique à la fois</h2></div>
+      <p>On commence par la brique qui vous rapporte le plus vite, puis on relie les autres. Chaque livraison est testée sur vos vrais cas avant la mise en route.</p>
     </div>
-    <div class="frise">
-      <span class="trait" aria-hidden="true"></span>
-      <div class="jalon"><span class="pt"></span><span class="prix">Gratuit · 3 min</span><h3>Le diagnostic</h3><p>Les questions ci-dessus, avec vos vrais chiffres. Vous repartez avec votre goulot.</p></div>
-      <div class="jalon"><span class="pt"></span><span class="prix">Offert · 30 min</span><h3>L'échange</h3><p>On regarde ensemble l'étape qui coince et ce qu'elle vous coûte en FCFA par mois.</p></div>
-      <div class="jalon"><span class="pt"></span><span class="prix">Devis écrit d'abord</span><h3>La petite mission</h3><p>Une réparation au périmètre écrit : ce qui est livré, la date, et le chiffre qu'on doit faire bouger.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="questions" aria-labelledby="t-q">
-  <div class="wrap">
-    <div class="sec-head"><p class="tag">Vos questions</p><h2 id="t-q">Avant de <em>m'écrire</em></h2></div>
-    <div class="q-grid">
-      <div class="non">
-        <h3>Ce que je ne fais pas</h3>
-        <ul>
-          <li>Promettre un chiffre d'affaires ou un nombre de clients</li>
-          <li>Inventer des avis, des témoignages ou des chiffres</li>
-          <li>Envoyer, publier ou dépenser quoi que ce soit sans votre accord</li>
-          <li>Réparer un processus que personne ne sait décrire : on le décrit d'abord</li>
-        </ul>
-      </div>
-      <div>
-        <details class="qr"><summary>Combien ça coûte ?</summary><p>Le diagnostic et l'échange de 30 minutes sont gratuits. Si on continue, vous recevez un devis écrit pour une petite mission sur une seule étape, avant tout engagement.</p></details>
-        <details class="qr"><summary>Mon équipe ne saura pas s'en servir.</summary><p>Chaque réparation part de la façon dont votre équipe travaille déjà. On forme sur vos vraies tâches, et il reste toujours une façon de faire à la main.</p></details>
-        <details class="qr"><summary>Et si ça ne marche pas ?</summary><p>On mesure un chiffre avant et après, sur une période écrite à l'avance. Si le chiffre ne bouge pas, vous décidez d'arrêter. Rien ne vous engage au-delà de la petite mission.</p></details>
-        <details class="qr"><summary>Mes données vont partir n'importe où ?</summary><p>Vous décidez qui voit quoi. Les documents sensibles restent réservés aux bonnes personnes, et rien n'est partagé sans votre accord.</p></details>
-        <details class="qr"><summary>Vous travaillez avec quels secteurs ?</summary><p>Commerce, services, BTP, restauration, transport… Le problème est souvent le même : une demande qui attend, un stock qu'on ne voit pas, un chiffre dispersé.</p></details>
-      </div>
+    <div class="grid-s">
+      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12Z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></svg></span><h3>Agent WhatsApp 24 h/24</h3><p>Il répond à vos clients, prend les commandes et les rendez-vous, et remplit votre CRM tout seul.</p><ul><li>Analyse des objections pour mieux vous positionner</li><li>Passage à un humain quand il le faut</li></ul><span class="delai">Mise en route : 2 à 3 semaines</span></article>
+      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M8.5 11h5M11 8.5v5"/></svg></span><h3>Agents de prospection</h3><p>Ils trouvent des entreprises qui vous ressemblent, préparent des messages personnalisés et suivent les relances.</p><ul><li>Vous validez chaque message avant l'envoi</li><li>Compteur de rendez-vous chaque semaine</li></ul><span class="delai">Mise en route : 2 semaines</span></article>
+      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><h3>Tableaux de bord Power BI</h3><p>Ventes, stock, trésorerie, achats : les chiffres qui comptent, à jour, sur votre téléphone.</p><ul><li>Branché sur vos fichiers ou votre logiciel</li><li>Alertes quand un chiffre dérape</li></ul><span class="delai">Mise en route : 1 à 3 semaines</span></article>
+      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></span><h3>Sites avec chatbot WhatsApp</h3><p>Un site rapide sur mobile, et un assistant qui répond aux visiteurs et les envoie sur votre WhatsApp.</p><ul><li>Paiement Wave et Orange Money si besoin</li><li>Visible sur Google</li></ul><span class="delai">Mise en route : 2 à 4 semaines</span></article>
+      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg></span><h3>ERP sur mesure</h3><p>Commandes, stock, facturation, équipes : un seul outil pensé pour votre métier, pas un logiciel qu'on vous force à adopter.</p><ul><li>Reprise de vos fichiers Excel existants</li><li>Formation de l'équipe incluse</li></ul><span class="delai">Mise en route : par modules</span></article>
+      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.3 11 16.7 6M7.3 13l9.4 5"/></svg></span><h3>Automatisations n8n</h3><p>Relances de devis, rapports du lundi, saisie entre deux logiciels : les tâches répétées tournent toutes seules.</p><ul><li>Historique de chaque action</li><li>Reprise à la main toujours possible</li></ul><span class="delai">Mise en route : quelques jours</span></article>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact" aria-labelledby="t-contact">
+<section class="obj" aria-labelledby="t-obj">
   <div class="wrap">
     <div>
-      <h2 id="t-contact">On répare <em>la fuite ?</em></h2>
-      <p>30 minutes offertes, au téléphone ou à votre bureau à Abidjan. Venez avec votre résultat du diagnostic : on part de là.</p>
-      <div class="actions">
-        <a class="btn btn-m" id="wa" href="#contact" target="_blank" rel="noopener">Écrire sur WhatsApp <span class="fl">→</span></a>
-        <div class="num-wa"><span id="wa-num">Numéro WhatsApp à ajouter</span><button type="button" id="copier">Copier</button></div>
-        <a class="btn btn-o" id="li" href="#contact" target="_blank" rel="noopener">Me suivre sur LinkedIn</a>
-      </div>
+      <p class="lab">Ce que l'agent vous apprend</p>
+      <h2 id="t-obj" style="margin-top:12px">Vos clients vous disent pourquoi ils n'achètent pas. L'agent le note.</h2>
+      <p>Chaque conversation est classée : prix, délai, disponibilité, confiance. Chaque semaine, vous voyez ce qui bloque vraiment, et on ajuste votre offre, vos prix ou vos messages en conséquence.</p>
     </div>
-    <figure><img src="img/hero.jpg" alt="Un commerçant dans sa boutique, au milieu des sachets suspendus" loading="lazy"></figure>
+    <div class="panel" aria-label="Exemple de rapport d'objections">
+      <div class="panel-h"><b>Objections de la semaine</b><span class="lab">exemple · 214 conversations</span></div>
+      <div class="barres" id="barres">
+        <div class="br"><span>Prix trop élevé</span><span class="t"><i style="width:42%"></i></span><b>42 %</b></div>
+        <div class="br"><span>Délai de livraison</span><span class="t"><i style="width:23%"></i></span><b>23 %</b></div>
+        <div class="br"><span>Produit indisponible</span><span class="t"><i style="width:18%"></i></span><b>18 %</b></div>
+        <div class="br"><span>Besoin de confiance</span><span class="t"><i style="width:17%"></i></span><b>17 %</b></div>
+      </div>
+      <p class="reco"><b>Recommandation :</b> 6 objections « prix » sur 10 portent sur la livraison. Proposez la livraison offerte dès 300 000 FCFA à Cocody et Riviera.</p>
+    </div>
   </div>
 </section>
 
-<footer><div class="wrap"><span>Mr Kassio · Le Fixer d'Opérations · Abidjan, Côte d'Ivoire</span><span>Chiffres d'exemple fictifs · Photos Pexels : Muhammad-Taha Ibrahim, Aviz Media, Lagos Food Bank Initiative, RDNE Stock project, Kalz Michael</span></div></footer>
+<section class="equipe" id="agents" aria-labelledby="t-ag">
+  <div class="wrap">
+    <div class="sh" style="margin-bottom:0">
+      <div><p class="lab">Vos agents</p><h2 id="t-ag" style="margin-top:12px">Une petite équipe qui ne dort pas</h2></div>
+      <p>Chaque agent a un rôle précis et vous rend compte. Le matin, vous recevez sur votre téléphone ce qui a été fait et ce qui attend votre décision.</p>
+    </div>
+    <div class="agents">
+      <article class="ag"><span class="st">actif</span><h3>Agent Accueil</h3><p>Répond sur WhatsApp, prend les commandes, remplit le CRM.</p><p class="log" data-log="03:14 · commande de 12 sacs de ciment enregistrée|07:02 · rendez-vous fixé jeudi 10 h|09:40 · client transféré au gérant"></p></article>
+      <article class="ag"><span class="st">actif</span><h3>Agent Prospection</h3><p>Repère des entreprises cibles et prépare vos messages.</p><p class="log" data-log="08:59 · 3 entreprises qualifiées|09:01 · 3 messages prêts à valider|lundi · 1 relance due"></p></article>
+      <article class="ag"><span class="st">actif</span><h3>Agent Rapports</h3><p>Met à jour vos tableaux de bord et signale ce qui dérape.</p><p class="log" data-log="06:30 · ventes d'hier : +8 %|06:31 · alerte : stock de peinture bas|vendredi · bilan de la semaine"></p></article>
+      <article class="ag"><span class="st">actif</span><h3>Agent Admin</h3><p>Relance les devis, prépare les factures, range les documents.</p><p class="log" data-log="10:00 · 4 devis relancés|11:20 · 2 factures prêtes à envoyer|16:00 · reçus classés"></p></article>
+    </div>
+    <p class="regle"><b>La règle :</b> un agent prépare, vous décidez. Rien n'est publié, envoyé ou payé sans votre accord.</p>
+  </div>
+</section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<section class="methode" aria-labelledby="t-m">
+  <div class="wrap">
+    <p class="lab">Comment on travaille</p>
+    <h2 id="t-m" style="margin-top:12px;font-size:clamp(30px,4vw,44px)">De la première discussion à l'agent en service</h2>
+    <div class="etapes">
+      <div class="et"><span class="n">01 · 30 min, offert</span><h3>On discute</h3><p>Vous montrez comment vous travaillez aujourd'hui. On repère ce qui vous fait perdre le plus de temps ou de ventes.</p></div>
+      <div class="et"><span class="n">02 · sous 48 h</span><h3>Devis écrit</h3><p>Ce qui sera livré, la date, le prix et le chiffre qu'on doit faire bouger.</p></div>
+      <div class="et"><span class="n">03 · en semaines</span><h3>On construit</h3><p>Testé sur vos vrais messages et vos vrais fichiers, avec votre équipe.</p></div>
+      <div class="et"><span class="n">04 · chaque mois</span><h3>On améliore</h3><p>On suit les résultats, on corrige, et on ajoute la brique suivante si elle vaut le coup.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="questions" aria-labelledby="t-q">
+  <div class="wrap">
+    <div><p class="lab">Questions</p><h2 id="t-q" style="margin-top:12px">Ce qu'on me demande souvent</h2></div>
+    <div>
+      <details class="qr"><summary>L'agent va-t-il dire n'importe quoi à mes clients ?</summary><p>Il ne répond qu'à partir de vos informations : vos prix, votre stock, vos règles. Quand il ne sait pas, il passe la main à vous ou à votre équipe. Vous relisez ses réponses pendant les premières semaines.</p></details>
+      <details class="qr"><summary>Je dois changer de numéro WhatsApp ?</summary><p>Non. On utilise un numéro WhatsApp Business, le vôtre ou un nouveau, avec les outils officiels de WhatsApp.</p></details>
+      <details class="qr"><summary>Combien ça coûte ?</summary><p>Ça dépend de la brique et de votre volume. Après l'échange de 30 minutes, vous recevez un devis écrit sous 48 h. Les abonnements des outils (WhatsApp, hébergement) sont indiqués à part.</p></details>
+      <details class="qr"><summary>Mes données sont-elles protégées ?</summary><p>Vous décidez qui voit quoi. Les accès sont nominatifs, les données restent les vôtres, et on peut tout vous rendre si vous arrêtez.</p></details>
+      <details class="qr"><summary>Mon équipe saura-t-elle s'en servir ?</summary><p>On part de vos habitudes actuelles et on forme l'équipe sur ses vraies tâches. Une reprise à la main reste toujours possible.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="t-c">
+  <div class="wrap">
+    <div class="carte">
+      <div><h2 id="t-c">Montrez-moi comment vous travaillez. Je vous montre ce qu'un agent peut prendre en charge.</h2><p>30 minutes offertes, au téléphone ou à votre bureau à Abidjan.</p></div>
+      <div class="act">
+        <a class="btn btn-w" id="wa" href="#contact" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <div class="num"><span id="wa-num">+225 07 89 26 33 73</span><button type="button" id="copier">Copier</button></div>
+        <a class="btn btn-l" id="li" href="#contact" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Kassio · agence IA · Abidjan, Côte d'Ivoire</span><span>Démo, chiffres et rapports de cette page : exemples fictifs.</span></div></footer>
+
 <script>
 const WHATSAPP = "2250789263373";
 const LINKEDIN = "https://www.linkedin.com/in/mr-kassio-6190331b1";
 const $ = id => document.getElementById(id);
-const fmt = n => Math.round(n).toLocaleString("fr-FR").replace(/ | /g, " ");
 const calme = matchMedia("(prefers-reduced-motion: reduce)").matches;
-const top_ = $("top");
-const onScroll = () => top_.classList.toggle("solid", scrollY > 40);
-addEventListener("scroll", onScroll, {passive:true}); onScroll();
+addEventListener("scroll", () => $("top").classList.toggle("solid", scrollY > 8), {passive:true});
 
-const ETAPES = [
-  {cle:"rep", nom:"Réponse rapide", repere:0.6, titre:"Votre goulot : <em>la réponse</em>", texte:"Trop de demandes attendent. Chaque heure de retard envoie des clients chez le voisin. C'est souvent la réparation la plus rapide et la plus rentable."},
-  {cle:"vente", nom:"Vente conclue", repere:0.35, titre:"Votre goulot : <em>la conclusion</em>", texte:"Vous répondez, mais les devis ne deviennent pas des ventes. Il manque souvent une relance au bon moment ou un devis plus clair."},
-  {cle:"retour", nom:"Clients qui reviennent", repere:0.3, titre:"Votre goulot : <em>la fidélité</em>", texte:"Vous gagnez des clients mais ils ne reviennent pas. Un client qui revient coûte bien moins cher à servir qu'un nouveau."}
-];
-function n(id){ const v = parseFloat($(id).value); return isFinite(v) && v >= 0 ? v : 0; }
-function calc(){
-  const d=n("q1"), r=n("q2"), v=n("q3"), f=n("q4"), panier=n("q5");
-  const taux = {rep: d ? r/d : 0, vente: r ? v/r : 0, retour: v ? f/v : 0};
-  let pire=null, ecartMax=-1;
-  ETAPES.forEach(e => { const ec = (e.repere - Math.min(taux[e.cle],1)) / e.repere; if (ec > ecartMax){ ecartMax=ec; pire=e; } });
-  const ok = ecartMax <= 0, fun = $("funnel");
-  if (!fun.children.length) fun.innerHTML = ETAPES.map(e => `<div class="step" data-k="${e.cle}"><span>${e.nom}</span><span class="bar"><span></span></span><b>0%</b></div>`).join("");
-  ETAPES.forEach(e => {
-    const el = fun.querySelector(`[data-k="${e.cle}"]`), pct = Math.round(Math.min(taux[e.cle],1)*100);
-    el.classList.toggle("is-goulot", !ok && e===pire);
-    el.querySelector(".bar span").style.width = Math.max(pct,2) + "%";
-    el.querySelector("b").textContent = pct + "%";
-  });
-  const pv = $("v-perte");
-  if (!d){ $("v-titre").textContent="Indiquez vos demandes"; $("v-texte").textContent="Commencez par le nombre de demandes reçues sur un mois."; pv.hidden=true; return; }
-  if (ok){ $("v-titre").innerHTML="Pas de goulot <em>évident</em>"; $("v-texte").textContent="Vos chiffres dépassent les repères. Le prochain gain est sans doute dans le nombre de demandes reçues."; pv.hidden=true; }
-  else {
-    $("v-titre").innerHTML=pire.titre; $("v-texte").textContent=pire.texte;
-    let manque = 0;
-    if (pire.cle==="rep") manque = (d*pire.repere - r) * (r ? v/r : 0.35);
-    if (pire.cle==="vente") manque = r*pire.repere - v;
-    if (pire.cle==="retour") manque = v*pire.repere - f;
-    manque = Math.max(0, manque);
-    if (panier && manque >= 1){ pv.hidden=false; pv.innerHTML = `Si cette étape atteignait le repère : environ <b>${fmt(manque)} ventes</b> de plus, soit <b>${fmt(manque*panier)} FCFA</b> par mois.`; }
-    else pv.hidden=true;
-  }
-  const msg = `Bonjour, j'ai fait le diagnostic sur votre site. Mon goulot : ${ok ? "pas de goulot évident" : pire.nom.toLowerCase()}. Je voudrais l'échange de 30 min.`;
-  $("wa").href = WHATSAPP ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}` : "#contact";
-}
-["q1","q2","q3","q4","q5"].forEach(id => $(id).addEventListener("input", calc));
-$("f").addEventListener("submit", e => e.preventDefault());
-if (WHATSAPP){ $("wa-num").textContent = "+" + WHATSAPP.replace(/^(\d{3})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/, "$1 $2 $3 $4 $5 $6"); } else { $("copier").hidden = true; }
-if (LINKEDIN){ $("li").href = LINKEDIN; } else { $("li").hidden = true; }
+/* Liens de contact */
+const msg = "Bonjour Kassio, j'ai vu votre site. J'aimerais parler d'un agent pour mon entreprise.";
+const waUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+["wa","wa-hero"].forEach(id => $(id).href = waUrl);
+$("li").href = LINKEDIN;
 $("copier").addEventListener("click", async () => {
   try { await navigator.clipboard.writeText("+" + WHATSAPP); $("copier").textContent = "Copié"; }
-  catch { const s=getSelection(), rg=document.createRange(); rg.selectNodeContents($("wa-num")); s.removeAllRanges(); s.addRange(rg); }
+  catch { const s=getSelection(), r=document.createRange(); r.selectNodeContents($("wa-num")); s.removeAllRanges(); s.addRange(r); }
 });
-calc();
 
-if (!calme && window.gsap && window.ScrollTrigger){
-  gsap.registerPlugin(ScrollTrigger);
-  const tl = gsap.timeline({defaults:{ease:"power4.out"}});
-  tl.from(".hero h1 .ln > span", {yPercent:105, duration:1, stagger:.12}, .1)
-    .from(".hero .lead, .hero .cta-row", {y:18, duration:.8, stagger:.08}, .55)
-    .from(".cadre .photo", {clipPath:"inset(0 0 0 100%)", duration:1.3, ease:"expo.inOut"}, .05)
-    .from(".citation", {y:26, duration:.9}, 1.05);
-  setTimeout(() => tl.progress(1), 3500); // filet : le haut de page est complet même si l'animation est ralentie
-  gsap.utils.toArray(".cadre .photo img, .fuite figure img, .contact figure img").forEach(im => {
-    gsap.fromTo(im, {yPercent:-4}, {yPercent:4, ease:"none", scrollTrigger:{trigger:im.parentElement, start:"top bottom", end:"bottom top", scrub:true}});
-  });
-  const cols = document.querySelectorAll(".col");
-  ScrollTrigger.create({trigger:".mois", start:"top 80%", once:true, onEnter:() => {
-    cols.forEach((c, i) => {
-      const b = c.querySelector("b"), fin = +b.dataset.count, o = {v:0}, j = c.querySelector(".jauge i");
-      gsap.to(o, {v:fin, duration:1.6, delay:i*.15, ease:"power3.out", onUpdate:() => b.textContent = Math.round(o.v)});
-      gsap.fromTo(j, {scaleX:0}, {scaleX:fin/100, duration:1.4, delay:i*.15 + .1, ease:"power3.inOut"});
-    });
-  }});
-  ScrollTrigger.matchMedia({
-    "(min-width: 901px)": () => {
-      const rail = $("rail");
-      gsap.to(rail, {x: () => -(rail.scrollWidth - innerWidth + 32), ease:"none",
-        scrollTrigger:{trigger:".fuites", start:"top top", end: () => "+=" + (rail.scrollWidth - innerWidth), pin:true, scrub:.6, invalidateOnRefresh:true}});
-    }
-  });
-  gsap.fromTo(".frise .trait", {scaleX:0}, {scaleX:1, ease:"none", scrollTrigger:{trigger:".frise", start:"top 80%", end:"bottom 60%", scrub:true}});
-  gsap.utils.toArray(".sec-head, .mois-h, .jalon, .non, .qr, .contact h2").forEach(el => {
-    gsap.from(el, {y:28, duration:.9, ease:"power3.out", scrollTrigger:{trigger:el, start:"top 90%", once:true}});
-  });
+/* Démo : chaque message client déclenche une réponse et met à jour la fiche CRM */
+const SCRIPT = [
+  {q:"Il me faut 40 m², livré à Cocody.", r:"Parfait. 40 m² = 300 000 FCFA. Livraison à Cocody demain avant 12 h : 10 000 FCFA. Je vous réserve le stock ?",
+   crm:{qte:"40 m²", zone:"Cocody · demain matin", score:60}},
+  {q:"C'est un peu cher…", r:"Je comprends. Dès 40 m², je peux vous offrir la livraison : vous êtes à 300 000 FCFA tout compris. Ça vous convient ?",
+   crm:{obj:"prix", score:70}},
+  {q:"Vous êtes sûrs de livrer demain ?", r:"Oui : le camion part à 7 h vers Cocody. Vous recevez un message avec le numéro du livreur. Paiement Wave ou à la livraison.",
+   crm:{obj:"délai", score:82}},
+  {q:"D'accord, je prends.", r:"Merci ! Commande enregistrée : 40 m² carrelage 60×60 gris, livrée demain à Cocody. Le gérant vous confirme ce soir. ✅",
+   crm:{ok:true, score:95}}
+];
+let pas = 0, occupe = false;
+const fil = $("fil"), choix = $("choix");
+const heure = (() => { let m = 13; return () => `21:${String(m++).padStart(2,"0")}`; })();
+function bulle(cls, html){ const d = document.createElement("div"); d.className = "m " + cls; d.innerHTML = html; fil.appendChild(d); fil.scrollTop = fil.scrollHeight; return d; }
+function flash(id){ const c = $(id); c.classList.remove("vide"); c.classList.add("flash"); setTimeout(() => c.classList.remove("flash"), 900); }
+function majCRM(c){
+  if (c.qte){ $("c-qte").querySelector("b").textContent = c.qte; flash("c-qte"); }
+  if (c.zone){ $("c-zone").querySelector("b").textContent = c.zone; flash("c-zone"); }
+  if (c.obj){ const b = $("c-obj").querySelector("b"); b.textContent = "Levées par l'agent :"; const p = document.createElement("span"); p.className = "pill"; p.textContent = c.obj; $("pills").appendChild(p); flash("c-obj"); }
+  if (c.ok){ const p = document.createElement("span"); p.className = "pill ok"; p.textContent = "vendu"; $("pills").appendChild(p); $("crm-etat").textContent = "commande créée"; flash("c-obj"); }
+  if (c.score){ $("score-t").textContent = c.score + " %"; $("score-b").style.width = c.score + "%"; flash("c-score"); }
+}
+function boutons(){
+  choix.innerHTML = "";
+  if (pas >= SCRIPT.length){
+    const b = document.createElement("button"); b.type = "button"; b.textContent = "↺ Rejouer la démo"; b.onclick = rejouer; choix.appendChild(b); return;
+  }
+  const b = document.createElement("button"); b.type = "button"; b.textContent = SCRIPT[pas].q; b.onclick = envoyer; choix.appendChild(b);
+}
+function envoyer(){
+  if (occupe) return; occupe = true;
+  const e = SCRIPT[pas];
+  bulle("in", `${e.q}<time>${heure()}</time>`);
+  choix.querySelectorAll("button").forEach(b => b.disabled = true);
+  const t = bulle("out typing", "<i></i><i></i><i></i>");
+  setTimeout(() => { t.remove(); bulle("out", `${e.r}<time>${heure()}</time>`); majCRM(e.crm); pas++; occupe = false; boutons(); }, calme ? 50 : 900);
+}
+function rejouer(){
+  pas = 0; fil.innerHTML = '<div class="m in">Bonsoir, vous avez le carrelage 60×60 gris ?<time>21:12</time></div><div class="m out">Bonsoir ! Oui, 46 m² en stock à 7 500 FCFA le m². Combien de m² vous faut-il ?<time>21:12</time></div>';
+  ["c-qte","c-zone"].forEach(id => { $(id).classList.add("vide"); $(id).querySelector("b").textContent = "—"; });
+  $("c-obj").querySelector("b").textContent = "Aucune pour l'instant"; $("pills").innerHTML = ""; $("crm-etat").textContent = "mise à jour en direct";
+  $("score-t").textContent = "35 %"; $("score-b").style.width = "35%"; boutons();
+}
+boutons();
+
+/* Journal des agents : une ligne s'écrit toutes les quelques secondes */
+document.querySelectorAll(".log").forEach((el, k) => {
+  const lignes = el.dataset.log.split("|"); let i = 0;
+  const ecrire = () => { el.textContent = lignes.slice(0, i + 1).slice(-2).join("\n"); el.style.whiteSpace = "pre-line"; i = (i + 1) % lignes.length; };
+  ecrire(); if (!calme) setInterval(ecrire, 2600 + k * 400);
+});
+
+/* Barres d'objections : elles se remplissent quand on arrive dessus */
+if (!calme && "IntersectionObserver" in window){
+  const barres = [...document.querySelectorAll("#barres .t i")];
+  barres.forEach(i => { i.style.transition = "transform 1.1s cubic-bezier(.2,.8,.2,1)"; });
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ barres.forEach((i, k) => { i.animate([{transform:"scaleX(0)"},{transform:"scaleX(1)"}], {duration:1100, delay:k*120, easing:"cubic-bezier(.2,.8,.2,1)"}); }); io.disconnect(); } }), {threshold:.4});
+  io.observe($("barres"));
 }
 </script>
 
