@@ -182,11 +182,93 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 footer{padding-block:22px 34px;font-size:13px;color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+
+/* ===== Motion design : illustrations animées par service ===== */
+.vig{height:150px;border-radius:10px;background:var(--soft);position:relative;overflow:hidden;margin-bottom:6px}
+.vig svg{position:absolute;inset:0;width:100%;height:100%}
+.svc:hover .vig{background:color-mix(in srgb,var(--cobalt-soft) 60%,var(--soft))}
+/* 1. WhatsApp */
+.v-wa .b{position:absolute;left:18px;height:22px;border-radius:11px;background:var(--surface);border:1px solid var(--line);opacity:0;animation:waIn 6s infinite}
+.v-wa .b.o{left:auto;right:18px;background:var(--cobalt);border-color:var(--cobalt)}
+.v-wa .b1{top:20px;width:52%;animation-delay:0s}.v-wa .b2{top:50px;width:60%;animation-delay:.9s}.v-wa .b3{top:80px;width:40%;animation-delay:2.1s}.v-wa .b4{top:110px;width:55%;animation-delay:3s}
+.v-wa .ck{position:absolute;right:24px;top:116px;font:600 10px var(--f-m);color:#fff;opacity:0;animation:waIn 6s infinite;animation-delay:3.4s}
+@keyframes waIn{0%,4%{opacity:0;transform:translateY(8px) scale(.96)}10%,86%{opacity:1;transform:none}96%,100%{opacity:0}}
+/* 2. Radar */
+.v-rad .sweep{position:absolute;left:50%;top:50%;width:230px;height:230px;margin:-115px 0 0 -115px;border-radius:50%;background:conic-gradient(from 0deg,color-mix(in srgb,var(--cobalt) 35%,transparent),transparent 25%);animation:spin 4s linear infinite}
+.v-rad .ring{position:absolute;left:50%;top:50%;border:1px solid var(--line);border-radius:50%;transform:translate(-50%,-50%)}
+.v-rad .pt{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--muted);opacity:.5}
+.v-rad .pt.hit{background:var(--mand);opacity:1;animation:ping 4s infinite}
+.v-rad .tagq{position:absolute;font:600 10px var(--f-m);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:2px 6px;animation:waIn 4s infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes ping{0%,40%{box-shadow:0 0 0 0 rgba(242,102,26,.6)}70%{box-shadow:0 0 0 10px rgba(242,102,26,0)}100%{box-shadow:0 0 0 0 rgba(242,102,26,0)}}
+/* 3. Graphique */
+.v-bi .bar{transform-origin:bottom;animation:grow 5s cubic-bezier(.2,.8,.2,1) infinite}
+.v-bi .ln{stroke-dasharray:320;stroke-dashoffset:320;animation:draw 5s ease infinite}
+@keyframes grow{0%{transform:scaleY(.05)}30%,85%{transform:scaleY(1)}100%{transform:scaleY(.05)}}
+@keyframes draw{10%{stroke-dashoffset:320}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:320}}
+/* 4. Site + bulle */
+.v-site .win{position:absolute;inset:16px 22px;border-radius:8px;background:var(--surface);border:1px solid var(--line)}
+.v-site .win::before{content:"";position:absolute;left:10px;top:8px;width:28px;height:6px;border-radius:3px;background:var(--line)}
+.v-site .l{position:absolute;left:18px;height:7px;border-radius:4px;background:var(--line)}
+.v-site .fab{position:absolute;right:14px;bottom:12px;width:30px;height:30px;border-radius:50%;background:#25d366;animation:fab 5s infinite}
+.v-site .pop{position:absolute;right:14px;bottom:50px;width:58%;padding:8px 10px;border-radius:10px 10px 2px 10px;background:var(--cobalt);color:#fff;font:500 11px/1.3 var(--f-b);opacity:0;transform-origin:bottom right;animation:pop2 5s infinite}
+@keyframes fab{0%,15%{transform:scale(1)}20%{transform:scale(.85)}25%,100%{transform:scale(1)}}
+@keyframes pop2{0%,22%{opacity:0;transform:scale(.6)}30%,85%{opacity:1;transform:none}95%,100%{opacity:0;transform:scale(.6)}}
+/* 5. ERP modules */
+.v-erp .grid{position:absolute;inset:18px 22px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.v-erp .mod{border-radius:8px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:flex-end;padding:6px;font:500 9.5px var(--f-m);color:var(--muted);animation:lit 6s infinite}
+.v-erp .mod:nth-child(2){animation-delay:.5s}.v-erp .mod:nth-child(3){animation-delay:1s}.v-erp .mod:nth-child(4){animation-delay:1.5s}.v-erp .mod:nth-child(5){animation-delay:2s}.v-erp .mod:nth-child(6){animation-delay:2.5s}.v-erp .mod:nth-child(7){animation-delay:3s}.v-erp .mod:nth-child(8){animation-delay:3.5s}
+@keyframes lit{0%,8%{background:var(--surface);color:var(--muted)}14%,40%{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}55%,100%{background:var(--surface);color:var(--muted)}}
+/* 6. n8n */
+.v-n8n .node{fill:var(--surface);stroke:var(--line)}
+.v-n8n .wire{stroke:var(--line);stroke-width:2;fill:none}
+.v-n8n .pk{fill:var(--mand)}
+/* ===== Flux « tout se connecte » ===== */
+.flux{padding-block:20px 80px}
+.flux-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 22px 18px;overflow:hidden}
+.flux-box svg{display:block;width:100%;height:auto}
+.flux-box .nd rect{fill:var(--bg);stroke:var(--line)}
+.flux-box .nd.c rect{fill:var(--fg);stroke:var(--fg)}
+.flux-box .nd text{font:600 13px var(--f-b);fill:var(--fg)}
+.flux-box .nd.c text{fill:var(--bg)}
+.flux-box .nd .s{font:400 11px var(--f-m);fill:var(--muted)}
+.flux-box .nd.c .s{fill:color-mix(in srgb,var(--bg) 70%,transparent)}
+.flux-box .w{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:4 6;animation:dash 1.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-20}}
+.flux-box .pq{fill:var(--cobalt)}
+.flux-box .pq.m{fill:var(--mand)}
+.flux-cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--muted)}
+.flux-list{display:none;list-style:none;margin:0;padding:0}
+@media (max-width:640px){
+  .flux-box svg{display:none}
+  .flux-list{display:flex;flex-direction:column;gap:0}
+  .flux-list li{position:relative;padding:12px 14px 12px 34px;border:1px solid var(--line);border-radius:10px;background:var(--bg);display:flex;flex-direction:column}
+  .flux-list li + li{margin-top:22px}
+  .flux-list li:nth-child(2){background:var(--fg);color:var(--bg);border-color:var(--fg)}
+  .flux-list li::before{content:"";position:absolute;left:14px;top:18px;width:8px;height:8px;border-radius:50%;background:var(--cobalt)}
+  .flux-list li + li::after{content:"";position:absolute;left:17px;top:-23px;width:2px;height:22px;background:repeating-linear-gradient(180deg,var(--mand) 0 4px,transparent 4px 8px);animation:dashv 1s linear infinite}
+  .flux-list b{font:600 15px var(--f-b)}.flux-list span{font:400 12px var(--f-m);opacity:.7}
+}
+@keyframes dashv{to{background-position:0 8px}}
+/* ===== Ouverture : halo qui suit la souris + bandeau défilant ===== */
+.hero{position:relative;overflow:hidden}
+.halo{position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--cobalt) 16%,transparent),transparent);left:55%;top:-120px;pointer-events:none;will-change:transform}
+.hero .wrap{position:relative}
+.hl{background:linear-gradient(90deg,var(--cobalt),#6d5bff,var(--mand),var(--cobalt));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:hlmove 8s ease-in-out infinite}
+@keyframes hlmove{50%{background-position:100% 0}}
+.canaux{border-block:1px solid var(--line);background:var(--surface);overflow:hidden;padding-block:14px}
+.canaux .piste{display:flex;gap:48px;width:max-content;animation:defile 40s linear infinite;font:500 14px var(--f-m);color:var(--muted);white-space:nowrap}
+.canaux .piste span{display:inline-flex;align-items:center;gap:10px}
+.canaux .piste span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cobalt)}
+@keyframes defile{to{transform:translateX(-50%)}}
+.ag .log{transition:opacity .3s}
+@media (prefers-reduced-motion:reduce){.hl{animation:none;background:none;color:var(--cobalt)!important}}
+
 @media (max-width:980px){
   .hero .wrap,.sh,.obj .wrap,.faq .wrap,.carte{grid-template-columns:1fr;gap:32px}
   .grid-s{grid-template-columns:repeat(2,minmax(0,1fr))}
   .agents,.etapes{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .top nav a{display:none}
+  .top nav a:not(.btn){display:none}
 }
 @media (max-width:640px){
   .demo{grid-template-columns:1fr}
@@ -212,6 +294,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </header>
 
 <section class="hero" id="ouverture" aria-labelledby="t-hero">
+  <span class="halo" id="halo" aria-hidden="true"></span>
   <div class="wrap">
     <div>
       <p class="lab">Agence IA · Abidjan</p>
@@ -251,6 +334,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
+<div class="canaux" aria-hidden="true"><div class="piste"><span>WhatsApp Business</span><span>CRM</span><span>Power BI</span><span>n8n</span><span>Wave</span><span>Orange Money</span><span>Google</span><span>Excel</span><span>Sites web</span><span>ERP</span><span>Facebook</span><span>LinkedIn</span><span>WhatsApp Business</span><span>CRM</span><span>Power BI</span><span>n8n</span><span>Wave</span><span>Orange Money</span><span>Google</span><span>Excel</span><span>Sites web</span><span>ERP</span><span>Facebook</span><span>LinkedIn</span></div></div>
 <section class="services" id="services" aria-labelledby="t-svc">
   <div class="wrap">
     <div class="sh">
@@ -258,16 +342,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p>On commence par la brique qui vous rapporte le plus vite, puis on relie les autres. Chaque livraison est testée sur vos vrais cas avant la mise en route.</p>
     </div>
     <div class="grid-s">
-      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12Z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></svg></span><h3>Agent WhatsApp 24 h/24</h3><p>Il répond à vos clients, prend les commandes et les rendez-vous, et remplit votre CRM tout seul.</p><ul><li>Analyse des objections pour mieux vous positionner</li><li>Passage à un humain quand il le faut</li></ul><span class="delai">Mise en route : 2 à 3 semaines</span></article>
-      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M8.5 11h5M11 8.5v5"/></svg></span><h3>Agents de prospection</h3><p>Ils trouvent des entreprises qui vous ressemblent, préparent des messages personnalisés et suivent les relances.</p><ul><li>Vous validez chaque message avant l'envoi</li><li>Compteur de rendez-vous chaque semaine</li></ul><span class="delai">Mise en route : 2 semaines</span></article>
-      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><h3>Tableaux de bord Power BI</h3><p>Ventes, stock, trésorerie, achats : les chiffres qui comptent, à jour, sur votre téléphone.</p><ul><li>Branché sur vos fichiers ou votre logiciel</li><li>Alertes quand un chiffre dérape</li></ul><span class="delai">Mise en route : 1 à 3 semaines</span></article>
-      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></span><h3>Sites avec chatbot WhatsApp</h3><p>Un site rapide sur mobile, et un assistant qui répond aux visiteurs et les envoie sur votre WhatsApp.</p><ul><li>Paiement Wave et Orange Money si besoin</li><li>Visible sur Google</li></ul><span class="delai">Mise en route : 2 à 4 semaines</span></article>
-      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg></span><h3>ERP sur mesure</h3><p>Commandes, stock, facturation, équipes : un seul outil pensé pour votre métier, pas un logiciel qu'on vous force à adopter.</p><ul><li>Reprise de vos fichiers Excel existants</li><li>Formation de l'équipe incluse</li></ul><span class="delai">Mise en route : par modules</span></article>
-      <article class="svc"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.3 11 16.7 6M7.3 13l9.4 5"/></svg></span><h3>Automatisations n8n</h3><p>Relances de devis, rapports du lundi, saisie entre deux logiciels : les tâches répétées tournent toutes seules.</p><ul><li>Historique de chaque action</li><li>Reprise à la main toujours possible</li></ul><span class="delai">Mise en route : quelques jours</span></article>
+      <article class="svc"><div class="vig v-wa" aria-hidden="true"><span class="b b1"></span><span class="b o b2"></span><span class="b b3"></span><span class="b o b4"></span><span class="ck">✓✓ commande</span></div><h3>Agent WhatsApp 24 h/24</h3><p>Il répond à vos clients, prend les commandes et les rendez-vous, et remplit votre CRM tout seul.</p><ul><li>Analyse des objections pour mieux vous positionner</li><li>Passage à un humain quand il le faut</li></ul><span class="delai">Mise en route : 2 à 3 semaines</span></article>
+      <article class="svc"><div class="vig v-rad" aria-hidden="true"><span class="ring" style="width:80px;height:80px"></span><span class="ring" style="width:160px;height:160px"></span><span class="ring" style="width:240px;height:240px"></span><span class="sweep"></span><span class="pt" style="left:30%;top:30%"></span><span class="pt hit" style="left:64%;top:36%"></span><span class="pt" style="left:42%;top:70%"></span><span class="pt hit" style="left:72%;top:66%;animation-delay:2s"></span><span class="pt" style="left:22%;top:58%"></span><span class="tagq" style="left:calc(64% + 12px);top:calc(36% - 6px)">FIT 9/10</span></div><h3>Agents de prospection</h3><p>Ils trouvent des entreprises qui vous ressemblent, préparent des messages personnalisés et suivent les relances.</p><ul><li>Vous validez chaque message avant l'envoi</li><li>Compteur de rendez-vous chaque semaine</li></ul><span class="delai">Mise en route : 2 semaines</span></article>
+      <article class="svc"><div class="vig v-bi" aria-hidden="true"><svg viewBox="0 0 300 150" preserveAspectRatio="none"><g fill="var(--cobalt)" opacity=".85"><rect class="bar" x="30" y="70" width="26" height="60" rx="3"/><rect class="bar" x="72" y="50" width="26" height="80" rx="3" style="animation-delay:.15s"/><rect class="bar" x="114" y="85" width="26" height="45" rx="3" style="animation-delay:.3s"/><rect class="bar" x="156" y="40" width="26" height="90" rx="3" style="animation-delay:.45s"/><rect class="bar" x="198" y="60" width="26" height="70" rx="3" style="animation-delay:.6s"/><rect class="bar" x="240" y="28" width="26" height="102" rx="3" fill="var(--mand)" style="animation-delay:.75s"/></g><path class="ln" d="M30 96 L85 72 L127 92 L169 52 L211 66 L253 34" fill="none" stroke="var(--fg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="20" y1="130" x2="285" y2="130" stroke="var(--line)" stroke-width="1.5"/></svg></div><h3>Tableaux de bord Power BI</h3><p>Ventes, stock, trésorerie, achats : les chiffres qui comptent, à jour, sur votre téléphone.</p><ul><li>Branché sur vos fichiers ou votre logiciel</li><li>Alertes quand un chiffre dérape</li></ul><span class="delai">Mise en route : 1 à 3 semaines</span></article>
+      <article class="svc"><div class="vig v-site" aria-hidden="true"><div class="win"><span class="l" style="top:26px;width:55%;height:10px;background:var(--fg);opacity:.85"></span><span class="l" style="top:44px;width:70%"></span><span class="l" style="top:58px;width:62%"></span><span class="l" style="top:80px;width:30%;height:16px;border-radius:8px;background:var(--cobalt)"></span><span class="pop">Bonjour ! Je peux vérifier le stock pour vous ?</span><span class="fab"></span></div></div><h3>Sites avec chatbot WhatsApp</h3><p>Un site rapide sur mobile, et un assistant qui répond aux visiteurs et les envoie sur votre WhatsApp.</p><ul><li>Paiement Wave et Orange Money si besoin</li><li>Visible sur Google</li></ul><span class="delai">Mise en route : 2 à 4 semaines</span></article>
+      <article class="svc"><div class="vig v-erp" aria-hidden="true"><div class="grid"><span class="mod">Stock</span><span class="mod">Ventes</span><span class="mod">Devis</span><span class="mod">Factures</span><span class="mod">Achats</span><span class="mod">Équipe</span><span class="mod">Caisse</span><span class="mod">Rapports</span></div></div><h3>ERP sur mesure</h3><p>Commandes, stock, facturation, équipes : un seul outil pensé pour votre métier, pas un logiciel qu'on vous force à adopter.</p><ul><li>Reprise de vos fichiers Excel existants</li><li>Formation de l'équipe incluse</li></ul><span class="delai">Mise en route : par modules</span></article>
+      <article class="svc"><div class="vig v-n8n" aria-hidden="true"><svg viewBox="0 0 300 150"><path id="w1" class="wire" d="M62 75 C110 75 110 38 150 38"/><path id="w2" class="wire" d="M62 75 C110 75 110 112 150 112"/><path id="w3" class="wire" d="M190 38 C230 38 230 75 250 75"/><path id="w4" class="wire" d="M190 112 C230 112 230 75 250 75"/><rect class="node" x="18" y="57" width="44" height="36" rx="8"/><rect class="node" x="150" y="20" width="40" height="36" rx="8"/><rect class="node" x="150" y="94" width="40" height="36" rx="8"/><rect class="node" x="250" y="57" width="36" height="36" rx="8" style="fill:var(--fg);stroke:var(--fg)"/><text x="40" y="79" text-anchor="middle" font-size="10" font-family="JetBrains Mono,monospace" fill="var(--muted)">devis</text><text x="170" y="42" text-anchor="middle" font-size="9" font-family="JetBrains Mono,monospace" fill="var(--muted)">J+3</text><text x="170" y="116" text-anchor="middle" font-size="9" font-family="JetBrains Mono,monospace" fill="var(--muted)">mail</text><circle class="pk" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle><circle class="pk" r="4"><animateMotion dur="2.4s" begin=".8s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="1.2s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle><circle class="pk" r="4" style="fill:var(--cobalt)"><animateMotion dur="2s" begin="2s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle></svg></div><h3>Automatisations n8n</h3><p>Relances de devis, rapports du lundi, saisie entre deux logiciels : les tâches répétées tournent toutes seules.</p><ul><li>Historique de chaque action</li><li>Reprise à la main toujours possible</li></ul><span class="delai">Mise en route : quelques jours</span></article>
     </div>
   </div>
 </section>
 
+<section class="flux" aria-labelledby="t-flux">
+  <div class="wrap">
+    <p class="lab">Tout se connecte</p>
+    <h2 id="t-flux" style="margin:12px 0 28px;font-size:clamp(28px,3.6vw,42px)">Du premier message à votre décision, sans ressaisie</h2>
+    <div class="flux-box"><svg viewBox="0 0 940 150" role="img" aria-label="Le client écrit, l'agent répond, le CRM se remplit, le tableau de bord se met à jour, vous décidez."><path id="fw0" class="w" d="M150 75 H205"/><path id="fw1" class="w" d="M345 75 H400"/><path id="fw2" class="w" d="M540 75 H595"/><path id="fw3" class="w" d="M735 75 H790"/><g class="nd"><rect x="10" y="40" width="140" height="70" rx="12"/><text x="24" y="70">Client</text><text class="s" x="24" y="92">WhatsApp · site</text></g><g class="nd c"><rect x="205" y="40" width="140" height="70" rx="12"/><text x="219" y="70">Agent Accueil</text><text class="s" x="219" y="92">répond 24 h/24</text></g><g class="nd"><rect x="400" y="40" width="140" height="70" rx="12"/><text x="414" y="70">CRM</text><text class="s" x="414" y="92">fiche + objections</text></g><g class="nd"><rect x="595" y="40" width="140" height="70" rx="12"/><text x="609" y="70">Tableau de bord</text><text class="s" x="609" y="92">ventes · stock</text></g><g class="nd"><rect x="790" y="40" width="140" height="70" rx="12"/><text x="804" y="70">Vous</text><text class="s" x="804" y="92">décision du jour</text></g><circle class="pq" r="5"><animateMotion dur="1.6s" begin="0.0s" repeatCount="indefinite"><mpath href="#fw0"/></animateMotion></circle><circle class="pq m" r="5"><animateMotion dur="1.6s" begin="0.4s" repeatCount="indefinite"><mpath href="#fw1"/></animateMotion></circle><circle class="pq" r="5"><animateMotion dur="1.6s" begin="0.8s" repeatCount="indefinite"><mpath href="#fw2"/></animateMotion></circle><circle class="pq m" r="5"><animateMotion dur="1.6s" begin="1.2000000000000002s" repeatCount="indefinite"><mpath href="#fw3"/></animateMotion></circle></svg>
+      <ol class="flux-list" aria-hidden="true"><li><b>Client</b><span>WhatsApp · site</span></li><li><b>Agent Accueil</b><span>répond 24 h/24</span></li><li><b>CRM</b><span>fiche + objections</span></li><li><b>Tableau de bord</b><span>ventes · stock</span></li><li><b>Vous</b><span>décision du jour</span></li></ol>
+      <div class="flux-cap"><span>Chaque message alimente la fiche client et vos chiffres.</span><span>Vous gardez la main sur tout ce qui part.</span></div></div>
+  </div>
+</section>
 <section class="obj" aria-labelledby="t-obj">
   <div class="wrap">
     <div>
@@ -415,13 +508,54 @@ document.querySelectorAll(".log").forEach((el, k) => {
   ecrire(); if (!calme) setInterval(ecrire, 2600 + k * 400);
 });
 
-/* Barres d'objections : elles se remplissent quand on arrive dessus */
-if (!calme && "IntersectionObserver" in window){
-  const barres = [...document.querySelectorAll("#barres .t i")];
-  barres.forEach(i => { i.style.transition = "transform 1.1s cubic-bezier(.2,.8,.2,1)"; });
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ barres.forEach((i, k) => { i.animate([{transform:"scaleX(0)"},{transform:"scaleX(1)"}], {duration:1100, delay:k*120, easing:"cubic-bezier(.2,.8,.2,1)"}); }); io.disconnect(); } }), {threshold:.4});
-  io.observe($("barres"));
-}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger);
+  // titre : mots qui montent un par un
+  const h = document.querySelector(".hero h1");
+  const html = h.innerHTML;
+  h.innerHTML = html.replace(/(<span class="hl">)([\s\S]*?)(<\/span>)/, (_, a, t, b) => a + t + b)
+    .split(/(<span class="hl">[\s\S]*?<\/span>|\s+)/).map(p => !p ? "" : /^\s+$/.test(p) ? p : `<span class="mot" style="display:inline-block">${p}</span>`).join("");
+  const tl = gsap.timeline({defaults:{ease:"power4.out"}});
+  tl.from(".hero .mot", {y:40, rotate:2, duration:.9, stagger:.06}, .05)
+    .from(".hero .lead, .hero .cta, .hero .faits", {y:20, duration:.7, stagger:.08}, .4)
+    .from(".demo", {y:50, rotateX:8, transformPerspective:900, duration:1.1}, .2)
+    .from(".crm .champ", {x:24, duration:.6, stagger:.07}, .7);
+  setTimeout(() => tl.progress(1), 3500);
+  // halo qui suit la souris
+  const halo = document.getElementById("halo"), hero = document.querySelector(".hero");
+  if (matchMedia("(pointer:fine)").matches){
+    const qx = gsap.quickTo(halo,"x",{duration:1.2,ease:"power3"}), qy = gsap.quickTo(halo,"y",{duration:1.2,ease:"power3"});
+    hero.addEventListener("pointermove", e => { const r = hero.getBoundingClientRect(); qx(e.clientX - r.left - r.width*.55 - 320); qy(e.clientY - r.top + 120 - 320); });
+  }
+  // démo : légère inclinaison selon la souris
+  const demo = document.querySelector(".demo");
+  if (matchMedia("(pointer:fine)").matches){
+    demo.addEventListener("pointermove", e => { const r = demo.getBoundingClientRect(); gsap.to(demo,{rotateY:((e.clientX-r.left)/r.width-.5)*5, rotateX:-((e.clientY-r.top)/r.height-.5)*5, transformPerspective:1200, duration:.6}); });
+    demo.addEventListener("pointerleave", () => gsap.to(demo,{rotateX:0,rotateY:0,duration:.8}));
+  }
+  // cartes de services : entrée en cascade
+  gsap.from(".svc", {y:40, duration:.8, ease:"power3.out", stagger:.08, scrollTrigger:{trigger:".grid-s", start:"top 85%", once:true}});
+  // flux : les blocs s'allument dans l'ordre
+  gsap.from(".flux-box .nd", {y:20, opacity:.2, duration:.6, stagger:.15, ease:"power3.out", scrollTrigger:{trigger:".flux-box", start:"top 80%", once:true}});
+  // objections : barres + chiffres
+  document.querySelectorAll(".br").forEach((br, k) => {
+    const b = br.querySelector("b"), fin = parseInt(b.textContent), o = {v:0};
+    gsap.to(o, {v:fin, duration:1.4, delay:k*.12, ease:"power3.out", scrollTrigger:{trigger:"#barres", start:"top 80%", once:true}, onUpdate:() => b.textContent = Math.round(o.v) + " %"});
+  });
+  gsap.from(".reco", {y:20, duration:.7, scrollTrigger:{trigger:".reco", start:"top 90%", once:true}});
+  // agents, étapes, questions, contact
+  gsap.from(".ag", {y:40, duration:.8, stagger:.1, ease:"power3.out", scrollTrigger:{trigger:".agents", start:"top 85%", once:true}});
+  gsap.from(".et", {y:30, duration:.7, stagger:.1, ease:"power3.out", scrollTrigger:{trigger:".etapes", start:"top 85%", once:true}});
+  gsap.from(".et", {"--x":0, scrollTrigger:{trigger:".etapes", start:"top 85%", once:true}});
+  gsap.from(".carte", {y:60, scale:.97, duration:1, ease:"power3.out", scrollTrigger:{trigger:".carte", start:"top 85%", once:true}});
+  gsap.utils.toArray(".sh, .obj .wrap > div:first-child, .faq h2").forEach(el => gsap.from(el, {y:30, duration:.8, ease:"power3.out", scrollTrigger:{trigger:el, start:"top 88%", once:true}}));
+})();
 </script>
 
 </body>
