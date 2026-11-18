@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,900&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <meta property="og:title" content="Mr Kassio — Le Fixer d'Opérations">
 <meta property="og:description" content="Trouvez en 3 minutes l'étape où votre PME perd des ventes, du stock ou du temps. Diagnostic gratuit, Abidjan.">
+<meta property="og:image" content="https://yobed.github.io/kassio/img/sourire.jpg">
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
 <style>
 /* Concept : « la fuite » — un tuyau qui part du premier message WhatsApp et arrive à la caisse ; le défilement fait couler les demandes et montre où elles s'échappent. */
@@ -51,7 +52,10 @@ a{color:inherit}
 
 /* ---------- Ouverture : 3 plans ---------- */
 .hero{position:relative;min-height:min(820px,100svh);background:var(--cobalt-deep);color:var(--on-dark);overflow:hidden;display:flex;align-items:center;padding-block:110px 70px}
-.hero .grid-bg{position:absolute;right:-6vw;top:8%;width:52vw;height:84%;background:var(--cobalt);will-change:transform}
+.hero .photo{position:absolute;top:0;right:0;bottom:0;width:50vw;overflow:hidden}
+.hero .photo img{width:100%;height:118%;object-fit:cover;object-position:50% 55%;display:block;will-change:transform;filter:saturate(.92) contrast(1.04)}
+.hero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--cobalt-deep) 0%,rgba(15,31,102,.55) 22%,rgba(15,31,102,0) 55%),linear-gradient(0deg,rgba(15,31,102,.55),transparent 35%)}
+.hero .credit{position:absolute;right:12px;bottom:10px;font:400 10px var(--f-mono);color:rgba(255,255,255,.6);z-index:2}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;width:100%}
 .hero h1{font-size:clamp(44px,7.6vw,104px);font-weight:900;font-stretch:76%;text-transform:uppercase;letter-spacing:-.01em}
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
@@ -62,8 +66,8 @@ a{color:inherit}
 .compteur{margin-top:34px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-family:var(--f-mono);color:var(--on-dark-muted);font-size:13px}
 .compteur b{font:900 clamp(26px,3vw,36px)/1 var(--f-display);font-stretch:80%;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:.01em}
 /* plan du milieu : la conversation WhatsApp qui reste sans réponse */
-.scene{position:relative;height:520px}
-.phone{position:absolute;right:6%;top:0;width:min(300px,78%);height:500px;border-radius:38px;background:#0b141a;border:8px solid #1a2230;box-shadow:0 40px 80px rgba(0,0,0,.45);overflow:hidden;will-change:transform}
+.scene{position:relative;height:560px}
+.phone{position:absolute;right:4%;top:30px;width:min(290px,74%);height:480px;border-radius:38px;background:#0b141a;border:8px solid #1a2230;box-shadow:0 40px 80px rgba(0,0,0,.45);overflow:hidden;will-change:transform}
 .phone .bar{background:#1f2c34;color:#e9edef;padding:16px 16px 12px;font:600 14px/1.2 var(--f-body);display:flex;gap:10px;align-items:center}
 .phone .av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#ffb36b,#f26a1b)}
 .phone .bar small{display:block;font-weight:400;color:#8696a0;font-size:12px}
@@ -76,7 +80,7 @@ a{color:inherit}
 .typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
 @keyframes dot{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
 /* plan avant : le bon de travail */
-.bon{position:absolute;left:0;bottom:0;width:min(290px,72%);background:var(--papier);color:#2b2410;border-radius:4px;padding:16px 16px 12px;box-shadow:0 26px 50px rgba(0,0,0,.35);font:13px/1.45 var(--f-mono);transform:rotate(-3deg);will-change:transform}
+.bon{position:absolute;left:0;bottom:-34px;width:min(290px,72%);background:var(--papier);color:#2b2410;border-radius:4px;padding:16px 16px 12px;box-shadow:0 26px 50px rgba(0,0,0,.35);font:13px/1.45 var(--f-mono);transform:rotate(-3deg);will-change:transform}
 .bon .tag{display:flex;justify-content:space-between;border-bottom:1.5px dashed #b8a66a;padding-bottom:8px;margin-bottom:8px}
 .bon table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
 .bon td{padding:4px 0;border-bottom:1px dotted #cfbf86;vertical-align:top}
@@ -118,8 +122,12 @@ section{position:relative}
 .fuites .sec-head .tag{color:#ffb38a}
 .fuites .sec-head p{color:var(--on-dark-muted)}
 .rail{display:flex;gap:20px;padding-bottom:90px;padding-left:max(16px,env(safe-area-inset-left,0px),calc((100vw - 1120px)/2 + 16px));padding-right:max(16px,env(safe-area-inset-right,0px));width:max-content;will-change:transform}
-.fuite{width:min(430px,84vw);min-height:400px;background:transparent;border-left:1px solid rgba(255,255,255,.22);border-radius:0;padding:28px;display:flex;flex-direction:column;gap:14px;flex:none}
-.fuite .num{font:900 84px/0.8 var(--f-display);font-stretch:70%;color:transparent;-webkit-text-stroke:1.5px var(--mandarine)}
+.fuite{width:min(400px,84vw);background:transparent;border-left:1px solid rgba(255,255,255,.22);border-radius:0;padding:0 28px 8px;display:flex;flex-direction:column;gap:14px;flex:none}
+.fuite figure{margin:0 0 6px;overflow:hidden;aspect-ratio:4/5;max-width:100%;position:relative}
+.fuite figure img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.08);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.fuite:hover figure img{transform:scale(1.02)}
+.fuite figure .num{position:absolute;left:14px;bottom:10px;color:var(--mandarine);-webkit-text-stroke:0;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+.fuite .num{font:900 84px/0.8 var(--f-display);font-stretch:70%;color:transparent;-webkit-text-stroke:1.5px var(--mandarine);text-shadow:0 2px 24px rgba(0,0,0,.35)}
 .fuite h3{font-size:34px;font-weight:900;font-stretch:80%;text-transform:uppercase}
 .fuite p{margin:0;color:var(--on-dark-muted);font-size:17px}
 .fuite .mesure{margin-top:auto;border-top:1px dashed rgba(255,255,255,.25);padding-top:14px;font:500 13px/1.4 var(--f-mono);color:#ffb38a}
@@ -166,7 +174,10 @@ section{position:relative}
 .non li::before{content:"✕";color:var(--mandarine);font-weight:700}
 
 /* ---------- Contact ---------- */
-.contact{background:var(--cobalt-deep);color:var(--on-dark);padding-block:110px;overflow:hidden}
+.contact{background:var(--cobalt-deep);color:var(--on-dark);padding-block:140px 110px;overflow:hidden;position:relative;isolation:isolate}
+.contact .fond{position:absolute;inset:0;z-index:-1}
+.contact .fond img{width:100%;height:120%;object-fit:cover;object-position:60% 30%;display:block;will-change:transform}
+.contact .fond::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,31,102,.96) 0%,rgba(15,31,102,.82) 45%,rgba(15,31,102,.35) 100%)}
 .contact .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:end}
 .contact h2{font-size:clamp(44px,8vw,112px);font-weight:900;font-stretch:72%;text-transform:uppercase}
 .contact h2 em{font-style:normal;color:var(--mandarine)}
@@ -184,6 +195,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .hero .wrap,.diag-grid,.contact .wrap,.non{grid-template-columns:1fr}
   .scene{height:430px;max-width:420px}
   .phone{height:410px;right:0}
+  .hero .photo{position:absolute;inset:0;width:100%}
+  .hero .photo::after{background:linear-gradient(180deg,rgba(15,31,102,.82),rgba(15,31,102,.92))}
   .bon{width:min(240px,62%);bottom:-24px;font-size:12px}
   .result{position:static}
   .etapes{grid-template-columns:1fr}
@@ -212,7 +225,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </header>
 
 <section class="hero" id="ouverture" aria-labelledby="t-hero">
-  <div class="grid-bg" data-plan="0.15" aria-hidden="true"></div>
+  <div class="photo" aria-hidden="true"><img src="img/hero.jpg" alt="" data-plan="0.12" fetchpriority="high"><span class="credit">Photo : Kalz Michael / Pexels</span></div>
   <div class="wrap">
     <div>
       <p class="tag" style="color:var(--on-dark-muted)">Le Fixer d'Opérations · Abidjan</p>
@@ -305,10 +318,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
   </div>
   <div class="rail" id="rail">
-    <article class="fuite"><span class="num">1</span><h3>L'argent qui file</h3><p>Le client demande un prix sur WhatsApp un samedi soir. Personne ne répond avant lundi. Il a déjà acheté à Treichville.</p><p class="mesure">On mesure : demandes reçues · réponses dans la journée</p></article>
-    <article class="fuite"><span class="num">2</span><h3>Le brouillard du stock</h3><p>« On l'a en magasin » — sauf qu'on ne le trouve pas. Ou on recommande ce qui dort déjà au dépôt de Yopougon.</p><p class="mesure">On mesure : ruptures · écarts entre le cahier et le dépôt</p></article>
-    <article class="fuite"><span class="num">3</span><h3>L'information en silo</h3><p>Le chiffre est dans la tête du gérant, le devis dans le téléphone du commercial, le paiement dans le cahier de la caisse.</p><p class="mesure">On mesure : questions qui remontent toujours au patron</p></article>
-    <article class="fuite"><span class="num">4</span><h3>Le temps perdu à l'admin</h3><p>Chaque fin de mois, deux jours à recopier des chiffres d'un fichier à l'autre pour savoir si on a gagné de l'argent.</p><p class="mesure">On mesure : heures de saisie par semaine</p></article>
+    <article class="fuite"><figure><img src="img/nuit.jpg" alt="Une femme lit un message sur son téléphone dans le noir" loading="lazy"><span class="num">1</span></figure><h3>L'argent qui file</h3><p>Le client demande un prix sur WhatsApp un samedi soir. Personne ne répond avant lundi. Il a déjà acheté à Treichville.</p><p class="mesure">On mesure : demandes reçues · réponses dans la journée</p></article>
+    <article class="fuite"><figure><img src="img/stock.jpg" alt="Un magasinier note le stock devant des cartons empilés" loading="lazy"><span class="num">2</span></figure><h3>Le brouillard du stock</h3><p>« On l'a en magasin » — sauf qu'on ne le trouve pas. Ou on recommande ce qui dort déjà au dépôt de Yopougon.</p><p class="mesure">On mesure : ruptures · écarts entre le cahier et le dépôt</p></article>
+    <article class="fuite"><figure><img src="img/comptoir.jpg" alt="Un commerçant derrière son comptoir, entouré de marchandises" loading="lazy"><span class="num">3</span></figure><h3>L'information en silo</h3><p>Le chiffre est dans la tête du gérant, le devis dans le téléphone du commercial, le paiement dans le cahier de la caisse.</p><p class="mesure">On mesure : questions qui remontent toujours au patron</p></article>
+    <article class="fuite"><figure><img src="img/papiers.jpg" alt="Un dirigeant relit des documents papier stylo en main" loading="lazy"><span class="num">4</span></figure><h3>Le temps perdu à l'admin</h3><p>Chaque fin de mois, deux jours à recopier des chiffres d'un fichier à l'autre pour savoir si on a gagné de l'argent.</p><p class="mesure">On mesure : heures de saisie par semaine</p></article>
   </div>
 </section>
 
@@ -364,6 +377,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </section>
 
 <section class="contact" id="contact" aria-labelledby="t-contact">
+  <div class="fond" aria-hidden="true"><img src="img/sourire.jpg" alt="" loading="lazy" data-fond></div>
   <div class="wrap">
     <div>
       <h2 id="t-contact">On répare <em>la fuite</em> ?</h2>
@@ -377,7 +391,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
-<footer><div class="wrap"><span>Mr Kassio · Le Fixer d'Opérations · Abidjan, Côte d'Ivoire</span><span>Les chiffres d'exemple de cette page sont fictifs.</span></div></footer>
+<footer><div class="wrap"><span>Mr Kassio · Le Fixer d'Opérations · Abidjan, Côte d'Ivoire</span><span>Chiffres d'exemple fictifs · Photos Pexels : Kalz Michael, Aviz Media, Lagos Food Bank Initiative, Muhammad-Taha Ibrahim, RDNE Stock project</span></div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -499,6 +513,9 @@ if (!calme && window.gsap && window.ScrollTrigger){
   gsap.utils.toArray(".sec-head, .etape, .non, .q, .contact .wrap > *").forEach(el => {
     gsap.from(el, {y:36, duration:.8, ease:"power3.out", scrollTrigger:{trigger:el, start:"top 90%", once:true}});
   });
+  // photos : léger zoom arrière au défilement
+  gsap.utils.toArray(".fuite figure img").forEach(im => gsap.fromTo(im,{scale:1.18},{scale:1.02,ease:"none",scrollTrigger:{trigger:".fuites",start:"top bottom",end:"bottom top",scrub:true}}));
+  gsap.to("[data-fond]",{yPercent:-12,ease:"none",scrollTrigger:{trigger:".contact",start:"top bottom",end:"bottom top",scrub:true}});
   // 6. bouton aimanté
   document.querySelectorAll(".btn-big").forEach(b => {
     const qx = gsap.quickTo(b,"x",{duration:.4}), qy = gsap.quickTo(b,"y",{duration:.4});
