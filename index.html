@@ -525,7 +525,6 @@ if (!calme && window.gsap && window.ScrollTrigger){
     car.classList.toggle("s1", e>=1); car.classList.toggle("s2", e>=2); car.classList.toggle("s3", e>=3);
     document.querySelectorAll(".ec").forEach(x => x.classList.toggle("on", +x.dataset.e === e));
   }
-  gsap.from(".carres i", {scale:0, duration:.5, ease:"back.out(2)", stagger:{each:.008, from:"random"}, scrollTrigger:{trigger:".cent", start:"top 70%", once:true}});
   // frise de la méthode
   gsap.to(".frise .trait", {scaleX:1, ease:"none", scrollTrigger:{trigger:".frise", start:"top 80%", end:"bottom 60%", scrub:true}});
   // 4. les 4 fuites défilent de côté (écran large seulement)
