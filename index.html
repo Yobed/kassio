@@ -65,20 +65,21 @@ a{color:inherit}
 .hero .cta-row{display:flex;flex-wrap:wrap;gap:12px}
 .compteur{margin-top:34px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-family:var(--f-mono);color:var(--on-dark-muted);font-size:13px}
 .compteur b{font:900 clamp(26px,3vw,36px)/1 var(--f-display);font-stretch:80%;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:.01em}
-/* plan du milieu : la conversation WhatsApp qui reste sans réponse */
+/* plan du milieu : les messages restés sans réponse, posés sur la photo */
 .scene{position:relative;height:560px}
-.phone{position:absolute;right:4%;top:30px;width:min(290px,74%);height:480px;border-radius:38px;background:#0b141a;border:8px solid #1a2230;box-shadow:0 40px 80px rgba(0,0,0,.45);overflow:hidden;will-change:transform}
-.phone .bar{background:#1f2c34;color:#e9edef;padding:16px 16px 12px;font:600 14px/1.2 var(--f-body);display:flex;gap:10px;align-items:center}
-.phone .av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#ffb36b,#f26a1b)}
-.phone .bar small{display:block;font-weight:400;color:#8696a0;font-size:12px}
-.chat{padding:14px 12px;display:flex;flex-direction:column;gap:8px;font:14px/1.35 var(--f-body);background:#0b141a}
-.msg{align-self:flex-start;max-width:82%;background:#202c33;color:#e9edef;padding:8px 10px 6px;border-radius:8px 8px 8px 2px}
-.msg time{display:block;text-align:right;font-size:11px;color:#8696a0;margin-top:2px}
-.msg.late time{color:#ff9b6b}
-.typing{align-self:flex-start;background:#202c33;border-radius:8px;padding:10px 12px;display:flex;gap:4px}
-.typing i{width:6px;height:6px;border-radius:50%;background:#8696a0;display:block;animation:dot 1.2s infinite}
-.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
-@keyframes dot{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.notifs{position:absolute;right:2%;top:40px;width:min(330px,86%);display:flex;flex-direction:column;gap:10px;will-change:transform}
+.notif{background:rgba(255,255,255,.9);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);color:#14182b;border-radius:14px;padding:12px 14px 12px;box-shadow:0 12px 30px rgba(8,14,40,.28);display:grid;grid-template-columns:28px minmax(0,1fr);gap:4px 10px;font:14px/1.35 var(--f-body)}
+.notif .ic{grid-row:1/span 2;width:28px;height:28px;border-radius:7px;background:#14182b;display:grid;place-items:center}
+.notif .ic::before{content:"";width:12px;height:10px;border-radius:5px 5px 5px 1px;background:#fff}
+.notif .hd{display:flex;justify-content:space-between;gap:10px;font:600 12px/1.2 var(--f-body);color:#5a6077}
+.notif .hd time{font-weight:400;white-space:nowrap}
+.notif p{margin:0}
+.notif.tard .hd time{color:#c2410c;font-weight:600}
+.notif.perdu{background:var(--mandarine);color:#1a0d02}
+.notif.perdu .ic{background:#1a0d02}
+.notif.perdu .hd{color:rgba(26,13,2,.7)}
+.notif.perdu .hd time{color:#1a0d02}
+.notifs .lu{align-self:flex-end;font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);padding-right:4px}
 /* plan avant : le bon de travail */
 .bon{position:absolute;left:0;bottom:-34px;width:min(290px,72%);background:var(--papier);color:#2b2410;border-radius:4px;padding:16px 16px 12px;box-shadow:0 26px 50px rgba(0,0,0,.35);font:13px/1.45 var(--f-mono);transform:rotate(-3deg);will-change:transform}
 .bon .tag{display:flex;justify-content:space-between;border-bottom:1.5px dashed #b8a66a;padding-bottom:8px;margin-bottom:8px}
@@ -193,11 +194,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:900px){
   .hero{min-height:auto;padding-block:96px 80px}
   .hero .wrap,.diag-grid,.contact .wrap,.non{grid-template-columns:1fr}
-  .scene{height:430px;max-width:420px}
-  .phone{height:410px;right:0}
+  .scene{height:400px;max-width:420px}
+  .notifs{right:auto;left:0;top:10px;width:100%}
   .hero .photo{position:absolute;inset:0;width:100%}
   .hero .photo::after{background:linear-gradient(180deg,rgba(15,31,102,.82),rgba(15,31,102,.92))}
-  .bon{width:min(240px,62%);bottom:-24px;font-size:12px}
+  .bon{display:none}
   .result{position:static}
   .etapes{grid-template-columns:1fr}
   .top nav a:not(.btn){display:none}
@@ -238,15 +239,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p class="compteur" aria-live="off">Pendant que vous lisez cette page, une PME type perd environ <b id="perte-live">0 FCFA</b> <span>(exemple calculé sur 1,8 M FCFA perdus par mois)</span></p>
     </div>
     <div class="scene" aria-hidden="true">
-      <div class="phone" data-plan="-0.12">
-        <div class="bar"><span class="av"></span><div>Client · Boutique Adjamé<small>vu à 21:14</small></div></div>
-        <div class="chat">
-          <div class="msg">Bonsoir, vous avez le carrelage 60×60 gris ? C'est pour 40 m²<time>sam. 21:12</time></div>
-          <div class="msg">Je peux passer récupérer demain matin si c'est dispo 🙏<time>sam. 21:14</time></div>
-          <div class="msg late">Bonjour ?<time>dim. 09:41</time></div>
-          <div class="msg late">Bon, c'est pas grave, j'ai trouvé à Treichville.<time>dim. 12:03</time></div>
-          <div class="typing"><i></i><i></i><i></i></div>
-        </div>
+      <div class="notifs" data-plan="-0.12">
+        <div class="notif"><span class="ic"></span><div class="hd"><span>Client · Boutique Adjamé</span><time>sam. 21:12</time></div><p>Bonsoir, vous avez le carrelage 60×60 gris ? C'est pour 40 m².</p></div>
+        <div class="notif"><span class="ic"></span><div class="hd"><span>Client · Boutique Adjamé</span><time>sam. 21:14</time></div><p>Je peux passer le récupérer demain matin si c'est disponible.</p></div>
+        <div class="notif tard"><span class="ic"></span><div class="hd"><span>Client · Boutique Adjamé</span><time>dim. 09:41</time></div><p>Bonjour ?</p></div>
+        <div class="notif perdu"><span class="ic"></span><div class="hd"><span>Client · Boutique Adjamé</span><time>dim. 12:03</time></div><p>Bon, ce n'est pas grave, j'ai trouvé à Treichville.</p></div>
+        <span class="lu">4 messages · 0 réponse</span>
       </div>
       <aside class="bon" data-plan="0.22">
         <div class="tag"><span>Bon de travail</span><span>N° 0047</span></div>
@@ -469,9 +467,9 @@ if (!calme && window.gsap && window.ScrollTrigger){
   // 1. titre qui s'assemble
   gsap.from(".hero h1 .ln > span", {yPercent:110, duration:.9, ease:"power4.out", stagger:.12, delay:.1});
   gsap.from(".hero .lead, .hero .cta-row, .compteur", {y:24, duration:.8, ease:"power3.out", stagger:.08, delay:.45});
-  gsap.from(".phone", {y:60, rotate:4, duration:1.1, ease:"power3.out", delay:.2});
+
   gsap.from(".bon", {y:90, rotate:-10, duration:1.1, ease:"power3.out", delay:.45});
-  gsap.from(".chat > *", {y:14, duration:.5, ease:"power2.out", stagger:.35, delay:.9});
+  gsap.from(".notifs > *", {y:18, scale:.96, duration:.6, ease:"power3.out", stagger:.45, delay:.5});
   // 2. plans de profondeur : vitesses différentes au défilement + souris
   document.querySelectorAll("[data-plan]").forEach(el => {
     const k = parseFloat(el.dataset.plan);
